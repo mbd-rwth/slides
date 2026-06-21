@@ -2,6 +2,8 @@ project:
   output-dir: _site
   render:
     - slides/index.qmd
+  resources:
+    - index.html
 
 execute:
   eval: true

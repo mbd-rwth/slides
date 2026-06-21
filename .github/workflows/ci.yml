@@ -58,23 +58,19 @@ jobs:
       - name: Render slides
         run: quarto render
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-pages-artifact@v3
         with:
-          name: slides
           path: _site/
 
   deploy:
     needs: render
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     permissions:
-      contents: write
+      pages: write
+      id-token: write
     steps:
-      - uses: actions/download-artifact@v4
-        with:
-          name: slides
-          path: _site/
-
-      - uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: _site/
+      - uses: actions/deploy-pages@v4
+        id: deployment
