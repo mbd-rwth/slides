@@ -23,6 +23,7 @@ jobs:
       - name: Render slides
         run: |
           docker run --rm \
+            --user $(id -u):$(id -g) \
             -v $GITHUB_WORKSPACE:/workspace \
             -w /workspace \
             ghcr.io/${{ github.repository }}:latest \
