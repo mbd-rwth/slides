@@ -1,0 +1,17 @@
+## Quarto
+/.quarto/
+**/.quarto/**
+/.luarc.json
+_site/
+
+## Python
+**/__pycache__
+**/.ipynb_checkpoints/**
+**/*.quarto_ipynb
+
+## VS Code
+.vscode
+
+## Others
+.tmp
+local

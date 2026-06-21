@@ -1,0 +1,155 @@
+/*-- scss:defaults --*/
+
+// title page
+.reveal .slides #title-slide .title {
+  font-size: 80px;
+  font-style: italic;
+  color: #e8e8ec;
+  font-family: Arial;
+  //font-variant: small-caps;
+}
+
+.reveal .slides #title-slide .subtitle,
+.reveal .slides #title-slide .quarto-title-author-name,
+.reveal .slides #title-slide .quarto-title-affiliation,
+.reveal .slides #title-slide .date,
+.reveal .slides #title-slide p {
+  color: #e8e8ec;
+}
+
+.reveal .slides #title-slide {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.reveal .slides #title-slide > .title,
+.reveal .slides #title-slide > .subtitle,
+.reveal .slides #title-slide > .quarto-title-authors,
+.reveal .slides #title-slide > .date {
+  margin-left: 2%;
+}
+
+.reveal:has(.slides #title-slide.present) .footer-default {
+  display: none !important;
+}
+
+
+$presentation-title-slide-text-align: left;
+
+// fonts
+$presentation-font-size-root: 30px !default;
+
+
+
+// headings
+
+/*-- scss:rules --*/
+
+.math.inline {
+  font-size: 100%  !important;
+}
+
+.math.display .MathJax {
+  font-size: 100%  !important;
+}
+
+// some changes to the callout boxes
+.callout {
+  border-radius: 2px;
+  border-width: 4px;
+  border-color: black;
+  padding: 1em;
+  font-size: inherit;
+}
+
+/* ---- additional callouts ---- */
+.callout-definition {
+  border-radius: 2px;
+  border-width: 4px;
+  border-left: 4px solid #8ebae5;
+  background: rgba(142, 186, 229, 0.1);
+  font-size: inherit;
+  padding: 1.5em 0.5em 0.25em 0.9em; 
+  position: relative;  /* Für absolutes Positioning des Icons */
+}
+
+.callout-definition::before {
+  content: "📘 Definition";  /* Icon + Text */
+  position: absolute;
+  left: 0.5em;
+  top: 0.5em;
+  font-size: 1.1em;  /* Etwas kleiner */
+  font-weight: bold;
+}
+
+/* ---- additional callouts ---- */
+.callout-definition-in-worten {
+  border-radius: 2px;
+  border-width: 4px;
+  border-left: 4px solid #8ebae5;
+  background: rgba(142, 186, 229, 0.1);
+  font-size: inherit;
+  padding: 1.5em 0.5em 0.25em 0.9em; 
+  position: relative;  /* Für absolutes Positioning des Icons */
+}
+
+.callout-definition-in-worten::before {
+  content: "📘 Definition in Worten";  /* Icon + Text */
+  position: absolute;
+  left: 0.5em;
+  top: 0.5em;
+  font-size: 1.1em;  /* Etwas kleiner */
+  font-weight: bold;
+}
+
+
+.callout-good2know {
+  border-left: 4px solid #fabe50;
+   background: rgba(250, 190, 80, 0.1);
+  font-size: inherit;
+  padding: 1.5em 0.5em 0.25em 0.9em; 
+  position: relative;  /* Für absolutes Positioning des Icons */
+}
+
+.callout-good2know::before {
+  content: "💡";  /* Icon + Text */
+  position: absolute;
+  left: 0.5em;
+  top: 0.5em;
+  font-size: inherit; /* Gleiche Schriftgröße wie der Text */
+  font-weight: bold;
+}
+
+.callout-aufgabe {
+  border-left: 4px solid #e57373;
+  background: rgba(229, 115, 115, 0.14);
+  font-size: inherit;
+  padding: 1.5em 0.5em 0.25em 0.9em; 
+  position: relative;  /* Für absolutes Positioning des Icons */
+}
+
+.callout-aufgabe::before {
+  content: "🔍 Aufgabe";  /* Icon + Text */
+  position: absolute;
+  left: 0.5em;
+  top: 0.5em;
+  font-size: inherit; /* Gleiche Schriftgröße wie der Text */
+  font-weight: bold;
+}
+
+
+.callout-highlight {
+  border-left: 4px solid #fabe50;
+   background: rgba(250, 190, 80, 0.1);
+  font-size: inherit;
+  padding: 1.5em 0.5em 0.25em 0.9em; 
+  position: relative;  /* Für absolutes Positioning des Icons */
+}
+
+
+/* Ensure figures inside embedded notebook cells also respect the max width */
+.quarto-embed-nb-cell .quarto-figure {
+  max-width: 100%;
+}

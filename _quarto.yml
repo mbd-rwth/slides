@@ -1,0 +1,9 @@
+project:
+  output-dir: _site
+  render:
+    - slides/index.qmd
+
+execute:
+  eval: true
+  cache: false
+  freeze: true

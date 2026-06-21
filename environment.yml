@@ -1,0 +1,11 @@
+name: ENV_NAME
+channels:
+  - conda-forge
+dependencies:
+  - numpy
+  - pandas
+  - scipy
+  - matplotlib
+  - jupyter
+  - lazygit
+  - ipykernel

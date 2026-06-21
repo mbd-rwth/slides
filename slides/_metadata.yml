@@ -1,0 +1,40 @@
+institute: "Mechanical Engineering<br> RWTH Aachen University"
+title-slide-attributes:
+  data-background-image: "metafiles/cover.png"
+  data-background-size: cover
+  data-background-opacity: "0.85"
+
+standalone: true
+embed-resources: true
+
+bibliography:
+  - references.bib
+
+fig-cap-location: margin
+from: markdown+emoji
+
+format:
+  revealjs:
+    toc-title: "Today"
+    toc: false
+    toc-depth: 1
+    number-sections: true
+    number-depth: 1
+    progress: true
+    history: false
+    slide-number: true
+    show-slide-number: all
+    controls: auto
+    footer: "NHR4CES - CSG  {{< meta subtitle >}}"
+    code-fold: true
+    width: 1280
+    height: 720
+    margin: 0.075
+    margin-top: 0px
+    margin-left: 0px
+    fontsize: 19pt
+    menu:
+      side: left
+    preview-links: false
+    link-external-newwindow: true
+    theme: "metafiles/format.scss"

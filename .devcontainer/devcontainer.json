@@ -1,0 +1,28 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/docker-existing-dockerfile
+
+{
+	"initializeCommand": "",
+	"name": "juliacon2026_keynote",
+	"build": {
+		"dockerfile": "../Dockerfile",
+		"context": ".."
+	},
+	"containerEnv": {
+		"SHELL": "/bin/bash"
+	},
+
+	"postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
+	"customizations": {
+		"vscode": {
+			"settings": {}
+		},
+		"extensions": [
+			"ms-toolsai.jupyter",
+			"ms-python.vscode-pylance",
+			"ms-python.python",
+			"quarto.quarto",
+			"gruntfuggly.todo-tree"
+		]
+	}
+}
