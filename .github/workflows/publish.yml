@@ -9,18 +9,24 @@ on:
 jobs:
   render:
     runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/mbd-rwth/juliacon2026_keynote:latest
-      credentials:
-        username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
     permissions:
       packages: read
     steps:
       - uses: actions/checkout@v4
 
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Render slides
-        run: quarto render
+        run: |
+          docker run --rm \
+            -v $GITHUB_WORKSPACE:/workspace \
+            -w /workspace \
+            ghcr.io/${{ github.repository }}:latest \
+            quarto render
 
       - uses: actions/upload-artifact@v4
         with:
