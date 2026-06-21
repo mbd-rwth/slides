@@ -13,7 +13,7 @@ USER root
 # Adding a non-root user
 # https://code.visualstudio.com/remote/advancedcontainers/add-nonroot-user#_creating-a-nonroot-user
 ARG USERNAME=dev
-ARG USER_UID=1000
+ARG USER_UID=1001
 ARG USER_GID=$USER_UID
 # Add group and add the user to the group
 # RUN groupadd --gid $USER_GID $USERNAME \
