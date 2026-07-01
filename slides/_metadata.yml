@@ -25,7 +25,7 @@ format:
     slide-number: true
     show-slide-number: all
     controls: auto
-    footer: "NHR4CES - CSG  {{< meta subtitle >}}"
+    footer: "Conference - {{< meta subtitle >}}"
     code-fold: true
     width: 1280
     height: 720
