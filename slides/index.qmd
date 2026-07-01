@@ -1,5 +1,5 @@
 ---
-title: ""
+title: "Conference"
 subtitle: "Sustainability in Computational Engineering Science"
 author: "Julia Kowalski"
 date: "12. May 2026"
