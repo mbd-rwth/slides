@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SDG Browser</title>
+  <style>
+    :root {
+      --bg: #f3efe5;
+      --panel: #fffaf2;
+      --panel-strong: #fffdf8;
+      --text: #1b1b1b;
+      --muted: #655f57;
+      --line: #d8cfbf;
+      --accent: #0c7a6b;
+      --shadow: 0 14px 32px rgba(40, 32, 18, 0.14);
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top left, rgba(12, 122, 107, 0.14), transparent 26%),
+        radial-gradient(circle at bottom right, rgba(255, 171, 0, 0.12), transparent 24%),
+        var(--bg);
+      color: var(--text);
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    .stage {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: 0.95fr 1.2fr;
+      gap: 14px;
+      padding: 14px;
+      background: rgba(255, 252, 246, 0.78);
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+      overflow: hidden;
+    }
+
+    .goals-panel,
+    .info-panel {
+      min-height: 0;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .goals-panel {
+      padding: 10px;
+    }
+
+    .icon-grid {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-rows: repeat(5, minmax(0, 1fr));
+      gap: 8px;
+      align-content: stretch;
+      place-items: center;
+    }
+
+    .goal-button {
+      border: 0;
+      padding: 0;
+      width: 95%;
+      height: 95%;
+      margin: auto;
+      background: transparent;
+      cursor: pointer;
+      border-radius: 18px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 0 0 1px rgba(0,0,0,0.04);
+      transition: transform 150ms ease, box-shadow 150ms ease;
+    }
+
+    .goal-button:hover,
+    .goal-button:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 18px rgba(25, 25, 25, 0.15);
+      outline: none;
+    }
+
+    .goal-button.is-active {
+      box-shadow: 0 0 0 4px rgba(12, 122, 107, 0.35), 0 14px 20px rgba(0, 0, 0, 0.16);
+    }
+
+    .goal-button img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: contain;
+    }
+
+    .goal-kicker {
+      display: inline-block;
+      margin-bottom: 8px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: rgba(12, 122, 107, 0.1);
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .summary-box h2 {
+      margin: 0;
+      font-size: clamp(1.1rem, 1.5vw, 1.6rem);
+      line-height: 1.15;
+    }
+
+    .info-panel {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 12px;
+    }
+
+    .summary-box,
+    .details-panel {
+      min-height: 0;
+      background: var(--panel-strong);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .summary-box {
+      padding: 16px 20px;
+      text-align: left;
+    }
+
+    .details-panel {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      overflow: hidden;
+      background: var(--panel);
+    }
+
+    .targets-pane,
+    .indicators-pane {
+      min-height: 0;
+      display: block;
+    }
+
+    .targets-pane {
+      border-right: 1px solid var(--line);
+    }
+
+    .item-list {
+      min-height: 0;
+      height: 100%;
+      overflow: auto;
+      padding: 14px;
+    }
+
+    .target-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    .target-item {
+      cursor: pointer;
+      padding: 8px 10px;
+      border-radius: 10px;
+      transition: background 150ms ease, color 150ms ease;
+    }
+
+    .target-item:hover,
+    .target-item:focus-visible {
+      background: #fffcf6;
+      outline: none;
+    }
+
+    .target-item.is-active {
+      background: rgba(12, 122, 107, 0.08);
+    }
+
+    .item-code,
+    .indicator-code {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--accent);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+    }
+
+    .item-text,
+    .indicator-text {
+      font-size: 0.92rem;
+      line-height: 1.35;
+    }
+
+    .indicator-entry + .indicator-entry {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid #ece4d8;
+    }
+
+    .empty-state {
+      padding: 20px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.45;
+    }
+
+    @media (max-width: 820px) {
+      .stage {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+      }
+      .goals-panel {
+        min-height: 260px;
+      }
+      .icon-grid {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        grid-template-rows: repeat(4, minmax(0, 1fr));
+      }
+      .details-panel {
+        grid-template-columns: 1fr;
+      }
+      .targets-pane {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="stage">
+    <section class="goals-panel">
+      <div class="icon-grid" id="goalGrid"></div>
+    </section>
+
+    <section class="info-panel">
+      <section class="summary-box" id="goalSummary">
+        <span class="goal-kicker">Hover a goal</span>
+        <h2>Move across the SDG icons to inspect each goal</h2>
+        <p>Hover to preview a goal. Click to open its targets and indicators below.</p>
+      </section>
+
+      <section class="details-panel">
+        <section class="targets-pane">
+          <div class="item-list" id="targetList">
+            <div class="empty-state">No goal selected yet.</div>
+          </div>
+        </section>
+
+        <section class="indicators-pane">
+          <div class="item-list" id="indicatorList">
+            <div class="empty-state">Select a goal, then click one target to see its indicators.</div>
+          </div>
+        </section>
+      </section>
+    </section>
+  </main>
+
+  <script src="sdg_browser_data.js"></script>
+  <script>
+    const goalGrid = document.getElementById("goalGrid");
+    const goalSummary = document.getElementById("goalSummary");
+    const targetList = document.getElementById("targetList");
+    const indicatorList = document.getElementById("indicatorList");
+
+    const goals = Array.isArray(window.SDG_DATA) ? window.SDG_DATA : [];
+    let activeGoalCode = null;
+    let activeTargetCode = null;
+
+    function iconPath(goalCode) {
+      return `sdg-icons/E-WEB-Goal-${String(goalCode).padStart(2, "0")}.png`;
+    }
+
+    function renderDefaultSummary() {
+      goalSummary.innerHTML = `
+        <span class="goal-kicker">Hover a goal</span>
+        <h2>Move across the SDG icons to inspect each goal</h2>
+      `;
+    }
+
+    function createGoalButton(goal) {
+      const button = document.createElement("button");
+      button.className = "goal-button";
+      button.type = "button";
+      button.dataset.goalCode = goal.code;
+      button.setAttribute("aria-label", `Open Goal ${goal.code}: ${goal.title}`);
+
+      const image = document.createElement("img");
+      image.src = iconPath(goal.code);
+      image.alt = `SDG Goal ${goal.code}`;
+
+      button.appendChild(image);
+      button.addEventListener("mouseenter", () => previewGoal(goal.code));
+      button.addEventListener("focus", () => previewGoal(goal.code));
+      button.addEventListener("mouseleave", clearPreview);
+      button.addEventListener("click", () => selectGoal(goal.code));
+      return button;
+    }
+
+    function renderGoals() {
+      goalGrid.innerHTML = "";
+      goals.forEach((goal) => goalGrid.appendChild(createGoalButton(goal)));
+      goalGrid.addEventListener("mouseleave", clearPreview);
+      updateGoalButtonState();
+    }
+
+    function updateGoalButtonState() {
+      goalGrid.querySelectorAll(".goal-button").forEach((button) => {
+        button.classList.toggle("is-active", button.dataset.goalCode === activeGoalCode);
+      });
+    }
+
+    function getGoal(goalCode) {
+      return goals.find((goal) => goal.code === goalCode);
+    }
+
+    function renderGoalSummary(goal, isPreview = false) {
+      const label = isPreview ? `Goal ${goal.code}` : `Selected goal ${goal.code}`;
+      goalSummary.innerHTML = `
+        <span class="goal-kicker">${label}</span>
+        <h2>${goal.title}</h2>
+      `;
+    }
+
+    function renderTargets(goal) {
+      const targets = Array.isArray(goal.targets) ? goal.targets : [];
+      targetList.innerHTML = "";
+
+      if (!targets.length) {
+        targetList.innerHTML = '<div class="empty-state">No targets were returned for this goal.</div>';
+        return;
+      }
+
+      const list = document.createElement("div");
+      list.className = "target-list";
+
+      targets.forEach((target) => {
+        const item = document.createElement("div");
+        item.tabIndex = 0;
+        item.role = "button";
+        item.className = "target-item";
+        item.dataset.targetCode = target.code;
+        item.innerHTML = `
+          <span class="item-code">Target ${target.code}</span>
+          <span class="item-text">${target.title || target.description || "No target text available."}</span>
+        `;
+        item.addEventListener("click", () => selectTarget(target.code));
+        item.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            selectTarget(target.code);
+          }
+        });
+        list.appendChild(item);
+      });
+
+      targetList.appendChild(list);
+
+      updateTargetButtonState();
+    }
+
+    function updateTargetButtonState() {
+      targetList.querySelectorAll(".target-item").forEach((item) => {
+        item.classList.toggle("is-active", item.dataset.targetCode === activeTargetCode);
+      });
+    }
+
+    function renderIndicators(target) {
+      const indicators = Array.isArray(target.indicators) ? target.indicators : [];
+      indicatorList.innerHTML = "";
+
+      if (!indicators.length) {
+        indicatorList.innerHTML = '<div class="empty-state">No indicators were returned for this target.</div>';
+        return;
+      }
+
+      indicators.forEach((indicator) => {
+        const card = document.createElement("article");
+        card.className = "indicator-entry";
+        card.innerHTML = `
+          <span class="indicator-code">Indicator ${indicator.code}</span>
+          <span class="indicator-text">${indicator.description || "No indicator description available."}</span>
+        `;
+        indicatorList.appendChild(card);
+      });
+    }
+
+    function previewGoal(goalCode) {
+      const goal = getGoal(goalCode);
+      if (goal) {
+        renderGoalSummary(goal, activeGoalCode !== goalCode);
+      }
+    }
+
+    function clearPreview() {
+      if (activeGoalCode) {
+        const goal = getGoal(activeGoalCode);
+        if (goal) {
+          renderGoalSummary(goal, false);
+          return;
+        }
+      }
+      renderDefaultSummary();
+    }
+
+    function selectGoal(goalCode) {
+      if (activeGoalCode === goalCode) {
+        activeGoalCode = null;
+        activeTargetCode = null;
+        updateGoalButtonState();
+        renderDefaultSummary();
+        targetList.innerHTML = '<div class="empty-state">No goal selected yet.</div>';
+        indicatorList.innerHTML = '<div class="empty-state">Select a goal, then click one target to see its indicators.</div>';
+        return;
+      }
+
+      const goal = getGoal(goalCode);
+      if (!goal) return;
+
+      activeGoalCode = goalCode;
+      activeTargetCode = null;
+      updateGoalButtonState();
+      goalSummary.innerHTML = `
+        <span class="goal-kicker">Selected goal ${goal.code}</span>
+        <h2>${goal.title}</h2>
+      `;
+      renderTargets(goal);
+      indicatorList.innerHTML = '<div class="empty-state">Click one target on the left to show its indicators here.</div>';
+    }
+
+    function selectTarget(targetCode) {
+      const goal = getGoal(activeGoalCode);
+      if (!goal || !Array.isArray(goal.targets)) return;
+
+      const target = goal.targets.find((entry) => entry.code === targetCode);
+      if (!target) return;
+
+      activeTargetCode = targetCode;
+      updateTargetButtonState();
+      renderIndicators(target);
+    }
+
+    renderDefaultSummary();
+    renderGoals();
+  </script>
+</body>
+</html>
