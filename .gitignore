@@ -16,3 +16,4 @@ _site/
 .tmp
 local
 slides/src-ideas/*
+slides/indexold.qmd
