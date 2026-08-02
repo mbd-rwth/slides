@@ -2,7 +2,7 @@
 title: "Sustainability in Computational Science and Engineering"
 subtitle: "Methods, Software, and Long-Term Scientific Value"
 author: "Julia Kowalski"
-date: "12. May 2026"
+date: "18. August 2026"
 date-format: "D. MMMM YYYY"
 resources:
   - sdg-icons/
@@ -17,17 +17,18 @@ $$
 $$
 :::
 
-# Let's start with a question {.unnumbered}
+---
 
-::: {.fragment .fade-right}
+
 ```{=html}
-<div class="question-box">
-  <p>Which of the United Nations Sustainable Development Goals feels closest to your research?</p>
+<div class="question-slide-center">
+  <div class="question-box">
+    <p>Which of the United Nations Sustainable Development Goals feels closest to your research?</p>
+  </div>
 </div>
 ```
-:::
 
-## Sustainable Development Goals
+## United Nation's Sustainable Development Goals (SDGs)
 
 ```{=html}
 <div class="sdg-grid">
@@ -104,63 +105,67 @@ $$
 ```
 
 
-## SDGs follow a hierarchical taxonomy
+## From SDGs to measurable quantities
 
-```{=html}
-<div class="sdg-taxonomy">
-  <section class="sdg-taxonomy-card">
-    <div class="sdg-taxonomy-flow">
-      <div class="sdg-taxonomy-step">
-        <strong>Goal 7</strong>
-        Affordable and Clean Energy
-      </div>
-      <div class="sdg-taxonomy-arrow">↓</div>
-      <div class="sdg-taxonomy-step">
-        <strong>Target 7.2</strong>
-        Increase the share of renewable energy in the global energy mix.
-      </div>
-      <div class="sdg-taxonomy-arrow">↓</div>
-      <div class="sdg-taxonomy-step">
-        <strong>Indicator 7.2.1</strong>
-        Renewable energy share in total final energy consumption
-      </div>
-    </div>
-  </section>
+::: {.sdg-taxonomy-columns}
 
-  <section class="sdg-taxonomy-metric">
-    <p class="sdg-metric-kicker">Indicators can be quantified</p>
-    <h3 style="margin-top:0;">Indicator 7.2.1</h3>
-    <ul class="sdg-metric-list">
-      <li><strong>2015:</strong> 15.6%</li>
-      <li><strong>2023:</strong> 18.0%</li>
-    </ul>
-    <p style="margin-top:1rem;">This is where sustainability becomes operational and concrete and serves as a bridge between abstract goals and tangible outcomes that can be addressed via CSE (modeling, optimization).</p>
-    <p style="margin-bottom:0;">\tiny Sources: UN SDG Report 2026 [@un_sdg_report_2026_goal7]; UN metadata for indicator 7.2.1 [@un_sdg_metadata_721].</p>
-  </section>
-</div>
-```
+::: {.sdg-taxonomy-left}
 
+::: {.sdg-taxonomy-card}
+::: {.sdg-taxonomy-flow}
 
-## Two examples of CS&E research contributing to the SDGs
+::: {.sdg-taxonomy-step}
+**Goal 7**  Affordable and Clean Energy
+:::
+
+::: {.sdg-taxonomy-arrow}
+↓
+:::
+
+::: {.sdg-taxonomy-step}
+**Target 7.2** Increase the share of renewable energy in the global energy mix.
+:::
+
+::: {.sdg-taxonomy-arrow}
+↓
+:::
+
+::: {.sdg-taxonomy-step}
+**Indicator 7.2.1** Renewable energy share in total final energy consumption
+:::
+
+:::
+:::
+
+::: 
+::: {.sdg-taxonomy-right}
+
+::: {.sdg-taxonomy-metric}
+
+### Indicator 7.2.1
+
+- **2015:** 15.6%
+- **2023:** 18.0%
+
+Sustainability becomes operational via **indicators** that bridge between abstract goals and tangible outcomes. Indicators can be addressed via CS\&E through modeling and optimization.
+
+Sources: UN SDG Report 2026 [@un_sdg_report_2026_goal7]; UN metadata for indicator 7.2.1 [@un_sdg_metadata_721].
+:::
+
+:::
+:::
+
+## Examples of CS&E research contributing to selected SDGs
 
 ::: columns
 
 ::: {.column width="50%"}
 
-**Example 1: Clean energy systems**
-
-Relevant SDGs:
+**Area 1: Optimizing energy systems** relevant to
 
 - SDG 7: Affordable and Clean Energy
 - SDG 9: Industry, Innovation and Infrastructure
-- SDG 13: Climate Action
 
-Original CSE contribution:
-
-- wake and flow simulation
-- layout and control optimization
-- grid, storage, and system modeling
-- uncertainty-aware operational decision support
 
 ```{=html}
 <div style="margin-top:14px; border:1px solid rgba(28,45,66,0.14); border-radius:14px; min-height:190px; background:#f7f9fc; display:flex; align-items:center; justify-content:center; color:#5b6576; font-size:0.9em; text-align:center; padding:16px;">
@@ -168,24 +173,16 @@ Original CSE contribution:
 </div>
 ```
 
+\tiny Example paper: *A modular framework for FAIR shallow landslide susceptibility mapping based on machine learning* [@edrich2024fairlandslides]
+
 :::
 
 ::: {.column width="50%"}
 
-**Example 2: Natural hazards**
-
-Relevant SDGs:
+**Area 2: Geohazard prediction** relevant to
 
 - SDG 11: Sustainable Cities and Communities
 - SDG 13: Climate Action
-- SDG 9: Industry, Innovation and Infrastructure
-
-Original CSE contribution:
-
-- hazard simulation and forecasting
-- uncertainty quantification for extreme events
-- risk-informed decision support
-- resilient infrastructure planning
 
 ```{=html}
 <div style="margin-top:14px; border:1px solid rgba(28,45,66,0.14); border-radius:14px; min-height:190px; background:#f7f9fc; display:flex; align-items:center; justify-content:center; color:#5b6576; font-size:0.9em; text-align:center; padding:16px;">
@@ -199,9 +196,6 @@ Original CSE contribution:
 
 ::::
 
-- sustainability is a major societal objective
-- computational science and engineering is a major enabling technology
-- but sustainability is rarely explicit in method-oriented CSE research
 
 ## Conclusions
 
@@ -211,15 +205,17 @@ Original CSE contribution:
 
 Sustainable development goals are visible in application-facing projects.
 
+- sustainability is a major societal objective
+- computational science and engineering is a major enabling technology
+- but sustainability is rarely explicit in method-oriented CSE research
+
 Methodological CSE often contributes indirectly, but rarely names sustainability explicitly.
 
 That mismatch motivates a second question.
 
 If CSE helps design a more sustainable world, how sustainable is CSE itself?
 
-# The idea of sustainability {.unnumbered}
-
-## The idea of sustainability (Carlowitz)
+## The idea of sustainability (Carlowitz) {.unnumbered}
 
 We typically attribute the sustainability idea to **Hans Carl von Carlowitz**.
 
@@ -306,20 +302,132 @@ Implications:
 
 :::::
 
-## It's not about indicators, it's about dynamics!
+## From Carlowitz to the SDGs
 
-$T_regeneration$ >> $T_decision$
+```{=html}
+<div class="framework-two-col">
+  <section class="framework-card">
+    <h3>Carlowitz (1713) to the SDGs</h3>
+    <p><strong>Carlowitz</strong>: one renewable resource, one stock, one regeneration process</p>
+    <p>\[
+    S_{t+1}=S_t+G_t-H_t
+    \]</p>
+    <p><strong>SDGs today</strong>: many interacting resources, many coupled indicators, many delayed responses</p>
+    <p>17 Goals &nbsp;•&nbsp; 169 Targets &nbsp;•&nbsp; &gt;230 Indicators</p>
+  </section>
+  <section class="framework-card">
+    <h3>The common principle</h3>
+    <p><strong>Indicators are not the goal.</strong></p>
+    <p>They measure slowly evolving system states that determine future opportunities.</p>
+    <table>
+      <thead>
+        <tr><th>Process</th><th style="text-align:right;">Characteristic time</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Human decisions</td><td style="text-align:right;">months–years</td></tr>
+        <tr><td>Economic development</td><td style="text-align:right;">years–decades</td></tr>
+        <tr><td>Forest regeneration</td><td style="text-align:right;">decades–century</td></tr>
+        <tr><td>Climate system</td><td style="text-align:right;">decades–centuries</td></tr>
+        <tr><td>Education</td><td style="text-align:right;">decades</td></tr>
+        <tr><td>Infrastructure</td><td style="text-align:right;">50–100 years</td></tr>
+      </tbody>
+    </table>
+  </section>
+</div>
+<div class="framework-center-line">\[
+T_{\mathrm{system}} > T_{\mathrm{decision}}
+\]</div>
+<div class="framework-center-line">When regeneration is slower than decision cycles, today's decisions determine tomorrow's possibilities. Sustainability is not mainly about indicators. It is about governing delayed dynamics.</div>
+```
 
 
-# Toward Sustainability in CSE
+## One template, many sustainability problems
+
+```{=html}
+<div class="framework-two-col">
+  <section class="framework-card">
+    <h3>State and dynamics</h3>
+    <p><strong>Resource</strong> <code>R(t)</code></p>
+    <p><strong>Dynamics</strong></p>
+    <p>\[
+    \frac{dR}{dt}=G(R)-D(R)+E
+    \]</p>
+    <ul>
+      <li><strong>G</strong>: regeneration</li>
+      <li><strong>D</strong>: depletion</li>
+      <li><strong>E</strong>: managed intervention</li>
+    </ul>
+  </section>
+  <section class="framework-card">
+    <h3>Governance and viability</h3>
+    <p><strong>Decision</strong> <code>u(t)</code></p>
+    <p><strong>Implementation</strong></p>
+    <p>\[
+    \tau_I \frac{dI}{dt}=c\,u-I
+    \]</p>
+    <ul>
+      <li><strong>c</strong>: compliance</li>
+      <li><strong>I</strong>: realized impact</li>
+      <li><strong>R(t)\in \mathcal{K}</strong>: viable region</li>
+    </ul>
+  </section>
+</div>
+<div class="framework-center-line">Sustainability means keeping a regenerating system inside a viable region despite delay, depletion, and imperfect implementation.</div>
+```
+
+
+## What changes from one domain to the next?
+
+```{=html}
+<div class="framework-two-col">
+  <section class="framework-card">
+    <h3>The structure stays the same</h3>
+    <ol>
+      <li>resource</li>
+      <li>regeneration</li>
+      <li>depletion</li>
+      <li>governance</li>
+      <li>compliance</li>
+      <li>viability</li>
+    </ol>
+  </section>
+  <section class="framework-card">
+    <h3>Only the interpretation changes</h3>
+    <ul>
+      <li>forest: timber stock</li>
+      <li>software: usability</li>
+      <li>methods: methodological capability</li>
+      <li>computing: effective compute</li>
+      <li>humans: scientific capability</li>
+    </ul>
+  </section>
+</div>
+```
+
 
 ## The internal perspective
 
-If CSE wants to contribute credibly to sustainability elsewhere, it must reflect on:
-
-- its own energy footprint
-- the longevity of its knowledge and software
-- its future relevance as a field
+```{=html}
+<div class="framework-two-col">
+  <section class="framework-card">
+    <h3>If CSE wants to be credible</h3>
+    <ul>
+      <li>it must reflect on its own energy footprint</li>
+      <li>it must preserve its software and knowledge</li>
+      <li>it must sustain its future methodological relevance</li>
+    </ul>
+  </section>
+  <section class="framework-card">
+    <h3>The three sustainability dimensions</h3>
+    <ol>
+      <li>sustainable computing</li>
+      <li>sustainable software and methods</li>
+      <li>sustainable human capability</li>
+    </ol>
+  </section>
+</div>
+<div class="framework-center-line">If CSE helps design a more sustainable world, it must also sustain its own computational ecosystems.</div>
+```
 
 
 ## A simple framing for sustainable CSE
@@ -416,11 +524,58 @@ Sustainable CSE emerges when these three dimensions reinforce each other.
 ::::
 
 
-# Sustainable Computing
-
 ## Sustainable computing is about deliberate trade-offs
 
 It asks how computational work should be designed so that scientific benefit, runtime, and resource use are balanced consciously.
+
+
+## Available compute is a finite regenerative resource
+
+```{=html}
+<div class="framework-two-col">
+  <section class="framework-card">
+    <h3>Resource</h3>
+    <p><strong>Available compute</strong> <code>C(t)</code></p>
+    <p>Includes hardware, energy, queue time, cloud access, budget, and carbon budget.</p>
+    <p>\[
+    \dot C = G_C - L_C
+    \]</p>
+  </section>
+  <section class="framework-card">
+    <h3>Interpretation</h3>
+    <ul>
+      <li><strong>G<sub>C</sub></strong>: hardware, energy efficiency, funding, algorithms</li>
+      <li><strong>L<sub>C</sub></strong>: larger simulations, UQ, optimization, digital twins</li>
+      <li>finite computational opportunity must be allocated deliberately</li>
+    </ul>
+  </section>
+</div>
+<div class="framework-center-line">The key question is not how to minimize compute at all costs, but how to turn finite compute into the most trustworthy insight.</div>
+```
+
+## Green computing versus sustainable computing
+
+```{=html}
+<div class="framework-two-col">
+  <section class="framework-card">
+    <h3>Green computing asks</h3>
+    <p>How can we reduce computational energy consumption?</p>
+    <p style="margin-top:1rem;">Important, but incomplete.</p>
+  </section>
+  <section class="framework-card">
+    <h3>Sustainable computing asks</h3>
+    <p>\[
+    K=\eta(M)\,C
+    \]</p>
+    <ul>
+      <li><strong>K</strong>: generated knowledge</li>
+      <li><strong>M</strong>: methodological capability</li>
+      <li><strong>\eta = K/C</strong>: knowledge return per computational investment</li>
+    </ul>
+  </section>
+</div>
+<div class="framework-center-line">The goal is not minimal compute. The goal is maximal trustworthy information return per computational investment.</div>
+```
 
 
 ## Sustainable computing means allocating effort where it matters
@@ -445,23 +600,38 @@ It asks how computational work should be designed so that scientific benefit, ru
     </ul>
   </section>
 </div>
-<div class="framework-center-line">Sustainable computing is not just about doing less. It is about spending effort where it produces meaningful scientific return.</div>
+<div class="framework-center-line">Adaptive methods increase effective compute because they increase the value extracted from each computational unit.</div>
 ```
 
 
-## Algorithmic differentiation and related levers
+## Regeneration and depletion in computational ecosystems
 
-- gradients without fragile hand-derived code
-- lower development burden in optimization workflows
-- better maintainability and extensibility
-- efficiency is computational and human
-
-
-## Model hierarchies and multi-fidelity workflows
-
-- cheap models for screening
-- expensive models for verification and critical cases
-- match fidelity to decision relevance
+```{=html}
+<div class="framework-two-col">
+  <section class="framework-card">
+    <h3>Regeneration</h3>
+    <ul>
+      <li>more efficient hardware</li>
+      <li>improved energy infrastructure</li>
+      <li>better scheduling</li>
+      <li>adaptive numerical methods</li>
+      <li>improved software</li>
+      <li>AI-assisted workflows</li>
+    </ul>
+  </section>
+  <section class="framework-card">
+    <h3>Depletion</h3>
+    <ul>
+      <li>larger simulations</li>
+      <li>increasing model fidelity</li>
+      <li>uncertainty quantification</li>
+      <li>optimization and control</li>
+      <li>digital twins</li>
+      <li>more ambitious scientific questions</li>
+    </ul>
+  </section>
+</div>
+```
 
 
 ## Monitoring resource consumption
@@ -488,20 +658,73 @@ It asks how computational work should be designed so that scientific benefit, ru
 - turns energy awareness into something usable for research software and workflows
 
 
-## Interim conclusion on sustainable computing
-
-Sustainable computing is a workflow-level design principle.
-
-It links models, algorithms, software, and infrastructure.
-
-
-# Sustainable Software
-
 ## Software is the heart of CSE
 
-- software carries methods into practice
-- software preserves or loses knowledge
-- software quality shapes the long-term impact of research
+```{=html}
+<div class="framework-two-col">
+  <section class="framework-card">
+    <h3>Scientific role</h3>
+    <ul>
+      <li>software carries methods into practice</li>
+      <li>software preserves or loses knowledge</li>
+      <li>software quality shapes long-term scientific impact</li>
+    </ul>
+  </section>
+  <section class="framework-card">
+    <h3>The key shift</h3>
+    <p>The sustained resource is not the artifact itself.</p>
+    <p><strong>It is software usability inside an evolving ecosystem.</strong></p>
+  </section>
+</div>
+```
+
+
+## Sustainable software as a viability problem
+
+```{=html}
+<div class="framework-two-col">
+  <section class="framework-card">
+    <h3>Resource dynamics</h3>
+    <p><strong>Usability</strong> <code>U(t)</code></p>
+    <p>\[
+    \dot U = -\delta U + \eta m
+    \]</p>
+    <ul>
+      <li><strong>\delta</strong>: ecosystem drift</li>
+      <li><strong>m</strong>: realized maintenance</li>
+      <li><strong>\eta</strong>: maintenance effectiveness</li>
+    </ul>
+  </section>
+  <section class="framework-card">
+    <h3>Viability</h3>
+    <p>\[
+    U(t)\ge U_{\min}
+    \]</p>
+    <p>Software remains viable only if maintenance keeps pace with drift.</p>
+  </section>
+</div>
+<div class="framework-center-line">Software sustainability is an ecosystem problem: usability decays unless maintenance continuously regenerates it.</div>
+```
+
+
+## Planning versus implementation
+
+```{=html}
+<div class="framework-two-col">
+  <section class="framework-card">
+    <h3>Planned maintenance</h3>
+    <p><strong>Decision</strong> <code>I(t)</code></p>
+    <p>What a group lead, PI, or project team intends to invest.</p>
+  </section>
+  <section class="framework-card">
+    <h3>Realized maintenance</h3>
+    <p>\[
+    m(t)=c(t)\,I(t)
+    \]</p>
+    <p><strong>Compliance</strong> determines how much planned work becomes actual upkeep.</p>
+  </section>
+</div>
+```
 
 
 ## Sustainable software means more than code availability
@@ -520,30 +743,99 @@ It links models, algorithms, software, and infrastructure.
     </ul>
   </section>
   <section class="framework-card">
-    <h3>Two roles of software in CSE</h3>
-    <ol>
-      <li>Scientific application layer</li>
-      <li>Enabling infrastructure layer</li>
-    </ol>
+    <h3>Two failure modes</h3>
+    <ul>
+      <li><strong>resource failure</strong>: too little maintenance planned</li>
+      <li><strong>governance failure</strong>: maintenance planned, but not implemented</li>
+    </ul>
   </section>
 </div>
 ```
 
 
-## Why software sustainability is scientific, not administrative
+## Sustainability emerges from feedback loops
 
-- it reduces duplication of effort
-- it enables validation and extension
-- it supports cross-institutional collaboration
-- it preserves method knowledge beyond one project cycle
-
-
-## Research software is part of the scholarly output
-
-If software remains invisible in incentives and review, unsustainable practices are structurally reinforced.
+- usability increases adoption
+- adoption increases maintenance willingness
+- maintenance preserves usability
+- declining usability can trigger the opposite loop
 
 
-# Recommendations and Structural Consequences
+## Sustainable methods as a race between questions and methods
+
+```{=html}
+<div class="framework-two-col">
+  <section class="framework-card">
+    <h3>Two evolving quantities</h3>
+    <p><strong>Required decision capability</strong> <code>Q(t)</code></p>
+    <p><strong>Available methodological capability</strong> <code>M(t)</code></p>
+    <p>\[
+    \Gamma(t)=Q(t)-M(t), \qquad \Gamma \le 0 \text{ for viability}
+    \]</p>
+  </section>
+  <section class="framework-card">
+    <h3>Interpretation</h3>
+    <ul>
+      <li>demand drives innovation</li>
+      <li>success creates new demand</li>
+      <li>adaptivity slows obsolescence</li>
+      <li>continuous innovation is required just to keep pace</li>
+    </ul>
+  </section>
+</div>
+<div class="framework-center-line">Computational science is a race between expanding questions and the community's ability to answer them.</div>
+```
+
+
+## Methodological success creates future demand
+
+- more methods enable more ambitious questions
+- more ambitious questions raise required decision capability
+- adaptivity slows methodological obsolescence
+- continuous innovation is required merely to keep pace
+
+
+## Sustainable human capability
+
+```{=html}
+<div class="framework-two-col">
+  <section class="framework-card">
+    <h3>The regenerative layer beneath CSE</h3>
+    <ul>
+      <li>education</li>
+      <li>mentoring</li>
+      <li>scientific collaboration</li>
+      <li>methodological training</li>
+    </ul>
+  </section>
+  <section class="framework-card">
+    <h3>The AI tension</h3>
+    <ul>
+      <li>AI can amplify short-term productivity</li>
+      <li>it can also weaken long-term learning loops</li>
+      <li>capability matters more than output spikes</li>
+      <li>researchers regenerate methods, software, and judgment</li>
+    </ul>
+  </section>
+</div>
+<div class="framework-center-line">Human capability is the deepest regenerative resource in CSE because it renews every other layer of the ecosystem.</div>
+```
+
+
+## Human capability regenerates the whole stack
+
+```text
+Human capability
+        ↓
+Methodological capability
+        ↓
+Software usability
+        ↓
+Effective compute
+        ↓
+Decision capability
+```
+
 
 ## Sustainable CSE needs structure, not only goodwill
 
@@ -569,11 +861,11 @@ If software remains invisible in incentives and review, unsustainable practices 
     </ul>
   </section>
 </div>
-<div class="framework-center-line">Sustainable CSE requires sustainable computing, sustainable software, and coordinated institutional support.</div>
+<div class="framework-center-line">Sustainable CSE requires sustainable computing, sustainable software, sustainable human capability, and coordinated institutional support.</div>
 ```
 
 
-# Beyond the Manuscript
+
 
 ## My stronger claim today
 
@@ -645,8 +937,6 @@ The point is to compute as much as needed, for the right reason, at the right fi
 
 Sustainable CSE is the disciplined pursuit of lasting scientific value from computational effort.
 
-
-# Closing
 
 ## Final message
 
