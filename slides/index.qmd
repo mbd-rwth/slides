@@ -1,13 +1,13 @@
 ---
-title: "Conference"
-subtitle: "Sustainability in Computational Engineering Science"
+title: "Sustainability in Computational Science and Engineering"
+subtitle: "Methods, Software, and Long-Term Scientific Value"
 author: "Julia Kowalski"
 date: "12. May 2026"
 date-format: "D. MMMM YYYY"
 resources:
-  - sdg_browser.html
-  - sdg_browser_data.js
   - sdg-icons/
+  - origin_sustainability_plot.html
+  - wood_response_times_matrix.html
 include-after-body: metafiles/growth_progress.html
 ---
 
@@ -17,67 +17,131 @@ $$
 $$
 :::
 
-# Let's start with a question:
+# Let's start with a question {.unnumbered}
 
 ::: {.fragment .fade-right}
-Which of the United Nation's Sustainable Development Goals feels closest to your research?
+```{=html}
+<div class="question-box">
+  <p>Which of the United Nations Sustainable Development Goals feels closest to your research?</p>
+</div>
+```
 :::
 
 ## Sustainable Development Goals
 
 ```{=html}
-<div style="width:100%; max-width:1240px; margin:0 auto; border-radius:18px; overflow:hidden; box-shadow:0 18px 40px rgba(28,45,66,0.18); border:1px solid rgba(28,45,66,0.10); background:#f4f7fb; padding:12px;">
-  <iframe
-    data-external="1"
-    src="sdg_browser.html"
-    width="100%"
-    height="560px"
-    style="display:block; border:none; background:#f4f7fb; border-radius:12px;"
-    scrolling="no"
-    loading="lazy"></iframe>
+<div class="sdg-grid">
+  <button class="sdg-item" type="button">
+    <img src="sdg-icons/E-WEB-Goal-01.png" alt="SDG 1: No Poverty">
+    <span class="sdg-tooltip"><strong>Goal 1: No Poverty</strong>End poverty in all its forms and ensure a basic standard of living and protection for vulnerable people.</span>
+  </button>
+  <button class="sdg-item" type="button">
+    <img src="sdg-icons/E-WEB-Goal-02.png" alt="SDG 2: Zero Hunger">
+    <span class="sdg-tooltip"><strong>Goal 2: Zero Hunger</strong>End hunger, improve nutrition, and support sustainable agriculture and food systems.</span>
+  </button>
+  <button class="sdg-item" type="button">
+    <img src="sdg-icons/E-WEB-Goal-03.png" alt="SDG 3: Good Health and Well-Being">
+    <span class="sdg-tooltip"><strong>Goal 3: Good Health and Well-Being</strong>Promote healthy lives and well-being across all ages through better care, prevention, and access.</span>
+  </button>
+  <button class="sdg-item" type="button">
+    <img src="sdg-icons/E-WEB-Goal-04.png" alt="SDG 4: Quality Education">
+    <span class="sdg-tooltip"><strong>Goal 4: Quality Education</strong>Ensure inclusive, equitable, high-quality education and lifelong learning opportunities for all.</span>
+  </button>
+  <button class="sdg-item" type="button">
+    <img src="sdg-icons/E-WEB-Goal-05.png" alt="SDG 5: Gender Equality">
+    <span class="sdg-tooltip"><strong>Goal 5: Gender Equality</strong>Achieve gender equality and empower women and girls in social, political, and economic life.</span>
+  </button>
+  <button class="sdg-item" type="button">
+    <img src="sdg-icons/E-WEB-Goal-06.png" alt="SDG 6: Clean Water and Sanitation">
+    <span class="sdg-tooltip"><strong>Goal 6: Clean Water and Sanitation</strong>Ensure access to safe water, sanitation, and sustainable water management.</span>
+  </button>
+  <button class="sdg-item" type="button">
+    <img src="sdg-icons/E-WEB-Goal-07.png" alt="SDG 7: Affordable and Clean Energy">
+    <span class="sdg-tooltip"><strong>Goal 7: Affordable and Clean Energy</strong>Expand access to affordable, reliable, and cleaner energy systems.</span>
+  </button>
+  <button class="sdg-item" type="button">
+    <img src="sdg-icons/E-WEB-Goal-08.png" alt="SDG 8: Decent Work and Economic Growth">
+    <span class="sdg-tooltip"><strong>Goal 8: Decent Work and Economic Growth</strong>Support productive employment, safe work, and inclusive economic development.</span>
+  </button>
+  <button class="sdg-item" type="button">
+    <img src="sdg-icons/E-WEB-Goal-09.png" alt="SDG 9: Industry, Innovation and Infrastructure">
+    <span class="sdg-tooltip"><strong>Goal 9: Industry, Innovation and Infrastructure</strong>Build resilient infrastructure and promote inclusive industrialization and innovation.</span>
+  </button>
+  <button class="sdg-item" type="button">
+    <img src="sdg-icons/E-WEB-Goal-10.png" alt="SDG 10: Reduced Inequalities">
+    <span class="sdg-tooltip"><strong>Goal 10: Reduced Inequalities</strong>Reduce inequalities within and between countries through fairer participation and opportunity.</span>
+  </button>
+  <button class="sdg-item" type="button">
+    <img src="sdg-icons/E-WEB-Goal-11.png" alt="SDG 11: Sustainable Cities and Communities">
+    <span class="sdg-tooltip"><strong>Goal 11: Sustainable Cities and Communities</strong>Make cities safer, more inclusive, resilient, and environmentally sustainable.</span>
+  </button>
+  <button class="sdg-item" type="button">
+    <img src="sdg-icons/E-WEB-Goal-12.png" alt="SDG 12: Responsible Consumption and Production">
+    <span class="sdg-tooltip"><strong>Goal 12: Responsible Consumption and Production</strong>Use resources more responsibly across production, consumption, and waste management.</span>
+  </button>
+  <button class="sdg-item" type="button">
+    <img src="sdg-icons/E-WEB-Goal-13.png" alt="SDG 13: Climate Action">
+    <span class="sdg-tooltip"><strong>Goal 13: Climate Action</strong>Take urgent action to address climate change, its impacts, and societal resilience.</span>
+  </button>
+  <button class="sdg-item" type="button">
+    <img src="sdg-icons/E-WEB-Goal-14.png" alt="SDG 14: Life Below Water">
+    <span class="sdg-tooltip"><strong>Goal 14: Life Below Water</strong>Conserve and use oceans and marine resources sustainably.</span>
+  </button>
+  <button class="sdg-item" type="button">
+    <img src="sdg-icons/E-WEB-Goal-15.png" alt="SDG 15: Life on Land">
+    <span class="sdg-tooltip"><strong>Goal 15: Life on Land</strong>Protect terrestrial ecosystems, biodiversity, forests, and land resources.</span>
+  </button>
+  <button class="sdg-item" type="button">
+    <img src="sdg-icons/E-WEB-Goal-16.png" alt="SDG 16: Peace, Justice and Strong Institutions">
+    <span class="sdg-tooltip"><strong>Goal 16: Peace, Justice and Strong Institutions</strong>Promote peaceful societies, justice, and accountable institutions.</span>
+  </button>
+  <button class="sdg-item" type="button">
+    <img src="sdg-icons/E-WEB-Goal-17.png" alt="SDG 17: Partnerships for the Goals">
+    <span class="sdg-tooltip"><strong>Goal 17: Partnerships for the Goals</strong>Strengthen collaboration, finance, and capacity to deliver the agenda globally.</span>
+  </button>
+  <span class="sdg-item sdg-item--empty" aria-hidden="true"></span>
 </div>
 ```
 
 
-## One official SDG metric
+## SDGs follow a hierarchical taxonomy
 
-The SDG taxonomy is:
+```{=html}
+<div class="sdg-taxonomy">
+  <section class="sdg-taxonomy-card">
+    <div class="sdg-taxonomy-flow">
+      <div class="sdg-taxonomy-step">
+        <strong>Goal 7</strong>
+        Affordable and Clean Energy
+      </div>
+      <div class="sdg-taxonomy-arrow">↓</div>
+      <div class="sdg-taxonomy-step">
+        <strong>Target 7.2</strong>
+        Increase the share of renewable energy in the global energy mix.
+      </div>
+      <div class="sdg-taxonomy-arrow">↓</div>
+      <div class="sdg-taxonomy-step">
+        <strong>Indicator 7.2.1</strong>
+        Renewable energy share in total final energy consumption
+      </div>
+    </div>
+  </section>
 
-Goal -> Target -> Indicator
-
-**Example:** `SDG 7.2.1`
-
-- `Goal 7`: Affordable and Clean Energy
-- `Target 7.2`: increase the share of renewable energy
-- `Indicator 7.2.1`: renewable energy share in total final energy consumption
-
-::: columns
-
-::: {.column width="40%"}
-
-**Official metric**
-
-- 2015: **15.6%**
-- 2023: **18.0%**
-
-:::
-
-::: {.column width="60%"}
-
-This is an official UN sustainability metric.
-
-But where is computational science and engineering in this taxonomy?
-
-Original CSE research is rarely named explicitly in the SDG language, yet it helps move such indicators through modeling, simulation, optimization, and uncertainty-aware decision support.
-
-:::
-
-::::
-
-\tiny Sources: UN SDG Report 2026 [@un_sdg_report_2026_goal7]; UN metadata for indicator 7.2.1 [@un_sdg_metadata_721]
+  <section class="sdg-taxonomy-metric">
+    <p class="sdg-metric-kicker">Indicators can be quantified</p>
+    <h3 style="margin-top:0;">Indicator 7.2.1</h3>
+    <ul class="sdg-metric-list">
+      <li><strong>2015:</strong> 15.6%</li>
+      <li><strong>2023:</strong> 18.0%</li>
+    </ul>
+    <p style="margin-top:1rem;">This is where sustainability becomes operational and concrete and serves as a bridge between abstract goals and tangible outcomes that can be addressed via CSE (modeling, optimization).</p>
+    <p style="margin-bottom:0;">\tiny Sources: UN SDG Report 2026 [@un_sdg_report_2026_goal7]; UN metadata for indicator 7.2.1 [@un_sdg_metadata_721].</p>
+  </section>
+</div>
+```
 
 
-## Two examples of original CSE research contributing to the SDGs
+## Two examples of CS&E research contributing to the SDGs
 
 ::: columns
 
@@ -139,63 +203,126 @@ Original CSE contribution:
 - computational science and engineering is a major enabling technology
 - but sustainability is rarely explicit in method-oriented CSE research
 
-
-# Chapter 1 - The Idea of Sustainable Development 
-
-## Brundtland and his commission
-
-> "Meeting the needs of the present without compromising the ability of future generations to meet their own needs."
->
-> United Nations
-
-
-::: columns
-
-::: {.column width="48%"}
-
-![Dimensions of sustainability in the original context](images/sustainability.png){height="280"}
-
-:::
-
-::: {.column width="52%"}
-
-- sustainability implies a systemic view
-- sustainability implies multiple objectives
-- sustainability implies long-term thinking
-- sustainability often separates beneficiary and investor
-
-:::
-
-::::
-
-
-## Observations  
+## Conclusions
 
 - CSE papers optimize accuracy, runtime, scalability, and robustness
-- but they rarely frame these choices as sustainability choices
-- method-oriented work often appears detached from the sustainability discourse
+- but they rarely frame those choices as sustainability choices
+- method-oriented work often looks detached from the sustainability discourse
 
 Sustainable development goals are visible in application-facing projects.
 
 Methodological CSE often contributes indirectly, but rarely names sustainability explicitly.
 
-That mismatch motivated a deeper reflection. CSE can help design a more sustainable world. But then we must also ask:
+That mismatch motivates a second question.
 
-How sustainable is CSE itself?
+If CSE helps design a more sustainable world, how sustainable is CSE itself?
+
+# The idea of sustainability {.unnumbered}
+
+## The idea of sustainability (Carlowitz)
+
+We typically attribute the sustainability idea to **Hans Carl von Carlowitz**.
+
+- early forestry formulation in *Sylvicultura oeconomica* (`1713`)
+- manage forests such that harvest does not outrun regrowth
+- famous because it turned forest use into an explicit long-term management problem
+
+\tiny Carlowitz's *Sylvicultura oeconomica* (1713) is widely cited as an early forestry formulation of sustainability [@carlowitz_1713_biblio; @fao_sustainability_forestry].
+
+
+## Deep dive: The challenge was economic pressure 
+
+::: columns
+
+::: {.column width="34%"}
+
+Carlowitz was not primarily writing as a conservation activist.
+
+He was a leading mining administrator in Saxony facing a real **decision-support problem**:
+
+- reconstruction after the Thirty Years' War
+- expanding mining and metallurgy
+- rising timber prices and transport distances
+- growing pressure on economically accessible wood
+
+The core issue was operational:
+
+How do we keep a resource-dependent system running when demand grows faster than renewal?
+
+:::
+
+::: {.column width="66%"}
+
+```{=html}
+<div style="width:100%; max-width:920px; margin:0 auto; border-radius:18px; overflow:hidden; box-shadow:0 18px 40px rgba(28,45,66,0.18); border:1px solid rgba(28,45,66,0.10); background:#f4f7fb; padding:10px;">
+  <iframe
+    data-external="1"
+    src="origin_sustainability_plot.html"
+    width="100%"
+    height="590"
+    style="display:block; border:none; background:#f4f7fb; border-radius:12px;"
+    loading="lazy"></iframe>
+</div>
+```
+
+:::
+
+:::::
+
+
+## The real systems insight
+
+::: columns
+
+::: {.column width="38%"}
+
+The key difficulty was that the **scope of the decision** rested on a time-scale much shorter than the regeneration time of the system it controlled.
+
+So sustainable management required reliable anticipation of the future, not only reactive correction.
+
+Implications:
+
+- sustainability is more than just green energy
+- it is about balancing resource availability and demand as a dynamical system under shifting pressures
+- it requires predictive decision support whenever resource response times exceed operational decision horizons
+
+:::
+
+::: {.column width="62%"}
+
+```{=html}
+<div style="width:100%; max-width:900px; margin:0 auto; border-radius:18px; overflow:hidden; box-shadow:0 18px 40px rgba(28,45,66,0.18); border:1px solid rgba(28,45,66,0.10); background:#f4f7fb; padding:10px;">
+  <iframe
+    data-external="1"
+    src="wood_response_times_matrix.html"
+    width="100%"
+    height="610"
+    style="display:block; border:none; background:#f4f7fb; border-radius:12px;"
+    loading="lazy"></iframe>
+</div>
+```
+
+:::
+
+:::::
+
+## It's not about indicators, it's about dynamics!
+
+$T_regeneration$ >> $T_decision$
 
 
 # Toward Sustainability in CSE
 
 ## The internal perspective
 
-To enable sustainability credibly in other domains, CSE must reflect on:
+If CSE wants to contribute credibly to sustainability elsewhere, it must reflect on:
 
 - its own energy footprint
 - the longevity of its knowledge and software
 - its future relevance as a field
 
 
-## The manuscript's central framing
+## A simple framing for sustainable CSE
 
 ::: columns
 
@@ -231,25 +358,35 @@ To enable sustainability credibly in other domains, CSE must reflect on:
 
 ::::
 
-Sustainable CSE emerges where these three dimensions reinforce each other.
+Sustainable CSE emerges when these three dimensions reinforce each other.
 
 
-## Three sustainability aspects within CSE
+## Three sustainability aspects, and why they matter now
 
-1. Energy footprint of computational work
-2. Longevity and reuse of CSE knowledge
-3. Future relevance of CSE in an AI-rich landscape
+```{=html}
+<div class="framework-two-col">
+  <section class="framework-card">
+    <h3>Three sustainability aspects within CSE</h3>
+    <ol>
+      <li>Energy footprint of computational work</li>
+      <li>Longevity and reuse of CSE knowledge</li>
+      <li>Future relevance of CSE in an AI-rich landscape</li>
+    </ol>
+  </section>
+  <section class="framework-card">
+    <h3>Why this matters now</h3>
+    <ul>
+      <li>workflows are becoming more complex</li>
+      <li>software stacks are becoming more fragile</li>
+      <li>AI-HPC pipelines increase both opportunity and waste</li>
+      <li>scientific value is easily lost in irreproducible computation</li>
+    </ul>
+  </section>
+</div>
+```
 
 
-## Why this matters now
-
-- workflows are growing more complex
-- software stacks are becoming more fragile
-- hybrid AI-HPC workflows increase both opportunity and risk
-- scientific value can be lost in irreproducible computation
-
-
-## Observed shift of bottlenecks in CSE
+## CSE bottlenecks are shifting
 
 ::: columns
 
@@ -281,30 +418,35 @@ Sustainable CSE emerges where these three dimensions reinforce each other.
 
 # Sustainable Computing
 
-## Sustainable computing is more than measuring energy
+## Sustainable computing is about deliberate trade-offs
 
-It concerns the design of computational work such that scientific benefit, runtime, and resource use are balanced deliberately.
-
-
-## Three levels of sustainable computing
-
-1. Hardware efficiency
-2. Algorithmic efficiency
-3. Model efficiency
+It asks how computational work should be designed so that scientific benefit, runtime, and resource use are balanced consciously.
 
 
-## Adaptive mesh refinement as a sustainability principle
+## Sustainable computing means allocating effort where it matters
 
-- invest degrees of freedom only where needed
-- connect accuracy targets and computational effort
-- use error indicators to guide resource allocation
-
-
-## Goal-oriented adaptivity
-
-- uniform accuracy is often not the real objective
-- quantities of interest should drive computational investment
-- sustainable computing asks where extra effort changes the answer materially
+```{=html}
+<div class="framework-two-col">
+  <section class="framework-card">
+    <h3>Three levers</h3>
+    <ol>
+      <li>Hardware efficiency</li>
+      <li>Algorithmic efficiency</li>
+      <li>Model efficiency</li>
+    </ol>
+  </section>
+  <section class="framework-card">
+    <h3>What that means in practice</h3>
+    <ul>
+      <li>invest degrees of freedom only where they matter</li>
+      <li>connect accuracy targets to computational effort</li>
+      <li>let quantities of interest drive computational investment</li>
+      <li>spend extra effort only where it changes the answer materially</li>
+    </ul>
+  </section>
+</div>
+<div class="framework-center-line">Sustainable computing is not just about doing less. It is about spending effort where it produces meaningful scientific return.</div>
+```
 
 
 ## Algorithmic differentiation and related levers
@@ -312,7 +454,7 @@ It concerns the design of computational work such that scientific benefit, runti
 - gradients without fragile hand-derived code
 - lower development burden in optimization workflows
 - better maintainability and extensibility
-- resource efficiency is computational and human
+- efficiency is computational and human
 
 
 ## Model hierarchies and multi-fidelity workflows
@@ -327,6 +469,23 @@ It concerns the design of computational work such that scientific benefit, runti
 - measurement creates visibility
 - visibility enables accountability
 - accountability can shape better workflows
+
+
+## Why ALUMET matters
+
+- application-level energy attribution is hard on shared CPU/GPU systems
+- runtime alone is often an unreliable proxy for energy consumption
+- sustainable CSE needs measurement that reflects actual computational cost
+- ALUMET helps close the gap between raw telemetry and actionable energy awareness
+
+
+## ALUMET as enabler
+
+- modular, lightweight framework for energy and system measurement
+- plugin-based pipeline: gather, transform, export
+- adaptable across heterogeneous hardware and workflow contexts
+- enables downstream analysis and interpretation through tools such as Alumet-Insight
+- turns energy awareness into something usable for research software and workflows
 
 
 ## Interim conclusion on sustainable computing
@@ -347,21 +506,31 @@ It links models, algorithms, software, and infrastructure.
 
 ## Sustainable software means more than code availability
 
-- maintainability
-- reproducibility
-- accessibility
-- extensibility
-- portability
-- community uptake
+```{=html}
+<div class="framework-two-col">
+  <section class="framework-card">
+    <h3>Properties of sustainable software</h3>
+    <ul>
+      <li>maintainability</li>
+      <li>reproducibility</li>
+      <li>accessibility</li>
+      <li>extensibility</li>
+      <li>portability</li>
+      <li>community uptake</li>
+    </ul>
+  </section>
+  <section class="framework-card">
+    <h3>Two roles of software in CSE</h3>
+    <ol>
+      <li>Scientific application layer</li>
+      <li>Enabling infrastructure layer</li>
+    </ol>
+  </section>
+</div>
+```
 
 
-## Two roles of software in CSE
-
-1. Scientific application layer
-2. Enabling infrastructure layer
-
-
-## Why software sustainability matters scientifically
+## Why software sustainability is scientific, not administrative
 
 - it reduces duplication of effort
 - it enables validation and extension
@@ -376,78 +545,81 @@ If software remains invisible in incentives and review, unsustainable practices 
 
 # Recommendations and Structural Consequences
 
-## Why individual goodwill is not enough
+## Sustainable CSE needs structure, not only goodwill
 
-- sustainable practice often has delayed returns
-- short projects reward local optimization
-- institutions shape what is feasible and visible
-
-
-## Stakeholders shape sustainable CSE
-
-- funding agencies
-- supercomputing centers
-- research institutions
-- journals and publishers
-- industry and project leaders
-- educators and young scientists
-
-
-## Message of the manuscript
-
-Sustainable CSE requires:
-
-- sustainable computing
-- sustainable software
-- coordinated institutional support
+```{=html}
+<div class="framework-two-col">
+  <section class="framework-card">
+    <h3>Why individual goodwill is not enough</h3>
+    <ul>
+      <li>sustainable practice often has delayed returns</li>
+      <li>short projects reward local optimization</li>
+      <li>institutions shape what is feasible and visible</li>
+    </ul>
+  </section>
+  <section class="framework-card">
+    <h3>Stakeholders who shape sustainable CSE</h3>
+    <ul>
+      <li>funding agencies</li>
+      <li>supercomputing centers</li>
+      <li>research institutions</li>
+      <li>journals and publishers</li>
+      <li>industry and project leaders</li>
+      <li>educators and young scientists</li>
+    </ul>
+  </section>
+</div>
+<div class="framework-center-line">Sustainable CSE requires sustainable computing, sustainable software, and coordinated institutional support.</div>
+```
 
 
 # Beyond the Manuscript
 
-## My view now
+## My stronger claim today
 
 The manuscript was necessary.
-
-But I now think the sharper claim is this:
 
 Sustainable CSE is not merely a topic area. It is a methodology.
 
 
-## What sustainable CSE is not
-
-- not only green computing
-- not only efficient hardware usage
-- not only software best practice
-- not only a reporting obligation
-
-
-## Sustainable CSE as a methodology
+## The core methodological question
 
 Sustainable CSE asks:
 
 How do we maximize trustworthy information return per computational investment?
 
 
-## What counts as computational investment?
+## Computational investment and information return
 
-- compute time
-- energy
-- human development effort
-- workflow complexity
-- software maintenance
-- data generation and curation
+```{=html}
+<div class="framework-two-col">
+  <section class="framework-card">
+    <h3>Computational investment includes</h3>
+    <ul>
+      <li>compute time</li>
+      <li>energy</li>
+      <li>human development effort</li>
+      <li>workflow complexity</li>
+      <li>software maintenance</li>
+      <li>data generation and curation</li>
+    </ul>
+  </section>
+  <section class="framework-card">
+    <h3>Information return includes</h3>
+    <ul>
+      <li>reduced uncertainty</li>
+      <li>trustworthy predictions</li>
+      <li>actionable design guidance</li>
+      <li>transferable method knowledge</li>
+      <li>reusable software and workflows</li>
+    </ul>
+  </section>
+</div>
+<div class="framework-center-line">The methodological task is to increase trustworthy information return per unit of computational investment.</div>
+```
 
 
-## What counts as information return?
-
-- reduced uncertainty
-- trustworthy predictions
-- actionable design guidance
-- transferable method knowledge
-- reusable software and workflows
-
-
-## Why this is deeply CSE-native
+## This is already native to CSE
 
 - error control already asks what accuracy is needed
 - adaptivity already allocates resources selectively
@@ -462,14 +634,14 @@ The point is not to compute less at all costs.
 The point is to compute as much as needed, for the right reason, at the right fidelity.
 
 
-## Why this matters in the age of AI
+## AI makes this more urgent
 
 - AI can amplify scientific productivity
 - AI can also amplify waste, opacity, and fragility
 - CSE has the tools to make AI workflows more principled
 
 
-## My personal synthesis
+## My synthesis
 
 Sustainable CSE is the disciplined pursuit of lasting scientific value from computational effort.
 
