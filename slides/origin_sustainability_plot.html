@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Origin of Sustainability Plot</title>
+  <style>
+    :root {
+      --bg: #eef3f7;
+      --panel: rgba(255, 255, 255, 0.95);
+      --ink: #15314b;
+      --muted: #5e7388;
+      --line: rgba(21, 49, 75, 0.12);
+      --stock: #2f7d32;
+      --population: #1f77b4;
+      --demand: #c55a11;
+      --war: rgba(145, 76, 44, 0.12);
+      --accent: #17324d;
+      --shadow: 0 18px 38px rgba(21, 49, 75, 0.12);
+      --radius: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background:
+        radial-gradient(circle at top left, rgba(31, 119, 180, 0.08), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(47, 125, 50, 0.08), transparent 26%),
+        var(--bg);
+      color: var(--ink);
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    body {
+      padding: 10px;
+    }
+
+    .shell {
+      max-width: 1380px;
+      margin: 0 auto;
+      display: grid;
+      gap: 10px;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      padding: 20px 24px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      margin: 0 0 0.5rem 0;
+      font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+      line-height: 1.06;
+    }
+
+    .hero p {
+      margin: 0.35rem 0 0 0;
+      line-height: 1.45;
+      color: var(--muted);
+    }
+
+    .hero-note {
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(31, 119, 180, 0.07), rgba(47, 125, 50, 0.08));
+      border: 1px solid rgba(21, 49, 75, 0.08);
+    }
+
+    .hero-note strong {
+      display: block;
+      margin-bottom: 0.45rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-size: 0.82rem;
+    }
+
+    .control-wrap {
+      display: grid;
+      gap: 10px;
+    }
+
+    .control-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: baseline;
+    }
+
+    .control-top label {
+      font-weight: 600;
+      font-size: 1.08rem;
+    }
+
+    .control-value {
+      color: var(--demand);
+      font-weight: 700;
+      font-size: 1.02rem;
+      white-space: nowrap;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      accent-color: var(--demand);
+    }
+
+    button {
+      appearance: none;
+      border: 0;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff;
+      padding: 11px 16px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .plot-panel {
+      padding: 12px 14px 14px;
+    }
+
+    .plot-controls {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      align-items: center;
+      margin-bottom: 10px;
+      padding: 2px 2px 0;
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      margin-bottom: 8px;
+      font-size: 0.98rem;
+      color: var(--muted);
+    }
+
+    .legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .swatch {
+      width: 14px;
+      height: 14px;
+      border-radius: 999px;
+      display: inline-block;
+    }
+
+    .plot-frame {
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(21, 49, 75, 0.08);
+      background: #fff;
+    }
+
+    svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    @media (max-width: 1080px) {
+      .hero,
+      .plot-controls {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <section class="panel plot-panel">
+      <div class="plot-controls">
+        <div class="control-wrap">
+          <div class="control-top">
+            <label for="extraExtraction">Additional extraction after 1700</label>
+            <span class="control-value" id="extraExtractionValue"></span>
+          </div>
+          <input id="extraExtraction" type="range" min="0" max="120000" step="2500" value="30000">
+        </div>
+      </div>
+      <div class="legend">
+        <span class="legend-item"><span class="swatch" style="background: var(--stock);"></span>Affordable wood availability</span>
+        <span class="legend-item"><span class="swatch" style="background: var(--population);"></span>Population</span>
+        <span class="legend-item"><span class="swatch" style="background: var(--demand);"></span>Timber and wood demand</span>
+        <span class="legend-item"><span class="swatch" style="background: var(--war); border-radius: 4px;"></span>Thirty Years' War (1618-1648)</span>
+      </div>
+      <div class="plot-frame">
+        <svg id="plot" viewBox="0 0 1280 580" role="img" aria-label="Interactive plot of affordable wood availability, population, and wood demand from 1600 to 1850"></svg>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const YEARS = [];
+    for (let year = 1600; year <= 1850; year += 1) YEARS.push(year);
+
+    const MODEL = {
+      basePopulation: 100000,
+      populationGrowth: 0.0025,
+      baseDemand: 190000,
+      demandGrowth: 0.0038,
+      regeneration: 200000,
+      initialAvailability: 12000000,
+      warStart: 1618,
+      warEnd: 1648,
+      extractionStart: 1700
+    };
+
+    const slider = document.getElementById("extraExtraction");
+    const sliderValue = document.getElementById("extraExtractionValue");
+
+    function formatNumber(value, digits = 0) {
+      return new Intl.NumberFormat("en-US", {
+        maximumFractionDigits: digits,
+        minimumFractionDigits: digits
+      }).format(value);
+    }
+
+    function demandAt(year) {
+      const t = year - 1600;
+      return MODEL.baseDemand * Math.pow(1 + MODEL.demandGrowth, t);
+    }
+
+    function populationAt(year) {
+      const t = year - 1600;
+      return MODEL.basePopulation * Math.pow(1 + MODEL.populationGrowth, t);
+    }
+
+    function simulate(extraExtraction) {
+      let availability = MODEL.initialAvailability;
+      let depletionYear = null;
+      const data = YEARS.map((year) => {
+        const population = populationAt(year);
+        const demand = demandAt(year);
+        const policyExtraction = year >= MODEL.extractionStart ? extraExtraction : 0;
+        const totalOutflow = demand + policyExtraction;
+        const annualBalance = MODEL.regeneration - totalOutflow;
+        if (year > 1600) {
+          availability = Math.max(0, availability + annualBalance);
+        }
+        if (availability <= 0 && depletionYear === null) {
+          depletionYear = year;
+        }
+        return {
+          year,
+          availability,
+          population,
+          demand,
+          policyExtraction,
+          totalOutflow,
+          annualBalance
+        };
+      });
+      return { data, depletionYear };
+    }
+
+    function pathFor(data, xScale, yScale, key) {
+      return data.map((point, index) => {
+        const cmd = index === 0 ? "M" : "L";
+        return `${cmd} ${xScale(point.year).toFixed(2)} ${yScale(point[key]).toFixed(2)}`;
+      }).join(" ");
+    }
+
+    function render() {
+      const extraExtraction = Number(slider.value);
+      sliderValue.textContent = `${formatNumber(extraExtraction)} m³/year`;
+
+      const { data, depletionYear } = simulate(extraExtraction);
+      const svg = document.getElementById("plot");
+
+      const width = 1280;
+      const height = 580;
+      const left = 110;
+      const right1 = 130;
+      const right2 = 260;
+      const top = 26;
+      const bottom = 58;
+      const plotWidth = width - left - right2 - 30;
+      const plotHeight = height - top - bottom;
+
+      const maxAvailability = Math.max(MODEL.initialAvailability, ...data.map((d) => d.availability));
+      const maxPopulation = Math.max(...data.map((d) => d.population)) * 1.05;
+      const maxDemand = Math.max(...data.map((d) => d.totalOutflow)) * 1.08;
+
+      const xScale = (year) => left + ((year - 1600) / (1850 - 1600)) * plotWidth;
+      const yAvailability = (value) => top + (1 - value / maxAvailability) * plotHeight;
+      const yPopulation = (value) => top + (1 - value / maxPopulation) * plotHeight;
+      const yDemand = (value) => top + (1 - value / maxDemand) * plotHeight;
+
+      let grid = "";
+      for (let i = 0; i <= 5; i += 1) {
+        const value = (maxAvailability / 5) * i;
+        const y = yAvailability(value);
+        grid += `
+          <line x1="${left}" y1="${y}" x2="${left + plotWidth}" y2="${y}" stroke="rgba(21,49,75,0.08)" />
+          <text x="${left - 14}" y="${y + 5}" text-anchor="end" fill="#2f7d32" font-size="15">${formatNumber(value / 1000000, 1)}M</text>
+        `;
+      }
+
+      let yearTicks = "";
+      for (let year = 1600; year <= 1850; year += 25) {
+        const x = xScale(year);
+        yearTicks += `
+          <line x1="${x}" y1="${top}" x2="${x}" y2="${top + plotHeight}" stroke="rgba(21,49,75,0.06)" />
+          <text x="${x}" y="${height - 16}" text-anchor="middle" fill="#5e7388" font-size="15">${year}</text>
+        `;
+      }
+
+      const warX = xScale(MODEL.warStart);
+      const warWidth = xScale(MODEL.warEnd) - xScale(MODEL.warStart);
+      const policyX = xScale(MODEL.extractionStart);
+
+      const availabilityPath = pathFor(data, xScale, yAvailability, "availability");
+      const populationPath = pathFor(data, xScale, yPopulation, "population");
+      const demandPath = pathFor(data, xScale, yDemand, "totalOutflow");
+
+      const final = data[data.length - 1];
+      const year1850 = data.find((d) => d.year === 1850);
+
+      let populationTicks = "";
+      for (let i = 0; i <= 4; i += 1) {
+        const value = (maxPopulation / 4) * i;
+        const y = yPopulation(value);
+        populationTicks += `
+          <text x="${left + plotWidth + 16}" y="${y + 5}" text-anchor="start" fill="#1f77b4" font-size="15">${formatNumber(value / 1000, 0)}k</text>
+        `;
+      }
+
+      let demandTicks = "";
+      for (let i = 0; i <= 4; i += 1) {
+        const value = (maxDemand / 4) * i;
+        const y = yDemand(value);
+        demandTicks += `
+          <text x="${left + plotWidth + 146}" y="${y + 5}" text-anchor="start" fill="#c55a11" font-size="15">${formatNumber(value / 1000, 0)}k</text>
+        `;
+      }
+
+      const depletionMarker = depletionYear
+        ? `
+          <line x1="${xScale(depletionYear)}" y1="${top}" x2="${xScale(depletionYear)}" y2="${top + plotHeight}" stroke="#b63a3a" stroke-dasharray="7 6" stroke-width="2.2" />
+          <text x="${xScale(depletionYear) + 8}" y="${top + 20}" fill="#b63a3a" font-size="15">depletion visible around ${depletionYear}</text>
+        `
+        : "";
+
+      svg.innerHTML = `
+        <rect x="0" y="0" width="${width}" height="${height}" fill="#ffffff" />
+        <rect x="${warX}" y="${top}" width="${warWidth}" height="${plotHeight}" fill="var(--war)" />
+        ${grid}
+        ${yearTicks}
+        <line x1="${left}" y1="${top}" x2="${left}" y2="${top + plotHeight}" stroke="var(--stock)" stroke-width="2" />
+        <line x1="${left + plotWidth}" y1="${top}" x2="${left + plotWidth}" y2="${top + plotHeight}" stroke="var(--population)" stroke-width="2" />
+        <line x1="${left + plotWidth + 120}" y1="${top}" x2="${left + plotWidth + 120}" y2="${top + plotHeight}" stroke="var(--demand)" stroke-width="2" />
+        <line x1="${left}" y1="${top + plotHeight}" x2="${left + plotWidth}" y2="${top + plotHeight}" stroke="var(--accent)" stroke-width="1.8" />
+        <line x1="${policyX}" y1="${top}" x2="${policyX}" y2="${top + plotHeight}" stroke="rgba(21,49,75,0.4)" stroke-dasharray="6 5" stroke-width="1.8" />
+
+        <path d="${availabilityPath}" fill="none" stroke="var(--stock)" stroke-width="4" stroke-linecap="round" />
+        <path d="${populationPath}" fill="none" stroke="var(--population)" stroke-width="3.2" stroke-linecap="round" />
+        <path d="${demandPath}" fill="none" stroke="var(--demand)" stroke-width="3.2" stroke-linecap="round" />
+
+        <circle cx="${xScale(year1850.year)}" cy="${yAvailability(year1850.availability)}" r="5" fill="var(--stock)" />
+        <circle cx="${xScale(final.year)}" cy="${yPopulation(final.population)}" r="4.6" fill="var(--population)" />
+        <circle cx="${xScale(final.year)}" cy="${yDemand(final.totalOutflow)}" r="4.6" fill="var(--demand)" />
+
+        <text x="${left - 14}" y="${top - 8}" text-anchor="end" fill="var(--stock)" font-size="16" font-weight="700">Affordable wood availability</text>
+        <text x="${left + plotWidth + 16}" y="${top - 8}" text-anchor="start" fill="var(--population)" font-size="16" font-weight="700">Population</text>
+        <text x="${left + plotWidth + 146}" y="${top - 8}" text-anchor="start" fill="var(--demand)" font-size="16" font-weight="700">Timber + wood demand</text>
+
+        <text x="${warX + 8}" y="${top + 20}" fill="#8a5430" font-size="15">Thirty Years' War</text>
+        <text x="${policyX + 8}" y="${top + plotHeight - 10}" fill="#17324d" font-size="15">constant extra extraction starts</text>
+
+        ${populationTicks}
+        ${demandTicks}
+        ${depletionMarker}
+
+        <text x="${left}" y="${height - 6}" fill="#5e7388" font-size="15">time</text>
+      `;
+    }
+
+    slider.addEventListener("input", render);
+    render();
+  </script>
+</body>
+</html>

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wood Demand and Resource Response Times</title>
+  <style>
+    :root {
+      --bg: #eef3f7;
+      --panel: rgba(255, 255, 255, 0.96);
+      --ink: #17324d;
+      --muted: #5c6f83;
+      --line: rgba(23, 50, 77, 0.12);
+      --shadow: 0 18px 38px rgba(23, 50, 77, 0.12);
+      --radius: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background:
+        radial-gradient(circle at top left, rgba(36, 110, 185, 0.08), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(47, 125, 50, 0.08), transparent 26%),
+        var(--bg);
+      color: var(--ink);
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    body {
+      padding: 18px;
+    }
+
+    .shell {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      gap: 16px;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      padding: 20px 24px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      margin: 0 0 0.45rem 0;
+      font-size: clamp(1.55rem, 2.4vw, 2.35rem);
+      line-height: 1.08;
+    }
+
+    .hero p,
+    .formula p,
+    .note p {
+      margin: 0.35rem 0 0 0;
+      line-height: 1.45;
+      color: var(--muted);
+    }
+
+    .formula {
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(36, 110, 185, 0.08), rgba(47, 125, 50, 0.08));
+      border: 1px solid rgba(23, 50, 77, 0.08);
+    }
+
+    .formula strong {
+      display: block;
+      margin-bottom: 0.45rem;
+      color: var(--ink);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-size: 0.82rem;
+    }
+
+    .formula-code {
+      margin-top: 0.45rem;
+      font-size: 1.12rem;
+      font-weight: 700;
+      color: #1d5f9e;
+    }
+
+    .strip {
+      padding: 16px 20px 18px;
+    }
+
+    .strip h2,
+    .matrix-panel h2,
+    .note h2 {
+      margin: 0 0 0.75rem 0;
+      font-size: 1.06rem;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .process-card {
+      padding: 14px 16px;
+      border-radius: 18px;
+      border: 1px solid rgba(23, 50, 77, 0.08);
+      background: #fbfcfe;
+    }
+
+    .process-card h3 {
+      margin: 0;
+      font-size: 0.96rem;
+    }
+
+    .process-time {
+      margin-top: 0.45rem;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #1f77b4;
+    }
+
+    .process-card p {
+      margin: 0.35rem 0 0 0;
+      font-size: 0.84rem;
+      color: var(--muted);
+      line-height: 1.35;
+    }
+
+    .matrix-panel {
+      padding: 16px 20px 20px;
+    }
+
+    .matrix-wrap {
+      overflow-x: auto;
+      padding-bottom: 4px;
+    }
+
+    table {
+      width: 100%;
+      min-width: 1080px;
+      border-collapse: separate;
+      border-spacing: 8px;
+    }
+
+    thead th {
+      padding: 12px 10px;
+      text-align: center;
+      font-size: 0.92rem;
+      color: var(--ink);
+    }
+
+    thead th:first-child {
+      text-align: left;
+      width: 240px;
+    }
+
+    tbody th {
+      padding: 14px 12px;
+      text-align: left;
+      vertical-align: middle;
+      border-radius: 16px;
+      background: rgba(23, 50, 77, 0.05);
+      font-size: 0.94rem;
+    }
+
+    .cell {
+      position: relative;
+      min-width: 128px;
+      height: 96px;
+      padding: 10px 10px 8px;
+      border-radius: 18px;
+      border: 1px solid rgba(23, 50, 77, 0.08);
+      color: #fff;
+      vertical-align: top;
+      overflow: hidden;
+    }
+
+    .cell-value {
+      display: block;
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.05;
+    }
+
+    .cell-note {
+      display: block;
+      margin-top: 0.45rem;
+      font-size: 0.73rem;
+      line-height: 1.25;
+      opacity: 0.95;
+    }
+
+    .cell.unsuitable {
+      background: linear-gradient(135deg, #eef2f7, #dfe7f2);
+      color: #5f7084;
+    }
+
+    .cell.unsuitable::before,
+    .cell.unsuitable::after {
+      content: "";
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      top: 50%;
+      height: 2px;
+      background: rgba(95, 112, 132, 0.45);
+      transform-origin: center;
+    }
+
+    .cell.unsuitable::before {
+      transform: rotate(24deg);
+    }
+
+    .cell.unsuitable::after {
+      transform: rotate(-24deg);
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 16px;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .swatch {
+      width: 14px;
+      height: 14px;
+      border-radius: 999px;
+      display: inline-block;
+      border: 1px solid rgba(23, 50, 77, 0.08);
+    }
+
+    .swatch.unsuitable {
+      border-radius: 4px;
+      background: linear-gradient(135deg, #eef2f7, #dfe7f2);
+    }
+
+    .note {
+      padding: 16px 20px 18px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .callout {
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: rgba(23, 50, 77, 0.05);
+      line-height: 1.45;
+    }
+
+    .callout strong {
+      color: var(--ink);
+    }
+
+    @media (max-width: 1100px) {
+      .hero,
+      .note,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <section class="panel hero">
+      <div>
+        <h1>Wood Demand and Resource Response Times in Early Modern Forestry</h1>
+        <p>
+          This figure does not ask when a decision is made. It shows the
+          physical and functional lead time until suitable wood becomes
+          available for a given use.
+        </p>
+        <p>
+          Demand can shift within years, but resource response may require
+          several decades or more than a century.
+        </p>
+      </div>
+      <div class="formula">
+        <strong>Planning Logic</strong>
+        <p>Demand horizon: how quickly the need arises.</p>
+        <p>Supply lead time: how long until usable wood becomes available.</p>
+        <p>Planning horizon: how far ahead action must therefore be taken.</p>
+        <div class="formula-code">required planning horizon ≥ time to usable resource supply</div>
+      </div>
+    </section>
+
+    <section class="panel strip">
+      <h2>Reference Strip: Economic Processes vs. Forest Response</h2>
+      <div class="process-grid">
+        <article class="process-card">
+          <h3>Household shortage</h3>
+          <div class="process-time">months to years</div>
+          <p>Fuel stress becomes politically and socially visible quickly.</p>
+        </article>
+        <article class="process-card">
+          <h3>Mining expansion decision</h3>
+          <div class="process-time">1 to 5 years</div>
+          <p>Extraction and infrastructure decisions happen on short administrative horizons.</p>
+        </article>
+        <article class="process-card">
+          <h3>Construction programme</h3>
+          <div class="process-time">5 to 20 years</div>
+          <p>Buildings and infrastructure can scale demand faster than forests respond.</p>
+        </article>
+        <article class="process-card">
+          <h3>Forest regeneration / maturation</h3>
+          <div class="process-time">20 to 150 years</div>
+          <p>Functional timber quality depends on decades of growth and stand development.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel matrix-panel">
+      <h2>Time to Usable Supply</h2>
+      <div class="matrix-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Wood category / forest product</th>
+              <th>Energy use</th>
+              <th>Small diameter</th>
+              <th>Structural strength</th>
+              <th>High durability</th>
+              <th>Large dimensions</th>
+            </tr>
+          </thead>
+          <tbody id="matrixBody"></tbody>
+        </table>
+      </div>
+      <div class="legend">
+        <span class="legend-item"><span class="swatch" style="background:#d9f0d3;"></span>relatively quick supply</span>
+        <span class="legend-item"><span class="swatch" style="background:#78c679;"></span>multi-decade supply</span>
+        <span class="legend-item"><span class="swatch" style="background:#238443;"></span>long generational lead time</span>
+        <span class="legend-item"><span class="swatch unsuitable"></span>technically or economically unsuitable</span>
+      </div>
+    </section>
+
+    <section class="panel note">
+      <div class="callout">
+        <strong>Interpretation:</strong>
+        the use case determines the relevant wood properties, and the required
+        properties determine the necessary growth time.
+      </div>
+      <div class="callout">
+        <strong>Important caveat:</strong>
+        the ranges shown here are illustrative, meant to express the logic of
+        delayed resource response rather than a fully substantiated species-by-species
+        reconstruction of eighteenth-century Saxon forestry practice.
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const columns = [
+      "Energy use",
+      "Small diameter",
+      "Structural strength",
+      "High durability",
+      "Large dimensions"
+    ];
+
+    const rows = [
+      {
+        label: "Brushwood / coppice wood",
+        cells: {
+          "Energy use": { range: "10–20 y", note: "quickest renewable fuel supply", years: 15 },
+          "Small diameter": { range: "10–20 y", note: "stakes, bundles, small poles", years: 15 },
+          "Structural strength": null,
+          "High durability": null,
+          "Large dimensions": null
+        }
+      },
+      {
+        label: "Fast-growing softwood",
+        cells: {
+          "Energy use": { range: "20–40 y", note: "general fuel and rough wood", years: 30 },
+          "Small diameter": { range: "20–30 y", note: "light poles and simple members", years: 25 },
+          "Structural strength": { range: "40–60 y", note: "usable after longer stand development", years: 50 },
+          "High durability": { range: "50–70 y", note: "still limited versus hardwoods", years: 60 },
+          "Large dimensions": { range: "60–80 y", note: "requires sustained growth", years: 70 }
+        }
+      },
+      {
+        label: "Mature pine / spruce timber",
+        cells: {
+          "Energy use": { range: "30–50 y", note: "valuable but not optimal use", years: 40 },
+          "Small diameter": { range: "30–50 y", note: "supports, poles, smaller framing", years: 40 },
+          "Structural strength": { range: "40–60 y", note: "construction and mining members", years: 50 },
+          "High durability": { range: "50–80 y", note: "moderate durability if well selected", years: 65 },
+          "Large dimensions": { range: "60–90 y", note: "longer rotations for larger sections", years: 75 }
+        }
+      },
+      {
+        label: "Mature oak timber",
+        cells: {
+          "Energy use": { range: "30–50 y", note: "possible, but poor strategic use", years: 40 },
+          "Small diameter": { range: "30–50 y", note: "slower than coppice or softwood", years: 40 },
+          "Structural strength": { range: "70–100 y", note: "major structural members", years: 85 },
+          "High durability": { range: "80–120 y", note: "durable beams and exposed use", years: 100 },
+          "Large dimensions": { range: "100–150 y", note: "shipbuilding, bridges, reserves", years: 125 }
+        }
+      }
+    ];
+
+    function colorForYears(years) {
+      if (years <= 20) return "#d9f0d3";
+      if (years <= 40) return "#addd8e";
+      if (years <= 60) return "#78c679";
+      if (years <= 90) return "#41ab5d";
+      return "#238443";
+    }
+
+    function textColorForYears(years) {
+      return years <= 40 ? "#17324d" : "#ffffff";
+    }
+
+    const matrixBody = document.getElementById("matrixBody");
+
+    rows.forEach((row) => {
+      const tr = document.createElement("tr");
+
+      const th = document.createElement("th");
+      th.textContent = row.label;
+      tr.appendChild(th);
+
+      columns.forEach((column) => {
+        const td = document.createElement("td");
+        const cell = row.cells[column];
+
+        if (!cell) {
+          td.innerHTML = `
+            <div class="cell unsuitable">
+              <span class="cell-value">—</span>
+              <span class="cell-note">unsuitable</span>
+            </div>
+          `;
+        } else {
+          const bg = colorForYears(cell.years);
+          const ink = textColorForYears(cell.years);
+          td.innerHTML = `
+            <div class="cell" style="background:${bg}; color:${ink};">
+              <span class="cell-value">${cell.range}</span>
+              <span class="cell-note">${cell.note}</span>
+            </div>
+          `;
+        }
+
+        tr.appendChild(td);
+      });
+
+      matrixBody.appendChild(tr);
+    });
+  </script>
+</body>
+</html>
