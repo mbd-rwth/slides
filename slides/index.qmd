@@ -18,56 +18,94 @@ $$
 :::
 
 
-## The invitation 
+## The invitation
 
 :::: {.mail-thread}
 ### ✉ JuliaCon keynote invitation
 
 ::: {.mail-message .hendrik}
-**Hendrik → Julia**
+**Organizers → Julia(Kow)**
 
 We would like to invite you to give a keynote at JuliaCon?
 :::
 
+<div style="height: 1em;"></div>
+
 ::: {.mail-message .julia .fragment data-fragment-index="1"}
-**Julia → Hendrik**
+**Julia → Organizers**
 
 Sure, I can do that. You know that I’m not a superuser of the Julia programming language, right?
 :::
 
-::: {.mail-message .hendrik .fragment data-fragment-index="2"}
-**Hendrik → Julia**
+<div style="height: 1em;"></div>
 
-Yes, no worries. Our intention is to reach out to the wider community in order to promote JuliaLang and to connect to a wider community.
+::: {.mail-message .hendrik .fragment data-fragment-index="2"}
+**Organizers → Julia**
+
+Yes, no worries. Our intention is to reach out to the wider community in order to promote JuliaLang and to connect to new people.
 :::
 
-::: {.mail-message .julia .decision .fragment data-fragment-index="3"}
-**Julia → Hendrik**
+<div style="height: 1em;"></div>
 
-Nice, in that case I am all in and would like to talk about **Sustainability in Computational Science and Engineering (CS\&E)**. I think that is a topic that is relevant to the Julia community and to the wider CS\&E community.
+::: {.mail-message .julia .decision .fragment data-fragment-index="3"}
+**Julia → Organizers**
+
+Nice, in that case I am all in and would like to talk about **Sustainability in Computational Science and Engineering (CS\&E)**. I think that is a topic that is relevant to the JuliaLan community and to the wider CS\&E community.
 :::
 ::::
 
 
-## Community reach-out actually worked ;)
+
+
+## Good news: It worked already ;)
+
+
+We have now two projects in my team that to large parts rely on the JuliaLang:
 
 :::: columns
 
-::: {.column width="50%"}
+::: {.column style="width: 48%; border-right: 2px solid #2f7b29; padding-right: 1em;"}
 
-Alan's contribution
+**Globally differentiable surface flow simulator**
+
+![Quantum circuits are inherently parameter dependent](./images/Olivers-project.png){width=80%}
+
+$$
+\frac{\mathrm{d}}{\mathrm{d}\lambda}
+\mathbf{A}(\boldsymbol{\lambda})
+\quad\Longrightarrow\quad
+\frac{\mathrm{d}}{\mathrm{d}\lambda}
+\mathbf{U}\!\left(\boldsymbol{\theta}(\boldsymbol{\lambda})\right)
+\lvert 0\rangle
+$$
+
+Interested? *correa@mbd.rwth-aachen.de*
+
 
 :::
 
-::: {.column width="50%"}
+::: {.column style="width: 47%; padding-left: 1em;"}
 
-Oliver's contribution
+**Symbolic analysis of quantum circuits**
+
+![Quantum circuits are inherently parameter dependent](./images/Olivers-project.png){width=80%}
+
+$$
+\frac{\mathrm{d}}{\mathrm{d}\lambda}
+\mathbf{A}(\boldsymbol{\lambda})
+\quad\Longrightarrow\quad
+\frac{\mathrm{d}}{\mathrm{d}\lambda}
+\mathbf{U}\!\left(\boldsymbol{\theta}(\boldsymbol{\lambda})\right)
+\lvert 0\rangle
+$$
+
+Interested? *ahrend@mbd.rwth-aachen.de*
 
 :::
 
 ::::
 
-## Timeline and structure of the talk 
+## Structure of the talk (projected to timeline of events)
 
 <div style="height: 1em;"></div>
 
