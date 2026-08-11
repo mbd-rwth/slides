@@ -66,105 +66,6 @@ $presentation-font-size-root: 30px !default;
   font-size: 100%  !important;
 }
 
-// some changes to the callout boxes
-.callout {
-  border-radius: 2px;
-  border-width: 4px;
-  border-color: black;
-  padding: 1em;
-  font-size: inherit;
-}
-
-/* ---- additional callouts ---- */
-.callout-definition {
-  border-radius: 2px;
-  border-width: 4px;
-  border-left: 4px solid #8ebae5;
-  background: rgba(142, 186, 229, 0.1);
-  font-size: inherit;
-  padding: 1.5em 0.5em 0.25em 0.9em; 
-  position: relative;  /* Für absolutes Positioning des Icons */
-}
-
-.callout-definition::before {
-  content: "📘 Definition";  /* Icon + Text */
-  position: absolute;
-  left: 0.5em;
-  top: 0.5em;
-  font-size: 1.1em;  /* Etwas kleiner */
-  font-weight: bold;
-}
-
-/* ---- additional callouts ---- */
-.callout-definition-in-worten {
-  border-radius: 2px;
-  border-width: 4px;
-  border-left: 4px solid #8ebae5;
-  background: rgba(142, 186, 229, 0.1);
-  font-size: inherit;
-  padding: 1.5em 0.5em 0.25em 0.9em; 
-  position: relative;  /* Für absolutes Positioning des Icons */
-}
-
-.callout-definition-in-worten::before {
-  content: "📘 Definition in Worten";  /* Icon + Text */
-  position: absolute;
-  left: 0.5em;
-  top: 0.5em;
-  font-size: 1.1em;  /* Etwas kleiner */
-  font-weight: bold;
-}
-
-
-.callout-good2know {
-  border-left: 4px solid #fabe50;
-   background: rgba(250, 190, 80, 0.1);
-  font-size: inherit;
-  padding: 1.5em 0.5em 0.25em 0.9em; 
-  position: relative;  /* Für absolutes Positioning des Icons */
-}
-
-.callout-good2know::before {
-  content: "💡";  /* Icon + Text */
-  position: absolute;
-  left: 0.5em;
-  top: 0.5em;
-  font-size: inherit; /* Gleiche Schriftgröße wie der Text */
-  font-weight: bold;
-}
-
-.callout-aufgabe {
-  border-left: 4px solid #e57373;
-  background: rgba(229, 115, 115, 0.14);
-  font-size: inherit;
-  padding: 1.5em 0.5em 0.25em 0.9em; 
-  position: relative;  /* Für absolutes Positioning des Icons */
-}
-
-.callout-aufgabe::before {
-  content: "🔍 Aufgabe";  /* Icon + Text */
-  position: absolute;
-  left: 0.5em;
-  top: 0.5em;
-  font-size: inherit; /* Gleiche Schriftgröße wie der Text */
-  font-weight: bold;
-}
-
-
-.callout-highlight {
-  border-left: 4px solid #fabe50;
-   background: rgba(250, 190, 80, 0.1);
-  font-size: inherit;
-  padding: 1.5em 0.5em 0.25em 0.9em; 
-  position: relative;  /* Für absolutes Positioning des Icons */
-}
-
-
-/* Ensure figures inside embedded notebook cells also respect the max width */
-.quarto-embed-nb-cell .quarto-figure {
-  max-width: 100%;
-}
-
 /* ---- custom progress: seedling to tree ---- */
 .growth-progress {
   position: fixed;
@@ -244,13 +145,6 @@ $presentation-font-size-root: 30px !default;
   display: none;
 }
 
-.sdg-overview-note {
-  margin: 0 0 1rem 0;
-  font-size: 0.9em;
-  color: #5b6576;
-  text-align: center;
-}
-
 .sdg-grid {
   width: min(1160px, 100%);
   margin: 0 auto;
@@ -323,66 +217,7 @@ $presentation-font-size-root: 30px !default;
   transform: translate(-50%, 0);
 }
 
-.sdg-taxonomy {
-  width: min(1180px, 100%);
-  margin: 0 auto;
-}
-
-.sdg-taxonomy-columns {
-  width: min(1180px, 100%);
-  margin: 0 auto;
-  display: flex;
-  gap: 30px;
-  // align-items: stretch;
-}
-
-.sdg-taxonomy-left {
-  flex: 0 1 45%;
-  min-width: 0;
-}
-
-.sdg-taxonomy-right {
-  flex: 0 1 45%;
-  min-width: 0;
-}
-
-.sdg-taxonomy-left > div,
-.sdg-taxonomy-right > div {
-  width: 100%;
-}
-
-.sdg-taxonomy-right {
-  position: relative;
-}
-
-.sdg-taxonomy-right::before {
-  content: "";
-  position: absolute;
-  left: -15px;
-  top: 12px;
-  bottom: 12px;
-  width: 1px;
-  background: linear-gradient(
-    180deg,
-    rgba(28, 45, 66, 0),
-    rgba(28, 45, 66, 0.14) 18%,
-    rgba(28, 45, 66, 0.14) 82%,
-    rgba(28, 45, 66, 0)
-  );
-}
-
-@media (max-width: 1100px) {
-  .sdg-taxonomy-columns {
-    flex-direction: column;
-  }
-
-  .sdg-taxonomy-right::before {
-    display: none;
-  }
-}
-
-.sdg-taxonomy-card,
-.sdg-taxonomy-metric {
+.sdg-taxonomy-card {
   background: #f7f9fc;
   border: 1px solid rgba(28, 45, 66, 0.1);
   border-radius: 18px;
@@ -390,13 +225,11 @@ $presentation-font-size-root: 30px !default;
   box-shadow: 0 16px 34px rgba(28, 45, 66, 0.1);
 }
 
-.sdg-taxonomy-card > :first-child,
-.sdg-taxonomy-metric > :first-child {
+.sdg-taxonomy-card > :first-child {
   margin-top: 0;
 }
 
-.sdg-taxonomy-card > :last-child,
-.sdg-taxonomy-metric > :last-child {
+.sdg-taxonomy-card > :last-child {
   margin-bottom: 0;
 }
 
@@ -430,38 +263,6 @@ $presentation-font-size-root: 30px !default;
   line-height: 0.8;
   margin: -2px 0;
   padding: 0;
-}
-
-.sdg-metric-kicker {
-  margin: 0 0 0.6rem 0;
-  color: #5b6576;
-  font-size: 0.82em;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.sdg-metric-list {
-  margin: 0.9rem 0 0 1.1rem;
-}
-
-.sdg-taxonomy-metric ul {
-  margin: 0.9rem 0 0 1.1rem;
-}
-
-.sdg-metric-list li + li {
-  margin-top: 0.45rem;
-}
-
-.sdg-taxonomy-metric li + li {
-  margin-top: 0.45rem;
-}
-
-.sdg-taxonomy-metric h3 {
-  margin-top: 0;
-}
-
-.sdg-taxonomy-metric p + p {
-  margin-top: 0.9rem;
 }
 
 .framework-two-col {
@@ -702,94 +503,11 @@ $presentation-font-size-root: 30px !default;
   padding: 12px 14px;
 }
 
-.cse-venn {
-  position: relative;
-  width: min(100%, 410px);
-  height: 290px;
-  margin: 0 auto;
-}
-
-.cse-circle {
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  padding: 22px 16px 0;
-  font-weight: 600;
-  line-height: 1.15;
-  font-size: 0.78em;
-  color: #1c2d42;
-  border: 2px solid rgba(28, 45, 66, 0.14);
-  box-sizing: border-box;
-}
-
-.cse-circle--math {
-  left: 34px;
-  top: 8px;
-  background: rgba(251, 191, 80, 0.42);
-}
-
-.cse-circle--cs {
-  right: 34px;
-  top: 8px;
-  background: rgba(142, 186, 229, 0.42);
-}
-
-.cse-circle--eng {
-  left: 112px;
-  bottom: 6px;
-  background: rgba(241, 158, 177, 0.42);
-}
-
-.cse-core {
-  position: absolute;
-  left: 50%;
-  top: 53%;
-  transform: translate(-50%, -50%);
-  min-width: 96px;
-  padding: 10px 14px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.96);
-  border: 1px solid rgba(28, 45, 66, 0.14);
-  box-shadow: 0 10px 24px rgba(28, 45, 66, 0.12);
-  text-align: center;
-  font-weight: 700;
-  font-size: 0.88em;
-  color: #1c2d42;
-}
-
-.three-pillars {
-  width: min(1180px, 100%);
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
-}
-
 .sustainability-pillars {
   width: min(1080px, 92%);
   margin: 1.1em auto 0;
   color: #1c2d42;
   text-align: center;
-}
-
-.sustainability-pillars__beam,
-.sustainability-pillars__foundation {
-  box-sizing: border-box;
-  width: 100%;
-  border-radius: 10px;
-  background: #ff9900;
-  box-shadow: 0 12px 24px rgba(28, 45, 66, 0.12);
-  font-weight: 700;
-  letter-spacing: 0.02em;
-}
-
-.sustainability-pillars__beam {
-  padding: 0.45em 1em;
-  font-size: 1.05em;
 }
 
 .sustainability-pillars__columns {
@@ -826,69 +544,6 @@ $presentation-font-size-root: 30px !default;
   font-size: 0.8em;
   font-weight: 700;
   line-height: 1.25;
-}
-
-.sustainability-pillars__foundation {
-  padding: 0.38em 1em;
-  font-size: 0.78em;
-}
-
-.pillar-card {
-  background: #f7f9fc;
-  border: 1px solid rgba(28, 45, 66, 0.1);
-  border-radius: 18px;
-  padding: 20px 22px;
-  box-shadow: 0 16px 34px rgba(28, 45, 66, 0.1);
-}
-
-.pillar-card h3 {
-  margin-top: 0;
-  margin-bottom: 0.65rem;
-}
-
-.pillar-card ul {
-  margin: 0.4rem 0 0 1.1rem;
-}
-
-.pillar-card li + li {
-  margin-top: 0.45rem;
-}
-
-.timescale-slide {
-  width: min(1180px, 100%);
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 26px;
-  align-items: stretch;
-}
-
-.timescale-panel {
-  background: #f7f9fc;
-  border: 1px solid rgba(28, 45, 66, 0.1);
-  border-radius: 18px;
-  padding: 18px 20px;
-  box-shadow: 0 16px 34px rgba(28, 45, 66, 0.1);
-}
-
-.timescale-panel h3 {
-  margin-top: 0;
-  margin-bottom: 0.6rem;
-}
-
-.timescale-note {
-  margin-top: 0.9rem;
-  color: #5b6576;
-  font-size: 0.84em;
-  line-height: 1.35;
-}
-
-.timescale-panel ul {
-  margin: 0.45rem 0 0 1.1rem;
-}
-
-.timescale-panel li + li {
-  margin-top: 0.45rem;
 }
 
 .question-slide-center {
@@ -993,4 +648,3 @@ $presentation-font-size-root: 30px !default;
 .highlight-box b {
   font-weight: 700;
 }
-

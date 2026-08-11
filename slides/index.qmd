@@ -60,15 +60,15 @@ Nice, in that case I am all in and would like to talk about **Sustainability in 
 ## Good news: It worked already ;)
 
 
-We have now two projects in my team that to large parts rely on the JuliaLang:
+We (MBD@RWTH Aachen) have now two projects that to significant parts rely on the JuliaLang:
 
 :::: columns
 
 ::: {.column style="width: 48%; border-right: 2px solid #2f7b29; padding-right: 1em;"}
 
-**Globally differentiable surface flow simulator**
+**Differentiable Simulators for UQ in Complex Geometries**
 
-![Quantum circuits are inherently parameter dependent](./images/Olivers-project.png){width=80%}
+![UQ for complex geometry is inherently high-dimensional.](./images/Alans-project.png){width=80%}
 
 $$
 \frac{\mathrm{d}}{\mathrm{d}\lambda}
