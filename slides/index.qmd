@@ -66,9 +66,9 @@ We (MBD@RWTH Aachen) have now two projects that to significant parts rely on the
 
 ::: {.column style="width: 48%; border-right: 2px solid #2f7b29; padding-right: 1em;"}
 
-**Differentiable Simulators for UQ in Complex Geometries**
+**Differentiable Sims for Complex Geometries**
 
-![UQ for complex geometry is inherently high-dimensional.](./images/Alans-project.png){width=80%}
+![UQ for complex geometry is inherently high-dimensional.](./images/Alans-project.png){width=70%}
 
 $$
 \frac{\mathrm{d}}{\mathrm{d}\lambda}
@@ -79,7 +79,7 @@ $$
 \lvert 0\rangle
 $$
 
-Interested? *correa@mbd.rwth-aachen.de*
+*correa@mbd.rwth-aachen.de*
 
 
 :::
@@ -88,7 +88,7 @@ Interested? *correa@mbd.rwth-aachen.de*
 
 **Symbolic analysis of quantum circuits**
 
-![Quantum circuits are inherently parameter dependent](./images/Olivers-project.png){width=80%}
+![Quantum circuits are inherently parameter dependent](./images/Olivers-project.png){width=77%}
 
 $$
 \frac{\mathrm{d}}{\mathrm{d}\lambda}
@@ -99,13 +99,13 @@ $$
 \lvert 0\rangle
 $$
 
-Interested? *ahrend@mbd.rwth-aachen.de*
+*ahrend@mbd.rwth-aachen.de*
 
 :::
 
 ::::
 
-## Structure of the talk (projected to timeline of events)
+## Structure of the talk ... projected to timeline of events
 
 <div style="height: 1em;"></div>
 
@@ -113,9 +113,9 @@ Interested? *ahrend@mbd.rwth-aachen.de*
 <div class="timeline-slide">
   <div class="timeline-track"></div>
 
-  <svg class="timeline-arrows" viewBox="0 0 1000 110" preserveAspectRatio="none" aria-hidden="true">
+  <svg class="timeline-arrows" style="--timeline-marker: url(#timeline-arrowhead-structure);" viewBox="0 0 1000 110" preserveAspectRatio="none" aria-hidden="true">
     <defs>
-      <marker id="timeline-arrowhead" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse">
+      <marker id="timeline-arrowhead-structure" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse">
         <path d="M 0 0 L 8 4 L 0 8 Z"></path>
       </marker>
     </defs>
@@ -132,7 +132,7 @@ Interested? *ahrend@mbd.rwth-aachen.de*
     <div class="timeline-year">2025</div>
     <div class="timeline-card"><!--  -->
       <strong>von Kármán Conference</strong>
-      <span> explicit framing of sustainability as a dimension of computational science and engineering</span>
+      <span> framing of sustainability as a dimension of computational science and engineering</span>
     </div>
   </div>
 
@@ -148,7 +148,7 @@ Interested? *ahrend@mbd.rwth-aachen.de*
     <div class="timeline-year">1713</div>
     <div class="timeline-card">
       <strong>Carlowitz</strong>
-      <span><em>Sylvicultura oeconomica</em> makes long-term regenerative use explicit</span>
+      <span><em>Sylvicultura oeconomica</em> makes long-term regenerative use [of wood] explicit</span>
     </div>
   </div>
 
@@ -156,7 +156,7 @@ Interested? *ahrend@mbd.rwth-aachen.de*
     <div class="timeline-year">1987</div>
     <div class="timeline-card">
       <strong>Brundtland</strong>
-      <span>sustainability becomes a global policy frame</span>
+      <span>report through which sustainability becomes a global policy frame</span>
     </div>
   </div>
 
@@ -169,10 +169,10 @@ Interested? *ahrend@mbd.rwth-aachen.de*
   </div>
 
   <div class="timeline-event timeline-event--bottom fragment" data-fragment-index="2" style="left: 93%;">
-    <div class="timeline-year">2030</div>
+    <div class="timeline-year">203x</div>
     <div class="timeline-card">
-      <strong>Future of CS&amp;E</strong>
-      <span>explicitly sustainable methods, software, workflows, and institutions</span>
+      <strong>Future of CS&amp;E?</strong>
+      <span>sustainability in methods, software, workflows, and institutions</span>
     </div>
   </div>
 
@@ -181,12 +181,12 @@ Interested? *ahrend@mbd.rwth-aachen.de*
   <div class="timeline-legend">
     <div><span class="timeline-legend-arrow timeline-legend-arrow--green"></span><span>How we got here today</span></div>
     <div><span class="timeline-legend-arrow timeline-legend-arrow--blue"></span><span>Where sustainability began</span></div>
-    <div><span class="timeline-legend-arrow timeline-legend-arrow--red"></span><span>Where sustainable CS&E goes next</span></div>
+    <div><span class="timeline-legend-arrow timeline-legend-arrow--red"></span><span>Where sustainable CS&E could go next</span></div>
   </div>
 </div>
 ```
 
-## How we got here today
+## Part 1: How we got here today
 
 <div style="height: 1em;"></div>
 
@@ -194,19 +194,22 @@ Interested? *ahrend@mbd.rwth-aachen.de*
 <div class="timeline-slide">
   <div class="timeline-track"></div>
 
-  <svg class="timeline-arrows" viewBox="0 0 1000 110" preserveAspectRatio="none" aria-hidden="true">
+  <svg class="timeline-arrows" style="--timeline-marker: url(#timeline-arrowhead-summary);" viewBox="0 0 1000 110" preserveAspectRatio="none" aria-hidden="true">
     <defs>
-      <marker id="timeline-arrowhead" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse">
+      <marker id="timeline-arrowhead-summary" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse">
         <path d="M 0 0 L 8 4 L 0 8 Z"></path>
       </marker>
     </defs>
+
+    <path class="timeline-arrow" d="M 560 70 Q 650 28 740 70"></path>
+
   </svg>
 
   <div class="timeline-event timeline-event--top" style="left: 55%;">
     <div class="timeline-year">2025</div>
     <div class="timeline-card"><!--  -->
       <strong>von Kármán Conference</strong>
-      <span> explicit framing of sustainability as a dimension of computational science and engineering</span>
+      <span> framing of sustainability as a dimension of computational science and engineering</span>
     </div>
   </div>
 
@@ -218,29 +221,22 @@ Interested? *ahrend@mbd.rwth-aachen.de*
     </div>
   </div>
 
-  
 
   <div style="height: 4em;"></div>
   
   <div class="timeline-legend">
-    <div><span class="timeline-legend-arrow timeline-legend-arrow--green"></span><span>1 How we got here today</span></div>
-    <div><span class="timeline-legend-arrow timeline-legend-arrow--blue"></span><span>2 Where sustainability began</span></div>
-    <div><span class="timeline-legend-arrow timeline-legend-arrow--red"></span><span>3 The road ahead for sustainable CS&E</span></div>
+    <div><span class="timeline-legend-arrow timeline-legend-arrow--green"></span><span>How we got here today</span></div>
+    <div><span class="timeline-legend-arrow timeline-legend-arrow--blue"></span><span>Where sustainability began</span></div>
+    <div><span class="timeline-legend-arrow timeline-legend-arrow--red"></span><span>Where sustainable CS&E could go next</span></div>
   </div>
 </div>
 ```
 
-# How we got here today
+## {.center}
 
----
-
-```{=html}
-<div class="question-slide-center">
-  <div class="question-box">
-    <p>Which of the United Nations Sustainable Development Goals feels closest to your research?</p>
-  </div>
-</div>
-```
+::: {.callout-tip appearance="simple" icon=false title="A question for you"}
+### Which of the United Nations Sustainable Development Goals feels closest to your research?
+:::
 
 ## United Nation's Sustainable Development Goals (SDGs)
 
@@ -330,12 +326,11 @@ The SDGs constitute a framework for addressing the world's most pressing challen
 
 <div style="height: 1em;"></div>
 
-<div class="highlight-box">
-  As the departure point serves the **Brundtland report** issued by @wced_our_common_future_1987: 
-  <div style="height: 0.5em;"></div>
+::: {.callout-note appearance="simple" icon=false title="Definition of sustainable development"}
+As the departure point serves the **Brundtland report** issued by @wced_our_common_future_1987:
 
-  *Sustainable development is development that meets the needs of the present without compromising the ability of future generations to meet their own needs.*
-</div>
+> *Sustainable development is development that meets the needs of the present without compromising the ability of future generations to meet their own needs.*
+:::
 
 :::
 
@@ -616,7 +611,7 @@ Sustainable CS\&E emerges when these three dimensions reinforce each other.
 </div>
 ```
 
-## Structure of the talk 
+## Part 2: Where sustainability began
 
 <div style="height: 1em;"></div>
 
@@ -624,26 +619,24 @@ Sustainable CS\&E emerges when these three dimensions reinforce each other.
 <div class="timeline-slide">
   <div class="timeline-track"></div>
 
-  <svg class="timeline-arrows" viewBox="0 0 1000 110" preserveAspectRatio="none" aria-hidden="true">
+  <svg class="timeline-arrows" style="--timeline-marker: url(#timeline-arrowhead-part2);" viewBox="0 0 1000 110" preserveAspectRatio="none" aria-hidden="true">
     <defs>
-      <marker id="timeline-arrowhead" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse">
+      <marker id="timeline-arrowhead-part2" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse">
         <path d="M 0 0 L 8 4 L 0 8 Z"></path>
       </marker>
     </defs>
 
     <path class="timeline-arrow" d="M 560 70 Q 650 28 740 70"></path>
-    <path class="timeline-arrow timeline-arrow--blue timeline-arrow--to-past fragment" data-fragment-index="1 " d="M 70 70 Q 405 -36 740 70"></path>
-    <path class="timeline-arrow timeline-arrow--blue fragment" data-fragment-index="2" d="M 70 70 Q 145 32 220 70"></path>
-    <path class="timeline-arrow timeline-arrow--blue fragment" data-fragment-index="2" d="M 240 70 Q 310 36 380 70"></path>
-    <path class="timeline-arrow timeline-arrow--red fragment" data-fragment-index="3" d="M 400 70 C 470 36 570 8 740 70"></path>
-    <path class="timeline-arrow timeline-arrow--red fragment" data-fragment-index="3" d="M 760 70 Q 840 30 920 70"></path>
+    <path class="timeline-arrow timeline-arrow--blue timeline-arrow--to-past" d="M 70 70 Q 405 -36 740 70"></path>
+    <path class="timeline-arrow timeline-arrow--blue" d="M 70 70 Q 145 32 220 70"></path>
+    <path class="timeline-arrow timeline-arrow--blue" d="M 240 70 Q 310 36 380 70"></path>
   </svg>
 
   <div class="timeline-event timeline-event--top" style="left: 55%;">
     <div class="timeline-year">2025</div>
     <div class="timeline-card"><!--  -->
       <strong>von Kármán Conference</strong>
-      <span> explicit framing of sustainability as a dimension of computational science and engineering</span>
+      <span> framing of sustainability as a dimension of computational science and engineering</span>
     </div>
   </div>
 
@@ -655,23 +648,23 @@ Sustainable CS\&E emerges when these three dimensions reinforce each other.
     </div>
   </div>
 
-  <div class="timeline-event timeline-event--top fragment" data-fragment-index="1" style="left: 6%;">
+  <div class="timeline-event timeline-event--top" style="left: 6%;">
     <div class="timeline-year">1713</div>
     <div class="timeline-card">
       <strong>Carlowitz</strong>
-      <span><em>Sylvicultura oeconomica</em> makes long-term regenerative use explicit</span>
+      <span><em>Sylvicultura oeconomica</em> makes long-term regenerative use [of wood] explicit</span>
     </div>
   </div>
 
-  <div class="timeline-event timeline-event--bottom fragment" data-fragment-index="2" style="left: 23%;">
+  <div class="timeline-event timeline-event--bottom" style="left: 23%;">
     <div class="timeline-year">1987</div>
     <div class="timeline-card">
       <strong>Brundtland</strong>
-      <span>sustainability becomes a global policy frame</span>
+      <span>report through which sustainability becomes a global policy frame</span>
     </div>
   </div>
 
-  <div class="timeline-event timeline-event--top fragment" data-fragment-index="2" style="left: 39%;">
+  <div class="timeline-event timeline-event--top" style="left: 39%;">
     <div class="timeline-year">2015</div>
     <div class="timeline-card">
       <strong>SDGs</strong>
@@ -679,107 +672,18 @@ Sustainable CS\&E emerges when these three dimensions reinforce each other.
     </div>
   </div>
 
-  <div class="timeline-event timeline-event--bottom fragment" data-fragment-index="0" style="left: 93%;">
-    <div class="timeline-year">2030</div>
-    <div class="timeline-card">
-      <strong>Future of CS&amp;E</strong>
-      <span>explicitly sustainable methods, software, workflows, and institutions</span>
-    </div>
-  </div>
-
   <div style="height: 4em;"></div>
   
   <div class="timeline-legend">
-    <div><span class="timeline-legend-arrow timeline-legend-arrow--green"></span><span>1) How we got here today</span></div>
-    <div><span class="timeline-legend-arrow timeline-legend-arrow--blue"></span><span>2) Where sustainability began</span></div>
-    <div><span class="timeline-legend-arrow timeline-legend-arrow--red"></span><span>3)The road ahead for sustainable CS&E</span></div>
-  </div>
-</div>
-```
-
-# Where sustainability began
-
-## A timeline 
-
-```{=html}
-<div class="timeline-slide">
-  <div class="timeline-track"></div>
-
-  <svg class="timeline-arrows" viewBox="0 0 1000 110" preserveAspectRatio="none" aria-hidden="true">
-    <defs>
-      <marker id="timeline-arrowhead" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse">
-        <path d="M 0 0 L 8 4 L 0 8 Z"></path>
-      </marker>
-    </defs>
-
-    <path class="timeline-arrow" d="M 560 70 Q 650 28 740 70"></path>
-    <path class="timeline-arrow timeline-arrow--blue timeline-arrow--to-past fragment" data-fragment-index="1" d="M 70 70 Q 405 -36 740 70"></path>
-    <path class="timeline-arrow timeline-arrow--blue fragment" data-fragment-index="2" d="M 70 70 Q 145 32 220 70"></path>
-    <path class="timeline-arrow timeline-arrow--blue fragment" data-fragment-index="2" d="M 240 70 Q 310 36 380 70"></path>
-    <path class="timeline-arrow timeline-arrow--red fragment" data-fragment-index="3" d="M 400 70 C 470 36 570 8 740 70"></path>
-    <path class="timeline-arrow timeline-arrow--red fragment" data-fragment-index="3" d="M 760 70 Q 840 30 920 70"></path>
-  </svg>
-
-  <div class="timeline-event timeline-event--top" style="left: 55%;">
-    <div class="timeline-year">2025</div>
-    <div class="timeline-card"><!--  -->
-      <strong>von Kármán Conference</strong>
-      <span> explicit framing of sustainability as a dimension of computational science and engineering</span>
-    </div>
-  </div>
-
-  <div class="timeline-event timeline-event--bottom" style="left: 75%;">
-    <div class="timeline-year">2026</div>
-    <div class="timeline-card">
-      <strong>JuliaCon</strong>
-      <span>that's where we are today :)</span>
-    </div>
-  </div>
-
-  <div class="timeline-event timeline-event--top fragment" data-fragment-index="1" style="left: 6%;">
-    <div class="timeline-year">1713</div>
-    <div class="timeline-card">
-      <strong>Carlowitz</strong>
-      <span><em>Sylvicultura oeconomica</em> makes long-term regenerative use explicit</span>
-    </div>
-  </div>
-
-  <div class="timeline-event timeline-event--bottom fragment" data-fragment-index="2" style="left: 23%;">
-    <div class="timeline-year">1987</div>
-    <div class="timeline-card">
-      <strong>Brundtland</strong>
-      <span>sustainability becomes a global policy frame</span>
-    </div>
-  </div>
-
-  <div class="timeline-event timeline-event--top fragment" data-fragment-index="2" style="left: 39%;">
-    <div class="timeline-year">2015</div>
-    <div class="timeline-card">
-      <strong>SDGs</strong>
-      <span>the agenda becomes operational through goals, targets, and indicators</span>
-    </div>
-  </div>
-
-  <div class="timeline-event timeline-event--bottom fragment" data-fragment-index="3" style="left: 93%;">
-    <div class="timeline-year">2030</div>
-    <div class="timeline-card">
-      <strong>Future of CS&amp;E</strong>
-      <span>explicitly sustainable methods, software, workflows, and institutions</span>
-    </div>
-  </div>
-
-  <div style="height: 4em;"></div>
-  
-  <div class="timeline-legend">
-    <div><span class="timeline-legend-arrow timeline-legend-arrow--green"></span><span>TBD</span></div>
-    <div><span class="timeline-legend-arrow timeline-legend-arrow--blue"></span><span>TBD</span></div>
-    <div><span class="timeline-legend-arrow timeline-legend-arrow--red"></span><span>TBD</span></div>
+    <div><span class="timeline-legend-arrow timeline-legend-arrow--green"></span><span>How we got here today</span></div>
+    <div><span class="timeline-legend-arrow timeline-legend-arrow--blue"></span><span>Where sustainability began</span></div>
+    <div><span class="timeline-legend-arrow timeline-legend-arrow--red"></span><span>Where sustainable CS&E could go next</span></div>
   </div>
 </div>
 ```
 
 
-## The idea of sustainability (Carlowitz) {.unnumbered}
+## The idea of sustainability based on Carlowitz
 
 We typically attribute the sustainability idea to **Hans Carl von Carlowitz**.
 
@@ -958,7 +862,86 @@ When regeneration is slower than decision cycles, today's decisions determine to
 ```
 
 
-# Part 3: The road ahead for sustainable CS\&E
+## Part 3: Where sustainable CS&E could go next
+
+<div style="height: 1em;"></div>
+
+```{=html}
+<div class="timeline-slide">
+  <div class="timeline-track"></div>
+
+  <svg class="timeline-arrows" style="--timeline-marker: url(#timeline-arrowhead-part3);" viewBox="0 0 1000 110" preserveAspectRatio="none" aria-hidden="true">
+    <defs>
+      <marker id="timeline-arrowhead-part3" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse">
+        <path d="M 0 0 L 8 4 L 0 8 Z"></path>
+      </marker>
+    </defs>
+
+    <path class="timeline-arrow" d="M 560 70 Q 650 28 740 70"></path>
+    <path class="timeline-arrow timeline-arrow--blue timeline-arrow--to-past" d="M 70 70 Q 405 -36 740 70"></path>
+    <path class="timeline-arrow timeline-arrow--blue" d="M 70 70 Q 145 32 220 70"></path>
+    <path class="timeline-arrow timeline-arrow--blue" d="M 240 70 Q 310 36 380 70"></path>
+    <path class="timeline-arrow timeline-arrow--red" d="M 400 70 C 470 36 570 8 740 70"></path>
+    <path class="timeline-arrow timeline-arrow--red" d="M 760 70 Q 840 30 920 70"></path>
+  </svg>
+
+  <div class="timeline-event timeline-event--top" style="left: 55%;">
+    <div class="timeline-year">2025</div>
+    <div class="timeline-card"><!--  -->
+      <strong>von Kármán Conference</strong>
+      <span> framing of sustainability as a dimension of computational science and engineering</span>
+    </div>
+  </div>
+
+  <div class="timeline-event timeline-event--bottom" style="left: 75%;">
+    <div class="timeline-year">2026</div>
+    <div class="timeline-card">
+      <strong>JuliaCon</strong>
+      <span>that's where we are today :)</span>
+    </div>
+  </div>
+
+  <div class="timeline-event timeline-event--top" style="left: 6%;">
+    <div class="timeline-year">1713</div>
+    <div class="timeline-card">
+      <strong>Carlowitz</strong>
+      <span><em>Sylvicultura oeconomica</em> makes long-term regenerative use [of wood] explicit</span>
+    </div>
+  </div>
+
+  <div class="timeline-event timeline-event--bottom" style="left: 23%;">
+    <div class="timeline-year">1987</div>
+    <div class="timeline-card">
+      <strong>Brundtland</strong>
+      <span>report through which sustainability becomes a global policy frame</span>
+    </div>
+  </div>
+
+  <div class="timeline-event timeline-event--top" style="left: 39%;">
+    <div class="timeline-year">2015</div>
+    <div class="timeline-card">
+      <strong>SDGs</strong>
+      <span>the agenda becomes operational through goals, targets, and indicators</span>
+    </div>
+  </div>
+
+  <div class="timeline-event timeline-event--bottom" style="left: 93%;">
+    <div class="timeline-year">203x</div>
+    <div class="timeline-card">
+      <strong>Future of CS&amp;E?</strong>
+      <span>sustainability in methods, software, workflows, and institutions</span>
+    </div>
+  </div>
+
+  <div style="height: 4em;"></div>
+  
+  <div class="timeline-legend">
+    <div><span class="timeline-legend-arrow timeline-legend-arrow--green"></span><span>How we got here today</span></div>
+    <div><span class="timeline-legend-arrow timeline-legend-arrow--blue"></span><span>Where sustainability began</span></div>
+    <div><span class="timeline-legend-arrow timeline-legend-arrow--red"></span><span>Where sustainable CS&E could go next</span></div>
+  </div>
+</div>
+```
 
 ## The internal perspective
 

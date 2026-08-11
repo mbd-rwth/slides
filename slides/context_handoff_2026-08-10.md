@@ -1,6 +1,7 @@
 # Context Handoff: Sustainability in CS&E deck
 
-Date: 2026-08-10
+Created: 2026-08-10  
+Last updated: 2026-08-11
 
 Primary deck:
 - `slides/index.qmd`
@@ -110,24 +111,90 @@ Latest user request on this slide:
 
 This restructuring was already applied in the shared timeline SCSS.
 
+### 6. Shared design tokens and styling approach
+
+The consolidation of shared colors, surfaces, spacing, and shadows in
+`slides/metafiles/format.scss` is complete. The deck rendered successfully
+after the consolidation.
+
+The shared tokens are defined at the start of the SCSS file and are the
+default source for future styling decisions:
+
+- text and surfaces: `$deck-title-text`, `$deck-ink`,
+  `$deck-text-secondary`, `$deck-text-muted`, `$deck-surface`, `$deck-white`
+- semantic/accent colors: `$deck-green-dark`, `$deck-green-primary`,
+  `$deck-green-muted`, `$deck-green-message`, `$deck-green-accent`,
+  `$deck-blue`, `$deck-red`, `$deck-orange`, `$deck-yellow`
+- borders: `$deck-border-subtle`, `$deck-border-default`
+- shadows: `$deck-shadow-card`, `$deck-shadow-compact`
+- radii: `$deck-radius-small`, `$deck-radius-medium`, `$deck-radius-card`,
+  `$deck-radius-panel`
+- shared dimensions and spacing: `$deck-content-wide`, `$deck-gap-layout`,
+  `$deck-padding-card`
+
+Approach for future work:
+
+1. Reuse these shared tokens instead of introducing new literal colors,
+   shadows, radii, widths, gaps, or padding in individual components.
+2. If a genuinely recurring design value is missing, add one shared token and
+   use it consistently; do not create a token for a one-off adjustment.
+3. Keep component classes responsible for layout and meaning, while the token
+   layer controls the common visual language.
+4. Prefer native Quarto/RevealJS structure and attributes. Use custom HTML and
+   SCSS only when the native syntax cannot express the required layout or
+   behavior cleanly.
+5. Avoid new slide-specific component families where an existing shared class
+   can be reused or modestly extended.
+6. Preserve UTF-8 without BOM and CRLF working-tree line endings for edited
+   source files. With the repository's Git configuration, `git ls-files --eol`
+   should report `i/lf w/crlf` for these files.
+
+### Protected components
+
+Do not modify the timelines or the SDG grid unless the user gives an explicit
+instruction to work on that component. This restriction includes:
+
+- their content and source markup in `slides/index.qmd`
+- their layout, appearance, and responsive behavior in `format.scss`
+- timeline fragments, arrows, SVG markers, milestones, legends, and sequencing
+- SDG-grid items, images, tooltips, interactions, and grid arrangement
+
+General cleanup, harmonization, refactoring, or native-Quarto conversion does
+not by itself authorize changes to either protected component.
+
+Related cleanup already completed:
+
+- confirmed unused component families were removed from `format.scss`
+- repeated hard-coded design values were replaced with the shared tokens
+- repeated card implementations were consolidated without changing slide markup:
+  - `.sdg-taxonomy-card` and `.framework-card` share one standard-card rule
+  - `.timeline-card` intentionally remains separate because its compact
+    dimensions and typography serve a different layout role
+- custom `.question-box`, `.highlight-box`, and `.question-slide-center`
+  implementations were replaced with native Quarto/RevealJS syntax:
+  - the standalone research question uses a slide-level `.center` class and a
+    native `callout-tip`
+  - the Brundtland definition uses a native `callout-note`
+  - the SCSS selectors and tokens used only by the removed helpers were deleted
+- the global pale cover-image background remains centrally controlled in SCSS
+- RevealJS's native progress bar remains disabled (`progress: false`); the
+  custom seedling-to-tree growth widget is the deck's intentional progress
+  indicator and is offset from the right edge to leave room for slide numbers
+- timeline SVG marker IDs are unique per SVG to prevent arrowheads resolving
+  to a marker on another, hidden slide
+
 ## Files currently modified in the worktree
 
-From `git status --short`:
+From `git status --short` on 2026-08-11:
 - `M slides/index.qmd`
 - `M slides/metafiles/format.scss`
-- `M slides/references.bib`
-- `M slides/wood_response_times_matrix.html`
 
-Untracked files currently present:
-- `slides/images/DSCF4312.JPG`
-- `slides/images/DSCF4329.JPG`
-- `slides/images/FAIR-susceptibility.jpeg`
-- `slides/images/brundtland_report_book_cover.jpg`
-- `slides/wood_response_times_matrixorig.html`
+The context handoff file itself becomes modified by this update.
 
 ## Things that still need visual checking
 
-No render/preview was completed in this session.
+The deck has since been rendered successfully after the SCSS consolidation and
+the timeline marker fix. A full visual presentation-mode review is still useful.
 
 High-probability follow-up checks:
 

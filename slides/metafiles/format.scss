@@ -1,10 +1,42 @@
 /*-- scss:defaults --*/
 
+// Shared design tokens
+$deck-title-text: #e8e8ec;
+$deck-ink: #1c2d42;
+$deck-text-secondary: #445063;
+$deck-text-muted: #5b6576;
+$deck-surface: #f7f9fc;
+$deck-white: #ffffff;
+
+$deck-green-dark: #0b3e20;
+$deck-green-primary: #2f7b29;
+$deck-green-muted: #54703b;
+$deck-green-message: #62a84d;
+$deck-green-accent: #9bdc55;
+$deck-blue: #3972b7;
+$deck-red: #8b2635;
+$deck-orange: #ff9900;
+$deck-yellow: #f7c600;
+
+$deck-border-subtle: 1px solid rgba($deck-ink, 0.10);
+$deck-border-default: 1px solid rgba($deck-ink, 0.12);
+$deck-shadow-card: 0 16px 34px rgba($deck-ink, 0.10);
+$deck-shadow-compact: 0 14px 28px rgba($deck-ink, 0.10);
+
+$deck-radius-small: 14px;
+$deck-radius-medium: 16px;
+$deck-radius-card: 18px;
+$deck-radius-panel: 22px;
+
+$deck-content-wide: min(1180px, 100%);
+$deck-gap-layout: 24px;
+$deck-padding-card: 20px 22px;
+
 // title page
 .reveal .slides #title-slide .title {
   font-size: 80px;
   font-style: italic;
-  color: #e8e8ec;
+  color: $deck-title-text;
   font-family: Arial;
   //font-variant: small-caps;
 }
@@ -14,7 +46,7 @@
 .reveal .slides #title-slide .quarto-title-affiliation,
 .reveal .slides #title-slide .date,
 .reveal .slides #title-slide p {
-  color: #e8e8ec;
+  color: $deck-title-text;
 }
 
 .reveal .slides #title-slide {
@@ -39,7 +71,7 @@
 // The white layer leaves 20% of the image visible.
 .reveal .backgrounds .slide-background {
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)),
+    linear-gradient(rgba($deck-white, 0.95), rgba($deck-white, 0.95)),
     url("../../../../../metafiles/cover.png");
   background-position: center;
   background-size: cover;
@@ -69,7 +101,8 @@ $presentation-font-size-root: 30px !default;
 /* ---- custom progress: seedling to tree ---- */
 .growth-progress {
   position: fixed;
-  right: 22px;
+  // Reserve the bottom-right corner for RevealJS's slide number.
+  right: 72px;
   bottom: 20px;
   z-index: 32;
   width: 170px;
@@ -164,15 +197,15 @@ $presentation-font-size-root: 30px !default;
 .sdg-item img {
   display: block;
   width: 100%;
-  border-radius: 14px;
-  box-shadow: 0 10px 20px rgba(28, 45, 66, 0.12);
+  border-radius: $deck-radius-small;
+  box-shadow: 0 10px 20px rgba($deck-ink, 0.12);
   transition: transform 160ms ease, box-shadow 160ms ease;
 }
 
 .sdg-item:hover img,
 .sdg-item:focus-visible img {
   transform: translateY(-4px);
-  box-shadow: 0 18px 30px rgba(28, 45, 66, 0.2);
+  box-shadow: 0 18px 30px rgba($deck-ink, 0.20);
 }
 
 .sdg-item:focus-visible {
@@ -189,11 +222,11 @@ $presentation-font-size-root: 30px !default;
   bottom: calc(100% + 10px);
   width: 280px;
   padding: 12px 14px;
-  border-radius: 14px;
+  border-radius: $deck-radius-small;
   background: rgba(250, 252, 255, 0.98);
-  border: 1px solid rgba(28, 45, 66, 0.12);
-  box-shadow: 0 18px 34px rgba(28, 45, 66, 0.22);
-  color: #1c2d42;
+  border: $deck-border-default;
+  box-shadow: 0 18px 34px rgba($deck-ink, 0.22);
+  color: $deck-ink;
   text-align: left;
   font-size: 1.05em;
   line-height: 1.35;
@@ -217,12 +250,13 @@ $presentation-font-size-root: 30px !default;
   transform: translate(-50%, 0);
 }
 
-.sdg-taxonomy-card {
-  background: #f7f9fc;
-  border: 1px solid rgba(28, 45, 66, 0.1);
-  border-radius: 18px;
-  padding: 20px 22px;
-  box-shadow: 0 16px 34px rgba(28, 45, 66, 0.1);
+.sdg-taxonomy-card,
+.framework-card {
+  background: $deck-surface;
+  border: $deck-border-subtle;
+  border-radius: $deck-radius-card;
+  padding: $deck-padding-card;
+  box-shadow: $deck-shadow-card;
 }
 
 .sdg-taxonomy-card > :first-child {
@@ -240,16 +274,16 @@ $presentation-font-size-root: 30px !default;
 
 .sdg-taxonomy-step {
   padding: 12px 16px;
-  border-radius: 14px;
-  background: white;
-  border-left: 8px solid #f7c600;
+  border-radius: $deck-radius-small;
+  background: $deck-white;
+  border-left: 8px solid $deck-yellow;
 }
 
 .sdg-taxonomy-step strong,
 .sdg-taxonomy-step b {
   display: block;
   margin-bottom: 0.3rem;
-  color: #1c2d42;
+  color: $deck-ink;
 }
 
 .sdg-taxonomy-step p {
@@ -259,27 +293,19 @@ $presentation-font-size-root: 30px !default;
 .sdg-taxonomy-arrow {
   text-align: center;
   font-size: 1.05em;
-  color: #5b6576;
+  color: $deck-text-muted;
   line-height: 0.8;
   margin: -2px 0;
   padding: 0;
 }
 
 .framework-two-col {
-  width: min(1180px, 100%);
+  width: $deck-content-wide;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 24px;
+  gap: $deck-gap-layout;
   align-items: stretch;
-}
-
-.framework-card {
-  background: #f7f9fc;
-  border: 1px solid rgba(28, 45, 66, 0.1);
-  border-radius: 18px;
-  padding: 20px 22px;
-  box-shadow: 0 16px 34px rgba(28, 45, 66, 0.1);
 }
 
 .framework-card h3 {
@@ -301,15 +327,15 @@ $presentation-font-size-root: 30px !default;
   max-width: 1040px;
   padding: 14px 18px;
   text-align: center;
-  border-radius: 16px;
-  background: rgba(28, 45, 66, 0.06);
-  color: #1c2d42;
+  border-radius: $deck-radius-medium;
+  background: rgba($deck-ink, 0.06);
+  color: $deck-ink;
   font-weight: 600;
 }
 
 .timeline-slide {
   position: relative;
-  width: min(1180px, 100%);
+  width: $deck-content-wide;
   height: 420px;
   margin: 0 auto;
 }
@@ -321,7 +347,7 @@ $presentation-font-size-root: 30px !default;
   top: 72px;
   height: 4px;
   border-radius: 999px;
-  background: linear-gradient(90deg, rgba(28, 45, 66, 0.12), rgba(28, 45, 66, 0.26));
+  background: linear-gradient(90deg, rgba($deck-ink, 0.12), rgba($deck-ink, 0.26));
 }
 
 .timeline-arrows {
@@ -337,24 +363,24 @@ $presentation-font-size-root: 30px !default;
 
 .timeline-arrow {
   fill: none;
-  stroke: #54703b;
+  stroke: $deck-green-muted;
   stroke-width: 3;
   stroke-linecap: round;
   vector-effect: non-scaling-stroke;
-  marker-end: url("#timeline-arrowhead");
+  marker-end: var(--timeline-marker);
 }
 
 .timeline-arrow--to-past {
-  marker-start: url("#timeline-arrowhead");
+  marker-start: var(--timeline-marker);
   marker-end: none;
 }
 
 .timeline-arrow--blue {
-  stroke: #3972b7;
+  stroke: $deck-blue;
 }
 
 .timeline-arrow--red {
-  stroke: #8b2635;
+  stroke: $deck-red;
 }
 
 .timeline-arrows marker path {
@@ -370,7 +396,7 @@ $presentation-font-size-root: 30px !default;
   grid-template-columns: repeat(3, 1fr);
   gap: 28px;
   padding-top: 14px;
-  border-top: 1px solid rgba(28, 45, 66, 0.12);
+  border-top: $deck-border-default;
 }
 
 .timeline-legend > div {
@@ -378,12 +404,12 @@ $presentation-font-size-root: 30px !default;
   gap: 14px;
   align-items: center;
   justify-content: center;
-  color: #445063;
+  color: $deck-text-secondary;
   font-size: 0.72em;
 }
 
 .timeline-legend-arrow {
-  --arrow-color: #54703b;
+  --arrow-color: #{$deck-green-muted};
   position: relative;
   display: inline-block;
   width: 80px;
@@ -401,11 +427,11 @@ $presentation-font-size-root: 30px !default;
 }
 
 .timeline-legend-arrow--blue {
-  --arrow-color: #3972b7;
+  --arrow-color: #{$deck-blue};
 }
 
 .timeline-legend-arrow--red {
-  --arrow-color: #8b2635;
+  --arrow-color: #{$deck-red};
 }
 
 .timeline-event {
@@ -425,9 +451,9 @@ $presentation-font-size-root: 30px !default;
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background: white;
-  border: 3px solid #54703b;
-  box-shadow: 0 0 0 4px rgba(84, 112, 59, 0.12);
+  background: $deck-white;
+  border: 3px solid $deck-green-muted;
+  box-shadow: 0 0 0 4px rgba($deck-green-muted, 0.12);
 }
 
 .timeline-event::after {
@@ -438,7 +464,7 @@ $presentation-font-size-root: 30px !default;
   transform: translateX(-50%);
   width: 2px;
   height: 34px;
-  background: rgba(28, 45, 66, 0.18);
+  background: rgba($deck-ink, 0.18);
 }
 
 .timeline-year {
@@ -447,23 +473,23 @@ $presentation-font-size-root: 30px !default;
   text-align: center;
   font-size: 0.8em;
   font-weight: 700;
-  color: #5b6576;
+  color: $deck-text-muted;
   letter-spacing: 0.03em;
 }
 
 .timeline-card {
-  background: #f7f9fc;
-  border: 1px solid rgba(28, 45, 66, 0.1);
-  border-radius: 16px;
+  background: $deck-surface;
+  border: $deck-border-subtle;
+  border-radius: $deck-radius-medium;
   padding: 12px 14px;
-  box-shadow: 0 14px 28px rgba(28, 45, 66, 0.1);
+  box-shadow: $deck-shadow-compact;
   text-align: left;
 }
 
 .timeline-card strong {
   display: block;
   margin-bottom: 0.35rem;
-  color: #1c2d42;
+  color: $deck-ink;
   font-size: 0.9em;
 }
 
@@ -471,11 +497,11 @@ $presentation-font-size-root: 30px !default;
   display: block;
   font-size: 0.72em;
   line-height: 1.3;
-  color: #445063;
+  color: $deck-text-secondary;
 }
 
 .framework-bridge {
-  width: min(1180px, 100%);
+  width: $deck-content-wide;
   margin: 0 auto;
   display: grid;
   grid-template-columns: minmax(0, 1fr) 84px minmax(0, 1fr);
@@ -490,8 +516,8 @@ $presentation-font-size-root: 30px !default;
   width: 84px;
   height: 84px;
   border-radius: 50%;
-  background: rgba(28, 45, 66, 0.06);
-  color: #1c2d42;
+  background: rgba($deck-ink, 0.06);
+  color: $deck-ink;
   font-size: 2.1rem;
   font-weight: 700;
   line-height: 1;
@@ -506,7 +532,7 @@ $presentation-font-size-root: 30px !default;
 .sustainability-pillars {
   width: min(1080px, 92%);
   margin: 1.1em auto 0;
-  color: #1c2d42;
+  color: $deck-ink;
   text-align: center;
 }
 
@@ -528,7 +554,7 @@ $presentation-font-size-root: 30px !default;
   z-index: 1;
   width: 100%;
   border-radius: 4px;
-  background: #ff9900;
+  background: $deck-orange;
 }
 
 .sustainability-pillar__shaft {
@@ -538,19 +564,12 @@ $presentation-font-size-root: 30px !default;
   align-items: center;
   justify-content: center;
   padding: 0.7em;
-  background: rgba(255, 153, 0, 0.2);
-  border-right: 3px solid #ff9900;
-  border-left: 3px solid #ff9900;
+  background: rgba($deck-orange, 0.20);
+  border-right: 3px solid $deck-orange;
+  border-left: 3px solid $deck-orange;
   font-size: 0.8em;
   font-weight: 700;
   line-height: 1.25;
-}
-
-.question-slide-center {
-  min-height: 90vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .mail-thread {
@@ -559,18 +578,18 @@ $presentation-font-size-root: 30px !default;
   margin: 0.22em auto 0;
   overflow: hidden;
   border: 1px solid rgba(189, 255, 158, 0.42);
-  border-radius: 22px;
+  border-radius: $deck-radius-panel;
   background: rgba(247, 255, 244, 0.94);
   box-shadow: 0 22px 58px rgba(2, 37, 18, 0.28);
-  color: #12351f;
+  color: $deck-green-dark;
   backdrop-filter: blur(6px);
 }
 
 .mail-thread > h3 {
   margin: 0;
   padding: 0.48em 0.72em;
-  background: linear-gradient(105deg, #0b3e20, #2f7b29);
-  color: #ffffff;
+  background: linear-gradient(105deg, $deck-green-dark, $deck-green-primary);
+  color: $deck-white;
   text-align: left;
   font-size: 0.92em;
   letter-spacing: 0.01em;
@@ -579,7 +598,7 @@ $presentation-font-size-root: 30px !default;
 .mail-message {
   margin: 0.31em 0.62em;
   padding: 0.32em 0.58em;
-  border-left: 6px solid #62a84d;
+  border-left: 6px solid $deck-green-message;
   border-radius: 12px;
   background: rgba(96, 168, 77, 0.12);
   text-align: left;
@@ -587,7 +606,7 @@ $presentation-font-size-root: 30px !default;
 
 .mail-message.julia {
   margin-left: 5%;
-  border-left-color: #9bdc55;
+  border-left-color: $deck-green-accent;
   background: rgba(155, 220, 85, 0.16);
 }
 
@@ -606,45 +625,3 @@ $presentation-font-size-root: 30px !default;
   line-height: 1.3;
 }
 
-.question-box {
-  max-width: 1100px;
-  margin: 0 auto 0;
-  padding: 22px 28px;
-  border-radius: 20px;
-  background: linear-gradient(135deg, rgba(247, 249, 252, 0.96), rgba(255, 255, 255, 0.98));
-  border: 1px solid rgba(28, 45, 66, 0.12);
-  box-shadow: 0 18px 36px rgba(28, 45, 66, 0.12);
-  text-align: center;
-}
-
-.question-box p {
-  margin: 0;
-  font-size: 1.6em;
-  line-height: 1.35;
-  color: #1c2d42;
-  font-weight: 600;
-}
-
-.highlight-box {
-  max-width: 1100px;
-  margin: 0 auto 0;
-  padding: 22px 28px;
-  border-radius: 20px;
-  background: linear-gradient(135deg, rgba(247, 249, 252, 0.96), rgba(255, 255, 255, 0.98));
-  border: 1px solid rgba(28, 45, 66, 0.12);
-  box-shadow: 0 18px 36px rgba(28, 45, 66, 0.12);
-  text-align: left;
-}
-
-.highlight-box p {
-  margin: 0;
-  font-size: 1.05em;
-  line-height: 1.35;
-  color: #1c2d42;
-  font-weight: 400;
-}
-
-.highlight-box strong,
-.highlight-box b {
-  font-weight: 700;
-}
