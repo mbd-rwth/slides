@@ -1,0 +1,12 @@
+---
+title: "Untitled"
+format: html
+---
+
+```{=html}
+<div class="cse-venn" aria-label="CS&E at the overlap of applied mathematics, computer science, and engineering and applied sciences">
+  <div class="cse-circle cse-circle--math">applied mathematics</div>
+  <div class="cse-circle cse-circle--cs">computer science</div>
+  <div class="cse-circle cse-circle--eng">Engineering / applied sciences</div>
+</div>
+```
