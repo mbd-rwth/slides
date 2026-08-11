@@ -138,65 +138,68 @@
     }
 
     .matrix-panel {
-      padding: 10px 14px 14px;
+      padding: 16px 20px 20px;
     }
 
     .matrix-wrap {
       overflow-x: auto;
-      padding-bottom: 2px;
+      padding-bottom: 4px;
     }
 
     table {
       width: 100%;
-      min-width: 920px;
+      min-width: 1080px;
       border-collapse: separate;
-      border-spacing: 5px;
+      border-spacing: 8px;
     }
 
     thead th {
-      padding: 8px 6px;
+      padding: 12px 10px;
       text-align: center;
-      font-size: 0.82rem;
+      font-size: 0.92rem;
       color: var(--ink);
     }
 
     thead th:first-child {
       text-align: left;
-      width: 200px;
+      width: 240px;
     }
 
     tbody th {
-      padding: 10px 9px;
+      padding: 14px 12px;
       text-align: left;
       vertical-align: middle;
-      border-radius: 12px;
+      border-radius: 16px;
       background: rgba(23, 50, 77, 0.05);
-      font-size: 0.84rem;
+      font-size: 0.94rem;
     }
 
     .cell {
       position: relative;
-      min-width: 104px;
-      height: 58px;
-      padding: 8px 8px 6px;
-      border-radius: 12px;
+      min-width: 128px;
+      height: 96px;
+      padding: 10px 10px 8px;
+      border-radius: 18px;
       border: 1px solid rgba(23, 50, 77, 0.08);
       color: #fff;
-      vertical-align: middle;
+      vertical-align: top;
       overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
     }
 
     .cell-value {
       display: block;
-      font-size: 0.9rem;
+      font-size: 1rem;
       font-weight: 700;
       line-height: 1.05;
     }
 
+    .cell-note {
+      display: block;
+      margin-top: 0.45rem;
+      font-size: 0.73rem;
+      line-height: 1.25;
+      opacity: 0.95;
+    }
 
     .cell.unsuitable {
       background: linear-gradient(135deg, #eef2f7, #dfe7f2);
@@ -280,12 +283,39 @@
 </head>
 <body>
   <div class="shell">   
+    <section class="panel strip">
+      <h2>Reference Strip: Economic Processes vs. Forest Response</h2>
+      <div class="process-grid">
+        <article class="process-card">
+          <h3>Household shortage</h3>
+          <div class="process-time">months to years</div>
+          <p>Fuel stress becomes politically and socially visible quickly.</p>
+        </article>
+        <article class="process-card">
+          <h3>Mining expansion decision</h3>
+          <div class="process-time">1 to 5 years</div>
+          <p>Extraction and infrastructure decisions happen on short administrative horizons.</p>
+        </article>
+        <article class="process-card">
+          <h3>Construction programme</h3>
+          <div class="process-time">5 to 20 years</div>
+          <p>Buildings and infrastructure can scale demand faster than forests respond.</p>
+        </article>
+        <article class="process-card">
+          <h3>Forest regeneration / maturation</h3>
+          <div class="process-time">20 to 150 years</div>
+          <p>Functional timber quality depends on decades of growth and stand development.</p>
+        </article>
+      </div>
+    </section>
+
     <section class="panel matrix-panel">
+      <h2>Time to Usable Supply</h2>
       <div class="matrix-wrap">
         <table>
           <thead>
             <tr>
-              <th>Wood category</th>
+              <th>Wood category / forest product</th>
               <th>Energy use</th>
               <th>Small diameter</th>
               <th>Structural strength</th>
@@ -303,6 +333,20 @@
         <span class="legend-item"><span class="swatch unsuitable"></span>technically or economically unsuitable</span>
       </div>
     </section>
+
+    <section class="panel note">
+      <div class="callout">
+        <strong>Interpretation:</strong>
+        the use case determines the relevant wood properties, and the required
+        properties determine the necessary growth time.
+      </div>
+      <div class="callout">
+        <strong>Important caveat:</strong>
+        the ranges shown here are illustrative, meant to express the logic of
+        delayed resource response rather than a fully substantiated species-by-species
+        reconstruction of eighteenth-century Saxon forestry practice.
+      </div>
+    </section>
   </div>
 
   <script>
@@ -318,8 +362,8 @@
       {
         label: "Brushwood / coppice wood",
         cells: {
-          "Energy use": { range: "10–20 y", years: 15 },
-          "Small diameter": { range: "10–20 y", years: 15 },
+          "Energy use": { range: "10–20 y", note: "quickest renewable fuel supply", years: 15 },
+          "Small diameter": { range: "10–20 y", note: "stakes, bundles, small poles", years: 15 },
           "Structural strength": null,
           "High durability": null,
           "Large dimensions": null
@@ -328,31 +372,31 @@
       {
         label: "Fast-growing softwood",
         cells: {
-          "Energy use": { range: "20–40 y", years: 30 },
-          "Small diameter": { range: "20–30 y", years: 25 },
-          "Structural strength": { range: "40–60 y", years: 50 },
-          "High durability": { range: "50–70 y", years: 60 },
-          "Large dimensions": { range: "60–80 y", years: 70 }
+          "Energy use": { range: "20–40 y", note: "general fuel and rough wood", years: 30 },
+          "Small diameter": { range: "20–30 y", note: "light poles and simple members", years: 25 },
+          "Structural strength": { range: "40–60 y", note: "usable after longer stand development", years: 50 },
+          "High durability": { range: "50–70 y", note: "still limited versus hardwoods", years: 60 },
+          "Large dimensions": { range: "60–80 y", note: "requires sustained growth", years: 70 }
         }
       },
       {
         label: "Mature pine / spruce timber",
         cells: {
-          "Energy use": { range: "30–50 y", years: 40 },
-          "Small diameter": { range: "30–50 y", years: 40 },
-          "Structural strength": { range: "40–60 y",  years: 50 },
-          "High durability": { range: "50–80 y",  years: 65 },
-          "Large dimensions": { range: "60–90 y", years: 75 }
+          "Energy use": { range: "30–50 y", note: "valuable but not optimal use", years: 40 },
+          "Small diameter": { range: "30–50 y", note: "supports, poles, smaller framing", years: 40 },
+          "Structural strength": { range: "40–60 y", note: "construction and mining members", years: 50 },
+          "High durability": { range: "50–80 y", note: "moderate durability if well selected", years: 65 },
+          "Large dimensions": { range: "60–90 y", note: "longer rotations for larger sections", years: 75 }
         }
       },
       {
         label: "Mature oak timber",
         cells: {
-          "Energy use": { range: "30–50 y", years: 40 },
-          "Small diameter": { range: "30–50 y", years: 40 },
-          "Structural strength": { range: "70–100 y", years: 85 },
-          "High durability": { range: "80–120 y",  years: 100 },
-          "Large dimensions": { range: "100–150 y",  years: 125 }
+          "Energy use": { range: "30–50 y", note: "possible, but poor strategic use", years: 40 },
+          "Small diameter": { range: "30–50 y", note: "slower than coppice or softwood", years: 40 },
+          "Structural strength": { range: "70–100 y", note: "major structural members", years: 85 },
+          "High durability": { range: "80–120 y", note: "durable beams and exposed use", years: 100 },
+          "Large dimensions": { range: "100–150 y", note: "shipbuilding, bridges, reserves", years: 125 }
         }
       }
     ];
@@ -386,6 +430,7 @@
           td.innerHTML = `
             <div class="cell unsuitable">
               <span class="cell-value">—</span>
+              <span class="cell-note">unsuitable</span>
             </div>
           `;
         } else {
@@ -394,6 +439,7 @@
           td.innerHTML = `
             <div class="cell" style="background:${bg}; color:${ink};">
               <span class="cell-value">${cell.range}</span>
+              <span class="cell-note">${cell.note}</span>
             </div>
           `;
         }
