@@ -401,6 +401,15 @@ $presentation-font-size-root: 30px !default;
   align-items: stretch;
 }
 
+.framework-four-grid {
+  width: $deck-content-wide;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $deck-gap-layout;
+  align-items: stretch;
+}
+
 .framework-card h3 {
   margin-top: 0;
   margin-bottom: 0.6rem;
@@ -424,6 +433,10 @@ $presentation-font-size-root: 30px !default;
   background: rgba($deck-ink, 0.06);
   color: $deck-ink;
   font-weight: 600;
+}
+
+.model-timescale-slide .framework-center-line {
+  max-width: 1120px;
 }
 
 .timeline-slide {

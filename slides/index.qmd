@@ -160,6 +160,40 @@ $$
 
 ::::
 
+## Computational Science and Engineering (CS\&E)
+
+::: {.framework-card .cse-overlap-card}
+
+<div class="framework-center-line">
+  ... sits at the intersection of applied mathematics, computer science and applications in engineering and science.</div>
+
+<div style="height: 0.1em;"></div>
+
+:::: columns
+
+::: {.column width="60%"}
+
+**Motivation:** Model-based design or ~ decision-support in complex systems of physics-based or mechanistic core. 
+
+**Objective:** Uncertainty-aware and error-controlled prediction, introspection or reanalyis of coupled processes.
+
+**Focus:** Methods, algorithms, implementation, and software along with their effective deployment.
+
+**Challenges:** Multi-physics and multi-scale coupling, complex geometries, boundary conditions, data-rich workflows ... and the final boss *the curse of dimensionality* in high-throughput tasks.
+
+:::
+ 
+::: {.column width="40%"}
+
+<div style="height: 0.5em;"></div>
+
+![](./images/cse-overview.png)
+
+:::
+
+::::
+:::
+
 ## Structure of the talk ... projected to timeline of events
 
 <div style="height: 1em;"></div>
@@ -473,41 +507,6 @@ Note: 2015 -> Rust1.0, tensorflow, Julia 0.4
 
 
 ::::
-
-
-## Computational Science and Engineering (CS\&E)
-
-::: {.framework-card .cse-overlap-card}
-
-<div class="framework-center-line">
-  ... sits at the intersection of applied mathematics, computer science and applications in engineering and science.</div>
-
-<div style="height: 0.1em;"></div>
-
-:::: columns
-
-::: {.column width="60%"}
-
-**Motivation:** Model-based design or ~ decision-support in complex systems of physics-based or mechanistic core. 
-
-**Objective:** Uncertainty-aware and error-controlled prediction, introspection or reanalyis of coupled processes.
-
-**Focus:** Methods, algorithms, implementation, and software along with their effective deployment.
-
-**Challenges:** Multi-physics and multi-scale coupling, complex geometries, boundary conditions, data-rich workflows ... and the final boss *the curse of dimensionality* in high-throughput tasks.
-
-:::
- 
-::: {.column width="40%"}
-
-<div style="height: 0.5em;"></div>
-
-![](./images/cse-overview.png)
-
-:::
-
-::::
-:::
 
 
 
@@ -826,9 +825,31 @@ Lambert Theisen · Joseph De Veaugh-Geiss · Tim Wegmann · Gabriel Wittum · An
   Outcome: A perspectives paper that will be available soon -> kowalski@mbd.rwth-aachen.de</div>
 
 
+## Proposed action
+
+```{=html}
+<div class="framework-two-col">
+  <div class="framework-card">
+    <h3>If CS&amp;E wants to be credible</h3>
+    <ul>
+      <li>it must reflect on its own energy footprint</li>
+      <li>it must preserve its software and knowledge</li>
+      <li>it must sustain its future methodological relevance</li>
+    </ul>
+  </div>
+  <div class="framework-card">
+    <h3>The three sustainability dimensions</h3>
+    <ol>
+      <li>sustainable computing</li>
+      <li>sustainable software and methods</li>
+      <li>sustainable human capability</li>
+    </ol>
+  </div>
+</div>
+<div class="framework-center-line">If CS&amp;E helps design a more sustainable world, it must also sustain its own computational ecosystems.</div>
+```
 
 ## All sorted now? ... No
-
 
 
 ![](./images/DSCF4329.JPG){fig-align="center" width=80%}
@@ -974,15 +995,21 @@ How do we keep a resource-dependent system running when demand grows faster than
 :::::
 
 
-
 ## It's actually a multiscale-in-time problem
+
+<div style="height: 1em;"></div>
 
 ```{=html}
 <div class="framework-center-line">
 Observation: </br> The scope of the decision (demand for timber/wood) rested on a time-scale much shorter than the regeneration time of the system it controlled (the forest).
 </div>
 ```
+
+<div style="height: 2em;"></div>
+
 $$T_{\text{system time-scale}} > T_{\text{decision time-scale}}$$
+
+<div style="height: 2em;"></div>
 
 :::: {.columns .sdg-taxonomy-compare}
 
@@ -1024,6 +1051,12 @@ Many interacting resources, many coupled indicators, many delayed responses
 ::: 
 ::::
 
+
+
+## It's actually a multiscale-in-time problem
+
+<div style="height: 1em;"></div>
+
 ```{=html}
 <div class="framework-center-line">
 
@@ -1032,18 +1065,69 @@ When regeneration is slower than decision cycles, today's decisions determine to
 </div>
 ```
 
-## Let's model and formalize
+<div style="height: 0.9em;"></div>
+$$T_{\text{system time-scale}} > T_{\text{decision time-scale}}$$
+
+<div style="height: 2em;"></div>
+
+:::: {.columns .sdg-taxonomy-compare}
+
+::: {.column width="46%"}
+
+::: {.sdg-taxonomy-card}
+
+**Carlowitz' system**: 
+
+One renewable resource, one stock, one regeneration process.
+
+:::
+
+:::
+
+::: {.column width="8%"}
+
+::: {.sdg-taxonomy-arrow}
+
+<br>
+
+$\Leftrightarrow$
+
+:::
+
+:::
+
+::: {.column width="46%"}
+
+::: {.sdg-taxonomy-card}
+
+**SDG system**: 
+
+Many interacting resources, many coupled indicators, many delayed responses
+  
+:::
+
+
+::: 
+::::
+
+
+
+## Let's model with differential equations 🙂 {.model-timescale-slide}
+
+<div class="framework-center-line">Sustainability means keeping a resource $R(t)$ of a regenerating system inside a viable region $\mathcal K$ when implementation and regeneration act on different timescales.</div>
+
+<div style="height: 0.5em;"></div>
 
 ```{=html}
 <div class="framework-two-col">
   <div class="framework-card">
     <h3>State and dynamics</h3>
-    <p><strong>Resource</strong> <code>R(t)</code></p>
-    <p><strong>Dynamics</strong></p>
     <div class="framework-equation">\[
-    \frac{dR}{dt}=G(R)-D(R)+E
+    \tau_R \frac{dR}{dt}=G(R,t)-D(R,t)+E(R,I,t)
     \]</div>
     <ul>
+      <li><strong>\(\tau_R\)</strong>: regeneration / system timescale</li>
+      <li><strong>R</strong>: resource</li>
       <li><strong>G</strong>: regeneration</li>
       <li><strong>D</strong>: depletion</li>
       <li><strong>E</strong>: managed intervention</li>
@@ -1051,45 +1135,136 @@ When regeneration is slower than decision cycles, today's decisions determine to
   </div>
   <div class="framework-card">
     <h3>Governance and viability</h3>
-    <p><strong>Decision</strong> <code>u(t)</code></p>
-    <p><strong>Implementation</strong></p>
     <div class="framework-equation">\[
-    \tau_I \frac{dI}{dt}=c\,u-I
+    \tau_I \frac{dI}{dt}=c\,u-I,
+    \quad
+    \varepsilon=\frac{\tau_I}{\tau_R}
     \]</div>
     <ul>
+      <li><strong>\(\tau_I\)</strong>: governance timescale</li>
+      <li><strong>\(u\)</strong>: implemented action</li>
       <li><strong>c</strong>: compliance</li>
       <li><strong>I</strong>: realized impact</li>
-      <li><strong>R(t)\in \mathcal{K}</strong>: viable region</li>
+      <li><strong>\(\varepsilon\)</strong>: governance-to-system ratio</li>
     </ul>
   </div>
 </div>
-<div class="framework-center-line">Sustainability means keeping a regenerating system inside a viable region despite delay, depletion, and imperfect implementation.</div>
+
 ```
 
+## An arbitrary example
 
-## What changes from one domain to the next?
+:::: columns 
+
+::: {.column width="50%"}
+
+The viability condition is $R(t)\ge R_{\min}$ and
+$\tau_R=4.0,\tau_I=6.0,$ and $\varepsilon=\frac{\tau_I}{\tau_R}=1.5$
+
+Regeneration, depletion and intervention:
+
+$$
+\begin{aligned}
+G(R)&=\rho R\left(1-\frac{R}{K}\right)\\
+D(R)&=\alpha R+\beta\,\max(R_\ast-R,0)\,R\\
+E(R,I)&=\gamma\,I\left(1-\frac{R}{K}\right)
+\end{aligned}
+$$
+
+The governance decision is
+
+$$
+u(R)=
+\min\!\bigl\{u_{\max},\,u_0 + g\,(R_\ast - R)_+\bigr\},
+\qquad
+(R_\ast - R)_+ := \max(R_\ast - R,0).
+$$
+
+
+:::
+
+::: {.column width="50%"}
+
+![](./images/viability_feedback_solver_julia.png)
+
+:::
+
+::::
+
+## An arbitrary example
+
+:::: columns 
+
+::: {.column width="50%"}
+
+The viability condition is $R(t)\ge R_{\min}$ and
+$\tau_R=4.0,\tau_I=6.0,$ and $\varepsilon=\frac{\tau_I}{\tau_R}=1.5$
+
+Regeneration, depletion and intervention:
+
+$$
+\begin{aligned}
+G(R)&=\rho R\left(1-\frac{R}{K}\right)\\
+D(R)&=\alpha R+\beta\,\max(R_\ast-R,0)\,R\\
+E(R,I)&=\gamma\,I\left(1-\frac{R}{K}\right)
+\end{aligned}
+$$
+
+The governance decision is
+
+$$
+u(R)=
+\min\!\bigl\{u_{\max},\,u_0 + g\,(R_\ast - R)_+\bigr\},
+\qquad
+(R_\ast - R)_+ := \max(R_\ast - R,0).
+$$
+
+
+:::
+
+::: {.column width="50%"}
+
+![](./images/viability_feedback_ratio_sensitivity_julia.png)
+
+The immediate question that naturally arises is: What is $R,G,D$ and $u$?
+
+:::
+
+::::
+
+
+## Viability theory provides an interpretable framework
+
+<div style="height: 1em;"></div>
 
 ```{=html}
-<div class="framework-two-col">
+<div class="framework-four-grid">
   <div class="framework-card">
-    <h3>The structure stays the same</h3>
-    <ol>
-      <li>resource</li>
-      <li>regeneration</li>
-      <li>depletion</li>
-      <li>governance</li>
-      <li>compliance</li>
-      <li>viability</li>
-    </ol>
+    <h3>What's the system at stake?</h3>
+    <ul>
+      <li>Carlowitz: forest</li>
+      <li>SDG framing: water, land, ...</li>
+    </ul>
   </div>
   <div class="framework-card">
-    <h3>Only the interpretation changes</h3>
+    <h3>What's the sustained resource?</h3>
     <ul>
-      <li>forest: timber stock</li>
-      <li>software: usability</li>
-      <li>methods: methodological capability</li>
-      <li>computing: effective compute</li>
-      <li>humans: scientific capability</li>
+      <li>timber stock</li>
+      <li>access to water, fruitful land</li>
+    </ul>
+  </div>
+  <div class="framework-card">
+    <h3>What natural processes and actions need to be considered?</h3>
+    <ul>
+      <li>natural growth, logging, reforesting</li>
+      <li>quality recovery, wasting, activ cleaning</li>
+    </ul>
+  </div>
+  <div class="framework-card">
+    <h3>What are the time-scales of the system?</h3>
+    <ul>
+      <li>\[\tau_R \approx 20-30y, \tau_I \approx 1-5y\]</li>
+      <li>\[\tau_R \approx Xm, \tau_I \approx Xd\]</li>
     </ul>
   </div>
 </div>
@@ -1178,56 +1353,81 @@ When regeneration is slower than decision cycles, today's decisions determine to
 ```
 
 
-## Three sustainability aspects, and why they matter now
+## Sustainable CS\&E and why it matters now
+
+Previously, we introduced three dimensions:
+
+Sustainable software · Sustainable computing · Computing for sustainability
+
+
+Now, we have a conceptual framework to lead the discussion:
+
+<div style="height: 0.5em;"></div>
 
 ```{=html}
-<div class="framework-two-col">
+<div class="framework-four-grid">
   <div class="framework-card">
-    <h3>Three sustainability aspects within CS&amp;E</h3>
-    <ol>
-      <li>Energy footprint of computational work</li>
-      <li>Longevity and reuse of CS&amp;E knowledge</li>
-      <li>Future relevance of CS&amp;E in an AI-rich landscape</li>
-    </ol>
-  </div>
-  <div class="framework-card">
-    <h3>Why this matters now</h3>
+    <h3>What's the systems at stake?</h3>
     <ul>
-      <li>workflows are becoming more complex</li>
-      <li>software stacks are becoming more fragile</li>
-      <li>AI-HPC pipelines increase both opportunity and waste</li>
-      <li>scientific value is easily lost in irreproducible computation</li>
-    </ul>
-  </div>
-</div>
-``
-
-## The internal perspective
-
-```{=html}
-<div class="framework-two-col">
-  <div class="framework-card">
-    <h3>If CS&amp;E wants to be credible</h3>
-    <ul>
-      <li>it must reflect on its own energy footprint</li>
-      <li>it must preserve its software and knowledge</li>
-      <li>it must sustain its future methodological relevance</li>
+      <li>software ecosystem</li>
+      <li>computational ecosystem</li>
+      <li>methodological innovation ecosystem</li>
+      <li>research and training ecosystem</li>
     </ul>
   </div>
   <div class="framework-card">
-    <h3>The three sustainability dimensions</h3>
-    <ol>
-      <li>sustainable computing</li>
-      <li>sustainable software and methods</li>
-      <li>sustainable human capability</li>
-    </ol>
+    <h3>What's the sustained resource?</h3>
+    <ul>
+      <li>software usability</li>
+      <li>effective compute</li>
+      <li>methodological capability</li>
+      <li>scientific capability</li>
+    </ul>
   </div>
 </div>
-<div class="framework-center-line">If CS&amp;E helps design a more sustainable world, it must also sustain its own computational ecosystems.</div>
 ```
 
 
-## CS\&E bottlenecks are shifting
+
+# Sustainability in the software ecosystem
+
+```{=html}
+<div class="framework-four-grid">
+  <div class="framework-card">
+    <h3>What's the system at stake?</h3>
+    <ul>
+      <li>Software ecosystem</li>
+    </ul>
+  </div>
+  <div class="framework-card">
+    <h3>What's the sustained resource?</h3>
+    <ul>
+      <li>software usability</li>
+    </ul>
+  </div>
+  <div class="framework-card">
+    <h3>What natural processes and actions need to be considered?</h3>
+    <ul>
+      <li>G:</li>
+      <li>G:</li>
+           
+<li>G:</li>
+
+    </ul>
+  </div>
+  <div class="framework-card">
+    <h3>What are the time-scales of the system?</h3>
+    <ul>
+      <li>\[\tau_R \approx 20-30y, \tau_I \approx 1-5y\]</li>
+      <li>\[\tau_R \approx Xm, \tau_I \approx Xd\]</li>
+    </ul>
+  </div>
+</div>
+```
+
+# Sustainability in the computational workflow
+
+## CS\&E are shifting
 
 ::: columns
 
@@ -1363,13 +1563,6 @@ When regeneration is slower than decision cycles, today's decisions determine to
 ```
 
 
-## Monitoring resource consumption
-
-- measurement creates visibility
-- visibility enables accountability
-- accountability can shape better workflows
-
-
 
 
 ## Software is the heart of CS\&E
@@ -1473,6 +1666,59 @@ When regeneration is slower than decision cycles, today's decisions determine to
 - adoption increases maintenance willingness
 - maintenance preserves usability
 - declining usability can trigger the opposite loop
+
+
+## Sustainable software: the main take-aways
+
+```{=html}
+<div class="framework-two-col">
+  <div class="framework-card">
+    <h3>Conceptual shift</h3>
+    <ul>
+      <li>the sustained resource is not the code artifact itself</li>
+      <li>the relevant resource is software usability in an evolving ecosystem</li>
+      <li>viability means keeping <code>U(t)\ge U_{\min}</code></li>
+      <li>maintenance must continuously compensate ecosystem drift</li>
+    </ul>
+  </div>
+  <div class="framework-card">
+    <h3>Practical consequence</h3>
+    <ul>
+      <li>software sustainability is a maintenance-and-governance problem</li>
+      <li>code availability alone is not enough</li>
+      <li>maintainability, reproducibility, portability, and uptake all matter</li>
+      <li>sustainability must be assessed over time, not at release date only</li>
+    </ul>
+  </div>
+</div>
+```
+
+
+## What was surprising in the viability view?
+
+```{=html}
+<div class="framework-two-col">
+  <div class="framework-card">
+    <h3>Unexpected modeling insight</h3>
+    <ul>
+      <li>a project can remain visible while already losing viability</li>
+      <li>the decisive quantity is usable, maintained functionality, not repository existence</li>
+      <li>positive feedback can help: usability supports adoption, and adoption supports maintenance</li>
+      <li>the same loop can reverse and accelerate decline</li>
+    </ul>
+  </div>
+  <div class="framework-card">
+    <h3>Unexpected governance insight</h3>
+    <ul>
+      <li>failure need not start with bad intentions</li>
+      <li>there is <strong>resource failure</strong>: too little maintenance planned</li>
+      <li>there is <strong>governance failure</strong>: maintenance planned, but not realized</li>
+      <li>so sustainability depends on implementation capacity, not only stated commitment</li>
+    </ul>
+  </div>
+</div>
+<div class="framework-center-line">The viability lens makes software sustainability look less like a property of code and more like a delayed, feedback-driven ecosystem process.</div>
+```
 
 
 ## Sustainable methods as a race between questions and methods

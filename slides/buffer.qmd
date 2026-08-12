@@ -10,3 +10,41 @@ format: html
   <div class="cse-circle cse-circle--eng">Engineering / applied sciences</div>
 </div>
 ```
+
+## What is interpretations 1
+
+::: {style="font-size: 0.58em;"}
+
+| scenario | \(R\): sustain | \(D/G\): natural processes | \(E\): intervention | time scales |
+|---|---|---|---|---|
+| forest | timber stock | regrowth / harvest, disturbance | harvest limits, replanting, forestry policy | years vs decades |
+| software | usability | ecosystem drift, bit rot / reuse, community repair | maintenance, testing, documentation, funding | days-weeks vs years |
+| methods | methodological capability | obsolescence, rising complexity / innovation, transfer | research effort, benchmarking, education | project cycles vs decades |
+| computing | effective compute | demand growth / hardware and algorithmic gains | scheduling, adaptivity, model reduction | jobs-hours vs years |
+| humans | scientific capability | turnover, skill decay / learning, mentoring | training, mentoring, protected learning time | deadlines vs careers |
+
+:::
+
+
+
+```{=html}
+<div class="framework-two-col">
+  <div class="framework-card">
+    <h3>Three sustainability aspects within CS&amp;E</h3>
+    <ol>
+      <li>Energy footprint of computational work</li>
+      <li>Longevity and reuse of CS&amp;E knowledge</li>
+      <li>Future relevance of CS&amp;E in an AI-rich landscape</li>
+    </ol>
+  </div>
+  <div class="framework-card">
+    <h3>Why this matters now</h3>
+    <ul>
+      <li>workflows are becoming more complex</li>
+      <li>software stacks are becoming more fragile</li>
+      <li>AI-HPC pipelines increase both opportunity and waste</li>
+      <li>scientific value is easily lost in irreproducible computation</li>
+    </ul>
+  </div>
+</div>
+``
