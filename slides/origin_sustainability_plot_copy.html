@@ -12,7 +12,6 @@
       --muted: #5e7388;
       --line: rgba(21, 49, 75, 0.12);
       --stock: #2f7d32;
-      --regrowth: #4f8f3a;
       --population: #1f77b4;
       --demand: #c55a11;
       --war: rgba(145, 76, 44, 0.12);
@@ -93,14 +92,7 @@
 
     .control-wrap {
       display: grid;
-      gap: 7px;
-    }
-
-    .control-row {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-      align-items: start;
+      gap: 10px;
     }
 
     .control-top {
@@ -112,39 +104,19 @@
 
     .control-top label {
       font-weight: 600;
-      font-size: 0.98rem;
-      line-height: 1.15;
+      font-size: 1.08rem;
     }
 
     .control-value {
       color: var(--demand);
       font-weight: 700;
-      font-size: 0.94rem;
+      font-size: 1.02rem;
       white-space: nowrap;
-    }
-
-    .control-wrap--compact {
-      gap: 4px;
-    }
-
-    .control-wrap--compact .control-top {
-      gap: 8px;
-      align-items: center;
-    }
-
-    .control-wrap--compact .control-top label,
-    .control-wrap--compact .control-value {
-      font-size: 0.9rem;
-    }
-
-    .control-wrap--regrowth .control-value {
-      color: var(--regrowth);
     }
 
     input[type="range"] {
       width: 100%;
       accent-color: var(--demand);
-      height: 18px;
     }
 
     button {
@@ -166,9 +138,9 @@
     .plot-controls {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 12px;
+      gap: 18px;
       align-items: center;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
       padding: 2px 2px 0;
     }
 
@@ -212,10 +184,6 @@
       .plot-controls {
         grid-template-columns: 1fr;
       }
-
-      .control-row {
-        grid-template-columns: 1fr;
-      }
     }
   </style>
 </head>
@@ -230,27 +198,12 @@
           </div>
           <input id="extraExtraction" type="range" min="0" max="120000" step="2500" value="30000">
         </div>
-        <div class="control-row">
-          <div class="control-wrap control-wrap--regrowth control-wrap--compact">
-            <div class="control-top">
-              <label for="regrowthStart">Regrowth starts</label>
-              <span class="control-value" id="regrowthStartValue"></span>
-            </div>
-            <input id="regrowthStart" type="range" min="1600" max="1830" step="5" value="1720">
-          </div>
-          <div class="control-wrap control-wrap--regrowth control-wrap--compact">
-            <div class="control-top">
-              <label for="regrowthInvestment">Regrowth per year</label>
-              <span class="control-value" id="regrowthInvestmentValue"></span>
-            </div>
-            <input id="regrowthInvestment" type="range" min="0" max="120000" step="2500" value="25000">
-          </div>
-        </div>
       </div>
       <div class="legend">
         <span class="legend-item"><span class="swatch" style="background: var(--stock);"></span>Affordable wood availability</span>
         <span class="legend-item"><span class="swatch" style="background: var(--population);"></span>Population</span>
         <span class="legend-item"><span class="swatch" style="background: var(--demand);"></span>Timber and wood demand</span>
+        <span class="legend-item"><span class="swatch" style="background: var(--war); border-radius: 4px;"></span>Thirty Years' War (1618-1648)</span>
       </div>
       <div class="plot-frame">
         <svg id="plot" viewBox="0 0 1460 740" role="img" aria-label="Interactive plot of affordable wood availability, population, and wood demand from 1600 to 1850"></svg>
@@ -271,16 +224,11 @@
       initialAvailability: 12000000,
       warStart: 1618,
       warEnd: 1648,
-      extractionStart: 1700,
-      regrowthLag: 20
+      extractionStart: 1700
     };
 
-    const extractionSlider = document.getElementById("extraExtraction");
-    const extractionValue = document.getElementById("extraExtractionValue");
-    const regrowthStartSlider = document.getElementById("regrowthStart");
-    const regrowthStartValue = document.getElementById("regrowthStartValue");
-    const regrowthInvestmentSlider = document.getElementById("regrowthInvestment");
-    const regrowthInvestmentValue = document.getElementById("regrowthInvestmentValue");
+    const slider = document.getElementById("extraExtraction");
+    const sliderValue = document.getElementById("extraExtractionValue");
 
     function formatNumber(value, digits = 0) {
       return new Intl.NumberFormat("en-US", {
@@ -299,18 +247,16 @@
       return MODEL.basePopulation * Math.pow(1 + MODEL.populationGrowth, t);
     }
 
-    function simulate(extraExtraction, regrowthStart, regrowthInvestment) {
+    function simulate(extraExtraction) {
       let availability = MODEL.initialAvailability;
       let depletionYear = null;
       const data = YEARS.map((year) => {
         const population = populationAt(year);
         const demand = demandAt(year);
         const policyExtraction = year >= MODEL.extractionStart ? extraExtraction : 0;
-        const regrowthEffectYear = regrowthStart + MODEL.regrowthLag;
-        const regrowthGain = year >= regrowthEffectYear ? regrowthInvestment : 0;
         const totalOutflow = demand + policyExtraction;
         const sustainableBaselineExtraction = Math.min(demand, MODEL.regeneration);
-        const annualBalance = MODEL.regeneration + regrowthGain - sustainableBaselineExtraction - policyExtraction;
+        const annualBalance = MODEL.regeneration - sustainableBaselineExtraction - policyExtraction;
         if (year > 1600) {
           availability = Math.max(0, availability + annualBalance);
         }
@@ -323,7 +269,6 @@
           population,
           demand,
           policyExtraction,
-          regrowthGain,
           totalOutflow,
           annualBalance
         };
@@ -339,16 +284,10 @@
     }
 
     function render() {
-      const extraExtraction = Number(extractionSlider.value);
-      const regrowthStart = Number(regrowthStartSlider.value);
-      const regrowthInvestment = Number(regrowthInvestmentSlider.value);
-      const regrowthEffectYear = regrowthStart + MODEL.regrowthLag;
+      const extraExtraction = Number(slider.value);
+      sliderValue.textContent = `${formatNumber(extraExtraction)} m³/year`;
 
-      extractionValue.textContent = `${formatNumber(extraExtraction)} m³/year`;
-      regrowthStartValue.textContent = `${regrowthStart}`;
-      regrowthInvestmentValue.textContent = `${formatNumber(regrowthInvestment)} m³/year`;
-
-      const { data, depletionYear } = simulate(extraExtraction, regrowthStart, regrowthInvestment);
+      const { data, depletionYear } = simulate(extraExtraction);
       const svg = document.getElementById("plot");
 
       const width = 1460;
@@ -392,8 +331,6 @@
       const warX = xScale(MODEL.warStart);
       const warWidth = xScale(MODEL.warEnd) - xScale(MODEL.warStart);
       const policyX = xScale(MODEL.extractionStart);
-      const regrowthStartX = xScale(regrowthStart);
-      const regrowthEffectX = xScale(Math.min(regrowthEffectYear, 1850));
 
       const availabilityPath = pathFor(data, xScale, yAvailability, "availability");
       const populationPath = pathFor(data, xScale, yPopulation, "population");
@@ -437,7 +374,6 @@
         <line x1="${left + plotWidth + 120}" y1="${top}" x2="${left + plotWidth + 120}" y2="${top + plotHeight}" stroke="var(--demand)" stroke-width="2" />
         <line x1="${left}" y1="${top + plotHeight}" x2="${left + plotWidth}" y2="${top + plotHeight}" stroke="var(--accent)" stroke-width="1.8" />
         <line x1="${policyX}" y1="${top}" x2="${policyX}" y2="${top + plotHeight}" stroke="rgba(21,49,75,0.4)" stroke-dasharray="6 5" stroke-width="1.8" />
-        <line x1="${regrowthStartX}" y1="${top}" x2="${regrowthStartX}" y2="${top + plotHeight}" stroke="var(--regrowth)" stroke-dasharray="4 6" stroke-width="1.8" />
 
         <path d="${availabilityPath}" fill="none" stroke="var(--stock)" stroke-width="4" stroke-linecap="round" />
         <path d="${populationPath}" fill="none" stroke="var(--population)" stroke-width="3.2" stroke-linecap="round" />
@@ -453,8 +389,6 @@
 
         <text x="${warX + 10}" y="${top + 24}" fill="#8a5430" font-size="18">Thirty Years' War</text>
         <text x="${policyX + 10}" y="${top + plotHeight - 14}" fill="#17324d" font-size="18">constant extra extraction starts</text>
-        <text x="${regrowthStartX + 10}" y="${top + 48}" fill="var(--regrowth)" font-size="18">regrowth program begins</text>
-        ${regrowthEffectYear <= 1850 ? `<text x="${regrowthEffectX + 10}" y="${top + 72}" fill="var(--regrowth)" font-size="18">regrowth visible after ${MODEL.regrowthLag} years</text>` : ""}
 
         ${populationTicks}
         ${demandTicks}
@@ -464,9 +398,7 @@
       `;
     }
 
-    extractionSlider.addEventListener("input", render);
-    regrowthStartSlider.addEventListener("input", render);
-    regrowthInvestmentSlider.addEventListener("input", render);
+    slider.addEventListener("input", render);
     render();
   </script>
 </body>

@@ -6,6 +6,8 @@ date: "18. August 2026"
 date-format: "D. MMMM YYYY"
 resources:
   - sdg-icons/
+  - images/Ben-sim1.mp4
+  - images/Ben-sim2.mp4
   - origin_sustainability_plot.html
   - wood_response_times_matrix.html
 include-after-body: metafiles/growth_progress.html
@@ -17,6 +19,62 @@ $$
 $$
 :::
 
+## The name
+
+:::: columns
+
+::: {.column width="47%"}
+
+>
+> After 14 years of Julia …
+> JuliaCon finally has a Julia giving a keynote!
+>
+
+::: {.fragment}
+
+Out of **600+ programming-language names**  
+from Wikipedia's *List of programming languages* there seem to be
+14 plausible human first names
+
+**12 female · 10 male · 4 ambiguous** 👀 
+
+> Programming may (today) be male-dominated, but programming languages with human first names seem to have a female majority. 😄
+
+
+:::
+
+:::
+
+::: {.column width="53%"}
+
+::: {.fragment}
+
+**Origine stories**
+
+**Ada**  names after **Ada Lovelace**
+
+**Alice**  named after ***Alice's Adventures in Wonderland***
+
+**Julia**  *“There's no good reason, really.  It just seemed like a pretty name.“ (Karpinski)*
+
+:::
+
+::: {.fragment}
+
+What about: *“Similar to Julia sets, it leads to complex behaviour emerging from simple computational rules“*
+
+![](./images/julia-set.png){width=80%}
+
+:::
+
+:::
+
+::::
+
+<small>
+Sources: Wikipedia, Disclaimer: This is not a systematic study.
+</small>
+
 
 ## The invitation
 
@@ -24,7 +82,7 @@ $$
 ### ✉ JuliaCon keynote invitation
 
 ::: {.mail-message .hendrik}
-**Organizers → Julia(Kow)**
+**JuliaCon Organizers → JuliaKow**
 
 We would like to invite you to give a keynote at JuliaCon?
 :::
@@ -32,7 +90,7 @@ We would like to invite you to give a keynote at JuliaCon?
 <div style="height: 1em;"></div>
 
 ::: {.mail-message .julia .fragment data-fragment-index="1"}
-**Julia → Organizers**
+**JuliaKow → JuliaCon Organizers**
 
 Sure, I can do that. You know that I’m not a superuser of the Julia programming language, right?
 :::
@@ -40,7 +98,7 @@ Sure, I can do that. You know that I’m not a superuser of the Julia programmin
 <div style="height: 1em;"></div>
 
 ::: {.mail-message .hendrik .fragment data-fragment-index="2"}
-**Organizers → Julia**
+**JuliaCon Organizers → JuliaKow**
 
 Yes, no worries. Our intention is to reach out to the wider community in order to promote JuliaLang and to connect to new people.
 :::
@@ -48,7 +106,7 @@ Yes, no worries. Our intention is to reach out to the wider community in order t
 <div style="height: 1em;"></div>
 
 ::: {.mail-message .julia .decision .fragment data-fragment-index="3"}
-**Julia → Organizers**
+**JuliaKow → JuliaCon Organizers**
 
 Nice, in that case I am all in and would like to talk about **Sustainability in Computational Science and Engineering (CS\&E)**. I think that is a topic that is relevant to the JuliaLan community and to the wider CS\&E community.
 :::
@@ -57,7 +115,7 @@ Nice, in that case I am all in and would like to talk about **Sustainability in 
 
 
 
-## Good news: It worked already ;)
+## Good job: It worked already ;)
 
 
 We (MBD@RWTH Aachen) have now two projects that to significant parts rely on the JuliaLang:
@@ -70,14 +128,11 @@ We (MBD@RWTH Aachen) have now two projects that to significant parts rely on the
 
 ![UQ for complex geometry is inherently high-dimensional.](./images/Alans-project.png){width=70%}
 
-$$
-\frac{\mathrm{d}}{\mathrm{d}\lambda}
-\mathbf{A}(\boldsymbol{\lambda})
-\quad\Longrightarrow\quad
-\frac{\mathrm{d}}{\mathrm{d}\lambda}
-\mathbf{U}\!\left(\boldsymbol{\theta}(\boldsymbol{\lambda})\right)
-\lvert 0\rangle
-$$
+::: {.math-chain}
+$\mathcal P \quad \to \quad$
+[$\mathcal S \quad\Longrightarrow\quad \mathcal S$]{.math-chain__highlight}
+$\quad \to \quad \mathcal Q$
+:::
 
 *correa@mbd.rwth-aachen.de*
 
@@ -88,13 +143,13 @@ $$
 
 **Symbolic analysis of quantum circuits**
 
-![Quantum circuits are inherently parameter dependent](./images/Olivers-project.png){width=77%}
+![Quantum circuits are inherently parameter dependent](./images/Olivers-project.png){width=76%}
 
 $$
-\frac{\mathrm{d}}{\mathrm{d}\lambda}
+\tfrac{\mathrm{d}}{\mathrm{d}\lambda}
 \mathbf{A}(\boldsymbol{\lambda})
 \quad\Longrightarrow\quad
-\frac{\mathrm{d}}{\mathrm{d}\lambda}
+\tfrac{\mathrm{d}}{\mathrm{d}\lambda}
 \mathbf{U}\!\left(\boldsymbol{\theta}(\boldsymbol{\lambda})\right)
 \lvert 0\rangle
 $$
@@ -179,14 +234,14 @@ $$
   <div style="height: 4em;"></div>
   
   <div class="timeline-legend">
-    <div><span class="timeline-legend-arrow timeline-legend-arrow--green"></span><span>How we got here today</span></div>
+    <div><span class="timeline-legend-arrow timeline-legend-arrow--green"></span><span>Here and today</span></div>
     <div><span class="timeline-legend-arrow timeline-legend-arrow--blue"></span><span>Where sustainability began</span></div>
     <div><span class="timeline-legend-arrow timeline-legend-arrow--red"></span><span>Where sustainable CS&E could go next</span></div>
   </div>
 </div>
 ```
 
-## Part 1: How we got here today
+## Part 1: Here and today
 
 <div style="height: 1em;"></div>
 
@@ -232,11 +287,7 @@ $$
 </div>
 ```
 
-## {.center}
-
-::: {.callout-tip appearance="simple" icon=false title="A question for you"}
-### Which of the United Nations Sustainable Development Goals feels closest to your research?
-:::
+# Which of the United Nations Sustainable Development Goals feels closest to your research? {.unnumbered}
 
 ## United Nation's Sustainable Development Goals (SDGs)
 
@@ -317,7 +368,6 @@ $$
 ## United Nation's Sustainable Development Goals (SDGs)
 
 
-
 :::: columns
 
 ::: {.column width="55%"}
@@ -330,6 +380,12 @@ The SDGs constitute a framework for addressing the world's most pressing challen
 As the departure point serves the **Brundtland report** issued by @wced_our_common_future_1987:
 
 > *Sustainable development is development that meets the needs of the present without compromising the ability of future generations to meet their own needs.*
+:::
+
+::: {.fragment}
+
+Note: 1987 -> Perl, HyperTalk, pre-WWW-times 
+
 :::
 
 :::
@@ -347,7 +403,7 @@ As the departure point serves the **Brundtland report** issued by @wced_our_comm
 ::::
 
 
-## From SDGs to quantifiable indicators
+## SDGs get operational through quantifiable indicators
 
 :::: columns
 
@@ -358,7 +414,9 @@ As the departure point serves the **Brundtland report** issued by @wced_our_comm
 ::: {.column width="50%"}
 
 
-Sustainability becomes operational via indicators that bridge between SDG goals and tangible outcomes. **Indicators can be measured, predicted and optimized for.**
+Sustainability becomes operational via indicators that bridge between SDG goals and tangible outcomes. 
+
+**Indicators can be measured, predicted and optimized for with computational methods.** 
 
 
 **Example: Indicator 7.2.1**
@@ -370,8 +428,15 @@ Sustainability becomes operational via indicators that bridge between SDG goals 
 
 **Sources** : 
 
-* UN SDG Report 2026 [@un_sdg_report_2026_goal7]
-* UN metadata for indicator 7.2.1 [@un_sdg_metadata_721].
+UN SDG Report 2026 [@un_sdg_report_2026_goal7] and UN metadata for indicator 7.2.1 [@un_sdg_metadata_721].
+
+
+
+:::
+
+::: {.fragment}
+
+Note: 2015 -> Rust1.0, tensorflow, Julia 0.4
 
 :::
 
@@ -409,32 +474,6 @@ Sustainability becomes operational via indicators that bridge between SDG goals 
 
 ::::
 
-## Sustainability today is thought along three pillars
-
-```{=html}
-<div class="sustainability-pillars" role="img">
-  <div class="sustainability-pillars__columns">
-    <div class="sustainability-pillar">
-      <div class="sustainability-pillar__capital"></div>
-      <div class="sustainability-pillar__shaft">Social<br>sustainability</div>
-      Ensuring fair labor, human rights, and equitable access to resources.
-      <div class="sustainability-pillar__base"></div>
-    </div>
-    <div class="sustainability-pillar">
-      <div class="sustainability-pillar__capital"></div>
-      <div class="sustainability-pillar__shaft">Environmental<br>sustainability</div>
-      Ensuring fair labor, human rights, and equitable access to resources.
-      <div class="sustainability-pillar__base"></div>
-    </div>
-    <div class="sustainability-pillar">
-      <div class="sustainability-pillar__capital"></div>
-      <div class="sustainability-pillar__shaft">Economic<br>sustainability</div>
-      Ensuring fair labor, human rights, and equitable access to resources.
-      <div class="sustainability-pillar__base"></div>
-    </div>
-  </div>
-</div>
-```
 
 ## Computational Science and Engineering (CS\&E)
 
@@ -455,7 +494,7 @@ Sustainability becomes operational via indicators that bridge between SDG goals 
 
 **Focus:** Methods, algorithms, implementation, and software along with their effective deployment.
 
-**Challenges:** Given by multi-physics and multi-scale coupling, complex geometries, boundary conditions, the necessity for high-throughput tasks and data-rich workflows.
+**Challenges:** Multi-physics and multi-scale coupling, complex geometries, boundary conditions, data-rich workflows ... and the final boss *the curse of dimensionality* in high-throughput tasks.
 
 :::
  
@@ -472,7 +511,7 @@ Sustainability becomes operational via indicators that bridge between SDG goals 
 
 
 
-## How CS\&E enters the picture
+## How CS\&E enters the sustainable picture
 
 ::: columns
 
@@ -480,10 +519,22 @@ Sustainability becomes operational via indicators that bridge between SDG goals 
 
 **Area 1: Optimizing energy systems** relevant to
 
-- SDG 7: Affordable and Clean Energy
-- SDG 9: Industry, Innovation and Infrastructure
+::: {.sdg-icon-list}
+- ![SDG 7](sdg-icons/E-WEB-Goal-07.png){.sdg-bullet-icon} [**SDG 7:** Affordable and Clean Energy]{.sdg-bullet-label}
+- ![SDG 9](sdg-icons/E-WEB-Goal-09.png){.sdg-bullet-icon} [**SDG 9:** Industry, Innovation and Infrastructure]{.sdg-bullet-label}
+:::
 
-![Left: landslide database; right data enrichment strategy](./images/FAIR-susceptibility.jpeg){width="90%"} 
+```{=html}
+<div class="simulation-results-pair" aria-label="Two simulation results shown side by side">
+  <video autoplay loop muted playsinline controls aria-label="Simulation result one">
+    <source src="images/Ben-sim1.mp4" type="video/mp4">
+  </video>
+  <video autoplay loop muted playsinline controls aria-label="Simulation result two">
+    <source src="images/Ben-sim2.mp4" type="video/mp4">
+  </video>
+  <p class="simulation-results-pair__caption">Left: Convection-coupled phase-change; right: mushy-layer evolution</p>
+</div>
+```
 
 
 ::: {style="font-size: 0.7em;"}
@@ -494,15 +545,19 @@ Sustainability becomes operational via indicators that bridge between SDG goals 
 
 :::
 
-::: {.column width="50%"}
+::: {.column width="48%"}
 
 **Area 2: Geohazard prediction** relevant to
 
-- SDG 11: Sustainable Cities and Communities
-- SDG 13: Climate Action
+::: {.sdg-icon-list}
+- ![SDG 13](sdg-icons/E-WEB-Goal-13.png){.sdg-bullet-icon} [**SDG 13:** Climate Action]{.sdg-bullet-label}
+- ![SDG 11](sdg-icons/E-WEB-Goal-11.png){.sdg-bullet-icon} [**SDG 11:** Sustainable Cities and Communities]{.sdg-bullet-label}
+:::
 
   
-![Left: landslide database; right: data enrichment strategy.](./images/FAIR-susceptibility.jpeg){width="90%"} 
+::: {.harmonized-figure-caption}
+![Left: landslide database; right: data enrichment strategy.](./images/FAIR-susceptibility.jpeg){width="90%"}
+:::
 
 
 ::: {style="font-size: 0.7em;"}
@@ -516,11 +571,13 @@ Sustainability becomes operational via indicators that bridge between SDG goals 
 ::::
 
 
-
-
 ## Sustainability and CS\&E 
 
+<div style="height: 0.5em;"></div>
+
 **Observation**: CS\&E often contributes indirectly, but rarely names sustainability explicitly:
+
+<div style="height: 0.5em;"></div>
 
 ```{=html}
 <div class="framework-bridge">
@@ -528,7 +585,7 @@ Sustainability becomes operational via indicators that bridge between SDG goals 
     <h3>Application-facing view</h3>
     <ul>
       <li>sustainability is a societal objective</li>
-      <li>SDGs are visible in application-facing projects</li>
+      <li>SDGs are visible in application-oriented projects</li>
     </ul>
   </div>
   <div class="framework-bridge-arrow" aria-hidden="true">↔</div>
@@ -542,74 +599,240 @@ Sustainability becomes operational via indicators that bridge between SDG goals 
 </div>
 ```
 
-CS\&E publications focus on accuracy, runtime, scalability, and robustness, yet rarely frame methodological design as sustainability choices. That mismatch motivates a second question.
+<div style="height: 0.5em;"></div>
 
 >
 > If CS&amp;E helps design a more sustainable world, how sustainable is CS&amp;E itself?
 >
 
-## A simple framing for sustainable CS\&E
+<div style="height: 0.5em;"></div>
 
-::: columns
+CS\&E publications focus on accuracy, runtime, scalability, and robustness, more recently also energy footprint. Yet, they rarely frame methodological design as a sustainability dimension.
 
-::: {.column width="32%"}
 
-**Sustainable computing**
 
-- resource-aware models
-- efficient algorithms
-- energy-aware workflows
+## Perception of sustainability projected to CS\&E
+
+Sustainability often descibed as in three dimensions that need to be balanced:  
+
+<div style="height: 0.5em;"></div>
+
+```{=html}
+<div class="sustainability-framing">
+  <section>
+    <div class="sustainability-pillars sustainability-pillars--compact" role="img" aria-label="The social, environmental, and economic dimensions of sustainability">
+      <div class="sustainability-pillars__columns">
+        <div class="sustainability-pillar">
+          <div class="sustainability-pillar__capital"></div>
+          <div class="sustainability-pillar__shaft">Environmental<br>sustainability</div>
+          <div class="sustainability-pillar__base"></div>
+          <p>Healthy ecosystems, conserved resources, and reduced environmental harm.</p>
+        </div>
+        <div class="sustainability-pillar">
+          <div class="sustainability-pillar__capital"></div>
+          <div class="sustainability-pillar__shaft">Economic<br>sustainability</div>
+          <div class="sustainability-pillar__base"></div>
+          <p>Long-term viability, resilient value creation, and responsible resource use.</p>
+        </div>
+        
+        <div class="sustainability-pillar">
+          <div class="sustainability-pillar__capital"></div>
+          <div class="sustainability-pillar__shaft">Social<br>sustainability</div>
+          <div class="sustainability-pillar__base"></div>
+          <p>Fair labor, human rights, and equitable access to resources.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+```
+
+<div class="framework-center-line">
+  The three aspects of sustainability strongly interact and reinforce each other
+  </div>
+
+::: {.fragment}
+
+
+
+2023: We structured the sustainability dimensions of CS\&E in a similar manner:
+
+<div style="height: 0.5em;"></div>
+
+```{=html}
+  <section>
+    <div class="sustainability-pillars sustainability-pillars--compact sustainability-pillars--cse" role="img" aria-label="The sustainable computing, sustainable software, and computing for sustainability dimensions of CS and E">
+      <div class="sustainability-pillars__columns">
+        <div class="sustainability-pillar">
+          <div class="sustainability-pillar__capital"></div>
+          <div class="sustainability-pillar__shaft">Sustainable<br>computing</div>
+          <div class="sustainability-pillar__base"></div>
+          <p>Eco-friendly computing that reduces environmental impact and uses resources efficiently.</p>
+        </div>
+        <div class="sustainability-pillar">
+          <div class="sustainability-pillar__capital"></div>
+          <div class="sustainability-pillar__shaft">Sustainable<br>software</div>
+          <div class="sustainability-pillar__base"></div>
+          <p>Reusable, composable software that conserves knowledge and sustains value across its lifecycle.</p>
+        </div>
+        <div class="sustainability-pillar">
+          <div class="sustainability-pillar__capital"></div>
+          <div class="sustainability-pillar__shaft">Computing for<br>sustainability</div>
+          <div class="sustainability-pillar__base"></div>
+          <p>Advanced CS&amp;E workflows applied to engineering sustainable solutions and unfolding impact.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+```
+
+... and **organized a conference** to get consulted by expert colleagues.
 
 :::
 
-::: {.column width="32%"}
+## The community took up the idea
 
-**Sustainable software**
+::: {.columns}
 
-- reusable code
-- reproducible results
-- maintainable ecosystems
+::: {.column width="25%"}
+
+⚡ **Sustainable Computing**
+
+**Bruce Hendrickson**  
+*Reducing the Environmental Impact of High Performance Computing: a Systems Perspective*
+
+<br>
+
+**William S. Moses**  
+*EnzymeMLIR: Combining Differentiation with High-Level Optimization*
+
 
 :::
 
-::: {.column width="36%"}
+::: {.column width="75%"}
 
-**Stakeholder action**
+::: {.small}
 
-- incentives
-- infrastructure
-- education
+::: {.columns}
+
+::: {.column width="33%"}
+
+♻️ **Sustainable Software**
+
+**Matthias Rauter**  
+*If I have seen further, it is by using others' code — Sustainable programming in academia*
+
+<br>
+
+**Miriam Schulte**  
+*Sustainable Software for Multi-Physics and Multi-Scale Simulations*
+
+:::
+
+::: {.column width="33%"}
+
+🌱 **Sustainability as a CSE Principle**
+
+**Jens Saak**  
+*On the many facets of sustainability in scientific computing*
+
+<br><br><br>
+
+**Ann S. Almgren**  
+*Finding the Sweet Spot: the Evolution (and Future) of AMReX*
+
+:::
+
+::: {.column width="33%"}
+
+🌍 **Computing for Sustainability**
+
+**Zahra Lakdawala**  
+*On cost-effective and sustainable high fidelity numerical wind resource assessment*
+
+<br>
+
+![](./images/karman.png){width=100%}
+
+
+:::
+
+:::
+
+:::
+
+:::
+
+:::
+
+**Applications · algorithms · hardware · software · reuse · longevity**
+
+## Do it - interact with people in person 👥☕🤝!
+
+:::: columns
+
+::: {.column with="50%"}
+
+![](./images/DSCF4312.JPG){width=100%}
+
+:::
+
+::: {.column width="50%"}
+
+![](./images/DSCF4394.JPG){width=100%}
 
 :::
 
 ::::
 
-Sustainable CS\&E emerges when these three dimensions reinforce each other.
+
+::: {style="text-align: center; font-size: 0.55em; line-height: 1.5;"}
+
+Many thanks to:<br>
+Ann S. Almgren · Achim Basermann · Alan Correa · Immo Huismann ·
+Uwe Naumann · Hendrik Ranocha · Matthias Rauter · Jens Saak · Michael Schlottke-Lakemper ·
+Robert Speck · Manuel Torrilhon · Mario Wolter · Niklas von der Aßen · Jayesh Badwaik ·
+Maria Guadalupe Barrios Sazo · Dipankul Bhattacharya · Marcel Bock · Faras Brumand-Poor ·
+Dirk Brömmel · Semih Burak · Sara Grundel · Christiane Helzel · Bruce Hendrickson ·
+Robert Klöfkorn · Katharina Kormann · Zahra Lakdawala · Hannah Lanzrath · Camilla Lummerzheim ·
+Anna Matuszynska · Matthias Meinke · Simon Märtens · Abigail Morrison · William S. Moses ·
+Georgii Oblapenko · Tapasya Patki · Marcel Pfeiffer · Jana Sasse · Katharina Schmitz ·
+Miriam Schulte · Anna Schwarz · Pit Steinbach · Ingo Steldermann · Anton Stratmann ·
+Lambert Theisen · Joseph De Veaugh-Geiss · Tim Wegmann · Gabriel Wittum · Anil Yildiz
+:::
 
 
-## Three sustainability aspects, and why they matter now
 
-```{=html}
-<div class="framework-two-col">
-  <div class="framework-card">
-    <h3>Three sustainability aspects within CS&amp;E</h3>
-    <ol>
-      <li>Energy footprint of computational work</li>
-      <li>Longevity and reuse of CS&amp;E knowledge</li>
-      <li>Future relevance of CS&amp;E in an AI-rich landscape</li>
-    </ol>
-  </div>
-  <div class="framework-card">
-    <h3>Why this matters now</h3>
-    <ul>
-      <li>workflows are becoming more complex</li>
-      <li>software stacks are becoming more fragile</li>
-      <li>AI-HPC pipelines increase both opportunity and waste</li>
-      <li>scientific value is easily lost in irreproducible computation</li>
-    </ul>
-  </div>
-</div>
-```
+## Do it - interact with people in person 👥☕🤝!
+
+:::: columns
+
+::: {.column with="50%"}
+
+![](./images/DSCF4312.JPG){width=100%}
+
+:::
+
+::: {.column width="50%"}
+
+![](./images/sustainableCSE2.png){width=100%}
+
+:::
+
+::::
+
+
+<div class="framework-center-line">
+  Outcome: A perspectives paper that will be available soon -> kowalski@mbd.rwth-aachen.de</div>
+
+
+
+## All sorted now? ... No
+
+
+
+![](./images/DSCF4329.JPG){fig-align="center" width=80%}
+
 
 ## Part 2: Where sustainability began
 
@@ -683,7 +906,11 @@ Sustainable CS\&E emerges when these three dimensions reinforce each other.
 ```
 
 
-## The idea of sustainability based on Carlowitz
+## The idea of sustainability attributed to Carlowitz
+
+:::: columns
+
+::: {.column width="60%"}
 
 We typically attribute the sustainability idea to **Hans Carl von Carlowitz**.
 
@@ -699,12 +926,23 @@ We typically attribute the sustainability idea to **Hans Carl von Carlowitz**.
 > --- *Hans Carl von Carlowitz, Sylvicultura oeconomica* [@carlowitz_1713_biblio]
 :::
 
+:::
+
+::: {.column width="40%"}
+
+![Source: Wikipedia](./images/Hans_Carl_von_Carlowitz.jpg){width="70%"}
+
+:::
+
+:::
+
+
 
 ## Carlowitz' motivation was economic pressure 
 
 ::: columns
 
-::: {.column width="34%"}
+::: {.column width="37%"}
 
 Carlowitz was a mining administrator in Saxony facing a **decision-support problem**:
 
@@ -714,18 +952,19 @@ Carlowitz was a mining administrator in Saxony facing a **decision-support probl
 - growing pressure on economically accessible wood
 
 **His core question**: 
+How do we keep a resource-dependent system running when demand grows faster than renewal?
 
 
 :::
 
-::: {.column width="66%"}
+::: {.column width="63%"}
 
 ```{=html}
   <iframe
     data-external="1"
     src="origin_sustainability_plot.html"
     width="100%"
-    height="515"
+    height="660"
     style="display:block; border:none; background:#f4f7fb; border-radius:12px;"
     loading="lazy"></iframe>
 ```
@@ -734,52 +973,50 @@ Carlowitz was a mining administrator in Saxony facing a **decision-support probl
 
 :::::
 
-How do we keep a resource-dependent system running when demand grows faster than renewal?
 
 
-
-## It's a time-scale challenge
-
-Key challenge: The scope of the decision rested on a time-scale much shorter than the regeneration time of the system it controlled. *Sustainable forest management* requires predictive decision support whenever resource response times exceed operational decision horizons
-
+## It's actually a multiscale-in-time problem
 
 ```{=html}
-  <iframe
-    data-external="1"
-    src="wood_response_times_matrix.html"
-    width="100%"
-    height="610"
-    style="display:block; border:none; background:#f4f7fb; border-radius:12px;"
-    loading="lazy"></iframe>
+<div class="framework-center-line">
+Observation: </br> The scope of the decision (demand for timber/wood) rested on a time-scale much shorter than the regeneration time of the system it controlled (the forest).
+</div>
 ```
+$$T_{\text{system time-scale}} > T_{\text{decision time-scale}}$$
 
+:::: {.columns .sdg-taxonomy-compare}
 
-## From Carlowitz to the Sustainable Development Goals
-
-:::: columns
-
-::: {.column width="50%"}
+::: {.column width="46%"}
 
 ::: {.sdg-taxonomy-card}
 
-**Carlowitz**: 
+**Carlowitz' system**: 
 
-One renewable resource, one stock, one regeneration process
-$$S_{t+1}=S_t+G_t-H_t$$
+One renewable resource, one stock, one regeneration process.
 
 :::
 
 :::
 
-::: {.column width="50%"}
+::: {.column width="8%"}
+
+::: {.sdg-taxonomy-arrow}
+
+<br>
+
+$\Leftrightarrow$
+
+:::
+
+:::
+
+::: {.column width="46%"}
 
 ::: {.sdg-taxonomy-card}
 
-**SDGs today**: 
+**SDG system**: 
 
 Many interacting resources, many coupled indicators, many delayed responses
-
-17 Goals &nbsp;•&nbsp; 169 Targets &nbsp;•&nbsp; &gt;230 Indicators
   
 :::
 
@@ -790,12 +1027,9 @@ Many interacting resources, many coupled indicators, many delayed responses
 ```{=html}
 <div class="framework-center-line">
 
-A common principle: </br>
-When regeneration is slower than decision cycles, today's decisions determine tomorrow's possibilities. Sustainability is not mainly about indicators. It is about governing delayed dynamics:
-
-\[T_{\mathrm{system}} > T_{\mathrm{decision}}\]
+One common principle: </br>
+When regeneration is slower than decision cycles, today's decisions determine tomorrow's possibilities. Sustainability is not mainly about indicators. It is about governing delayed dynamics.
 </div>
-
 ```
 
 ## Let's model and formalize
@@ -806,9 +1040,9 @@ When regeneration is slower than decision cycles, today's decisions determine to
     <h3>State and dynamics</h3>
     <p><strong>Resource</strong> <code>R(t)</code></p>
     <p><strong>Dynamics</strong></p>
-    <p>\[
+    <div class="framework-equation">\[
     \frac{dR}{dt}=G(R)-D(R)+E
-    \]</p>
+    \]</div>
     <ul>
       <li><strong>G</strong>: regeneration</li>
       <li><strong>D</strong>: depletion</li>
@@ -819,9 +1053,9 @@ When regeneration is slower than decision cycles, today's decisions determine to
     <h3>Governance and viability</h3>
     <p><strong>Decision</strong> <code>u(t)</code></p>
     <p><strong>Implementation</strong></p>
-    <p>\[
+    <div class="framework-equation">\[
     \tau_I \frac{dI}{dt}=c\,u-I
-    \]</p>
+    \]</div>
     <ul>
       <li><strong>c</strong>: compliance</li>
       <li><strong>I</strong>: realized impact</li>
@@ -943,6 +1177,31 @@ When regeneration is slower than decision cycles, today's decisions determine to
 </div>
 ```
 
+
+## Three sustainability aspects, and why they matter now
+
+```{=html}
+<div class="framework-two-col">
+  <div class="framework-card">
+    <h3>Three sustainability aspects within CS&amp;E</h3>
+    <ol>
+      <li>Energy footprint of computational work</li>
+      <li>Longevity and reuse of CS&amp;E knowledge</li>
+      <li>Future relevance of CS&amp;E in an AI-rich landscape</li>
+    </ol>
+  </div>
+  <div class="framework-card">
+    <h3>Why this matters now</h3>
+    <ul>
+      <li>workflows are becoming more complex</li>
+      <li>software stacks are becoming more fragile</li>
+      <li>AI-HPC pipelines increase both opportunity and waste</li>
+      <li>scientific value is easily lost in irreproducible computation</li>
+    </ul>
+  </div>
+</div>
+``
+
 ## The internal perspective
 
 ```{=html}
@@ -998,10 +1257,6 @@ When regeneration is slower than decision cycles, today's decisions determine to
 ::::
 
 
-## Sustainable computing is about deliberate trade-offs
-
-It asks how computational work should be designed so that scientific benefit, runtime, and resource use are balanced consciously.
-
 
 ## Available compute is a finite regenerative resource
 
@@ -1011,9 +1266,9 @@ It asks how computational work should be designed so that scientific benefit, ru
     <h3>Resource</h3>
     <p><strong>Available compute</strong> <code>C(t)</code></p>
     <p>Includes hardware, energy, queue time, cloud access, budget, and carbon budget.</p>
-    <p>\[
+    <div class="framework-equation">\[
     \dot C = G_C - L_C
-    \]</p>
+    \]</div>
   </div>
   <div class="framework-card">
     <h3>Interpretation</h3>
@@ -1038,9 +1293,9 @@ It asks how computational work should be designed so that scientific benefit, ru
   </div>
   <div class="framework-card">
     <h3>Sustainable computing asks</h3>
-    <p>\[
+    <div class="framework-equation">\[
     K=\eta(M)\,C
-    \]</p>
+    \]</div>
     <ul>
       <li><strong>K</strong>: generated knowledge</li>
       <li><strong>M</strong>: methodological capability</li>
@@ -1115,21 +1370,6 @@ It asks how computational work should be designed so that scientific benefit, ru
 - accountability can shape better workflows
 
 
-## Why ALUMET matters
-
-- application-level energy attribution is hard on shared CPU/GPU systems
-- runtime alone is often an unreliable proxy for energy consumption
-- sustainable CS\&E needs measurement that reflects actual computational cost
-- ALUMET helps close the gap between raw telemetry and actionable energy awareness
-
-
-## ALUMET as enabler
-
-- modular, lightweight framework for energy and system measurement
-- plugin-based pipeline: gather, transform, export
-- adaptable across heterogeneous hardware and workflow contexts
-- enables downstream analysis and interpretation through tools such as Alumet-Insight
-- turns energy awareness into something usable for research software and workflows
 
 
 ## Software is the heart of CS\&E
@@ -1160,9 +1400,9 @@ It asks how computational work should be designed so that scientific benefit, ru
   <div class="framework-card">
     <h3>Resource dynamics</h3>
     <p><strong>Usability</strong> <code>U(t)</code></p>
-    <p>\[
+    <div class="framework-equation">\[
     \dot U = -\delta U + \eta m
-    \]</p>
+    \]</div>
     <ul>
       <li><strong>\delta</strong>: ecosystem drift</li>
       <li><strong>m</strong>: realized maintenance</li>
@@ -1171,9 +1411,9 @@ It asks how computational work should be designed so that scientific benefit, ru
   </div>
   <div class="framework-card">
     <h3>Viability</h3>
-    <p>\[
+    <div class="framework-equation">\[
     U(t)\ge U_{\min}
-    \]</p>
+    \]</div>
     <p>Software remains viable only if maintenance keeps pace with drift.</p>
   </div>
 </div>
@@ -1192,9 +1432,9 @@ It asks how computational work should be designed so that scientific benefit, ru
   </div>
   <div class="framework-card">
     <h3>Realized maintenance</h3>
-    <p>\[
+    <div class="framework-equation">\[
     m(t)=c(t)\,I(t)
-    \]</p>
+    \]</div>
     <p><strong>Compliance</strong> determines how much planned work becomes actual upkeep.</p>
   </div>
 </div>
@@ -1243,9 +1483,9 @@ It asks how computational work should be designed so that scientific benefit, ru
     <h3>Two evolving quantities</h3>
     <p><strong>Required decision capability</strong> <code>Q(t)</code></p>
     <p><strong>Available methodological capability</strong> <code>M(t)</code></p>
-    <p>\[
+    <div class="framework-equation">\[
     \Gamma(t)=Q(t)-M(t), \qquad \Gamma \le 0 \text{ for viability}
-    \]</p>
+    \]</div>
   </div>
   <div class="framework-card">
     <h3>Interpretation</h3>
@@ -1296,20 +1536,6 @@ It asks how computational work should be designed so that scientific benefit, ru
 ```
 
 
-## Human capability regenerates the whole stack
-
-```text
-Human capability
-        ↓
-Methodological capability
-        ↓
-Software usability
-        ↓
-Effective compute
-        ↓
-Decision capability
-```
-
 
 ## Sustainable CS\&E needs structure, not only goodwill
 
@@ -1341,18 +1567,17 @@ Decision capability
 
 
 
-## My stronger claim today
-
-The manuscript was necessary.
-
-Sustainable CS\&E is not merely a topic area. It is a methodology.
-
-
 ## The core methodological question
 
 Sustainable CS\&E asks:
 
 How do we maximize trustworthy information return per computational investment?
+
+**Sustainable CS\&E is principled approximation**
+
+The point is not to compute less at all costs.
+
+The point is to compute as much as needed, for the right reason, at the right fidelity.
 
 
 ## Computational investment and information return
@@ -1393,30 +1618,13 @@ How do we maximize trustworthy information return per computational investment?
 - numerical analysis already disciplines approximation
 
 
-## Sustainable CS\&E is principled approximation
-
-The point is not to compute less at all costs.
-
-The point is to compute as much as needed, for the right reason, at the right fidelity.
-
-
-## AI makes this more urgent
-
-- AI can amplify scientific productivity
-- AI can also amplify waste, opacity, and fragility
-- CS\&E has the tools to make AI workflows more principled
-
 
 ## My synthesis
 
 Sustainable CS\&E is the disciplined pursuit of lasting scientific value from computational effort.
 
 
-## Final message
-
 If CS\&E wants to remain a key enabling discipline, it must make sustainability explicit in how it designs methods, software, and workflows.
 
 
-## Thank you
-
-Questions and discussion
+## Happy to discuss these ideas today, tomorrow or in the future

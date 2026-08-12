@@ -98,6 +98,27 @@ $presentation-font-size-root: 30px !default;
   font-size: 100%  !important;
 }
 
+.math-chain {
+  margin: 1em 0;
+  white-space: nowrap;
+}
+
+.math-chain > p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.math-chain__highlight {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2em 0.45em;
+  background: rgba($deck-ink, 0.08);
+  border: $deck-border-subtle;
+  border-radius: $deck-radius-small;
+}
+
 /* ---- custom progress: seedling to tree ---- */
 .growth-progress {
   position: fixed;
@@ -250,6 +271,64 @@ $presentation-font-size-root: 30px !default;
   transform: translate(-50%, 0);
 }
 
+.sdg-icon-list ul {
+  margin: 0.35em 0 0.55em;
+  padding: 0;
+  list-style: none;
+}
+
+.sdg-icon-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.45em;
+  margin: 0.25em 0;
+}
+
+.sdg-icon-list .sdg-bullet-icon {
+  width: 1.65em;
+  height: 1.65em;
+  max-width: none;
+  max-height: none;
+  flex: 0 0 1.65em;
+  object-fit: contain;
+}
+
+.sdg-icon-list .sdg-bullet-label {
+  flex: 1;
+}
+
+.simulation-results-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  width: 96%;
+  margin: 0.45em auto;
+  gap: 0.45em;
+}
+
+.simulation-results-pair video {
+  display: block;
+  width: 100%;
+  height: 6.15em;
+  object-fit: contain;
+}
+
+.simulation-results-pair__caption {
+  grid-column: 1 / -1;
+  margin: -0.2em 0 0;
+}
+
+.simulation-results-pair__caption,
+.harmonized-figure-caption figcaption {
+  text-align: center;
+  font-size: 0.58em;
+  color: $deck-text-secondary;
+}
+
+.harmonized-figure-caption figcaption {
+  margin: 0.2em 0 0;
+}
+
 .sdg-taxonomy-card,
 .framework-card {
   background: $deck-surface;
@@ -288,6 +367,20 @@ $presentation-font-size-root: 30px !default;
 
 .sdg-taxonomy-step p {
   margin: 0;
+}
+
+.sdg-taxonomy-compare {
+  align-items: center;
+}
+
+.sdg-taxonomy-arrow {
+  display: grid;
+  place-items: center;
+  min-height: 100%;
+  color: $deck-green-dark;
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1;
 }
 
 .sdg-taxonomy-arrow {
@@ -570,6 +663,67 @@ $presentation-font-size-root: 30px !default;
   font-size: 0.8em;
   font-weight: 700;
   line-height: 1.25;
+}
+
+.sustainability-framing {
+  display: grid;
+  width: $deck-content-wide;
+  margin: 0.3em auto 0;
+  gap: 0.45em;
+  color: $deck-ink;
+}
+
+.sustainability-framing section > h3 {
+  margin: 0 0 0.25em;
+  text-align: center;
+  font-size: 0.72em;
+  color: $deck-text-secondary;
+}
+
+.sustainability-pillars--compact {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.sustainability-pillars--compact .sustainability-pillars__columns {
+  gap: $deck-gap-layout;
+  padding: 0 4%;
+}
+
+.sustainability-pillars--compact .sustainability-pillar {
+  grid-template-rows: 10px 70px 10px auto;
+}
+
+.sustainability-pillars--compact .sustainability-pillar__shaft {
+  padding: 0.35em;
+  font-size: 0.62em;
+}
+
+.sustainability-pillars--compact .sustainability-pillar p {
+  margin: 0.3em 0 0;
+  font-size: 0.52em;
+  line-height: 1.25;
+}
+
+.sustainability-pillars--cse .sustainability-pillar__capital,
+.sustainability-pillars--cse .sustainability-pillar__base {
+  background: linear-gradient(135deg, #2d5b88, #6ba6d9);
+}
+
+.sustainability-pillars--cse .sustainability-pillar__shaft {
+  background: linear-gradient(180deg, rgba(212, 232, 247, 0.96), rgba(185, 216, 241, 0.96));
+  border-color: rgba(45, 91, 136, 0.28);
+  color: #17324f;
+}
+
+.sustainability-pillars--cse .sustainability-pillar p {
+  color: #23425f;
+}
+
+.sustainability-framing .framework-center-line {
+  max-width: none;
+  margin: 0.45em auto 0;
+  padding: 0.4em 0.6em;
 }
 
 .mail-thread {
