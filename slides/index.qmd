@@ -270,7 +270,7 @@ $$
   <div class="timeline-legend">
     <div><span class="timeline-legend-arrow timeline-legend-arrow--green"></span><span>Here and today</span></div>
     <div><span class="timeline-legend-arrow timeline-legend-arrow--blue"></span><span>Where sustainability began</span></div>
-    <div><span class="timeline-legend-arrow timeline-legend-arrow--red"></span><span>Where sustainable CS&E could go next</span></div>
+    <div><span class="timeline-legend-arrow timeline-legend-arrow--red"></span><span>The future of sustainable CS&E</span></div>
   </div>
 </div>
 ```
@@ -316,7 +316,7 @@ $$
   <div class="timeline-legend">
     <div><span class="timeline-legend-arrow timeline-legend-arrow--green"></span><span>How we got here today</span></div>
     <div><span class="timeline-legend-arrow timeline-legend-arrow--blue"></span><span>Where sustainability began</span></div>
-    <div><span class="timeline-legend-arrow timeline-legend-arrow--red"></span><span>Where sustainable CS&E could go next</span></div>
+    <div><span class="timeline-legend-arrow timeline-legend-arrow--red"></span><span>The future of sustainable CS&E</span></div>
   </div>
 </div>
 ```
@@ -649,7 +649,6 @@ Sustainability often descibed as in three dimensions that need to be balanced:
   The three aspects of sustainability strongly interact and reinforce each other
   </div>
 
-::: {.fragment}
 
 
 
@@ -687,7 +686,6 @@ Sustainability often descibed as in three dimensions that need to be balanced:
 
 ... and **organized a conference** to get consulted by expert colleagues.
 
-:::
 
 ## The community took up the idea
 
@@ -802,19 +800,104 @@ Lambert Theisen · Joseph De Veaugh-Geiss · Tim Wegmann · Gabriel Wittum · An
 
 
 
-## Do it - interact with people in person 👥☕🤝!
+## Conclusion of the workshop
+
+<div style="height: 1em;"></div>
+
+```{=html}
+<div class="framework-center-line"> In order to credibly enable sustainability in domains we need to reflect on sustainability within our own computational practices, software ecosystems, and knowledge flows. Three aspects need to be paid attention to:</div>
+```
+
+<div style="height: 1em;"></div>
+
+:::: columns 
+
+::: {.column width="33%"}
+**Energy footprint of individual workflows**, ... 
+
+... which grows with increasing data volumes, computational complexity, and problem sizes and the use of agentic AI.
+
+:::
+::: {.column width="33%"}
+**Longevity and effective reuse of CS\&E knowledge** ... 
+
+... with its fragmented access to methods, software, and digital infrastructure including data.
+:::
+::: {.column width="33%"}
+**Future relevance of CS\&E as a field** ... 
+
+... as encoding physical principles, mathematical structure, and error management remains essential for many applications.
+:::
+
+::::
+
+## Conclusion of the workshop
+
+
+**Outcome:** A set of recommendations divided by stakeholders
 
 :::: columns
 
-::: {.column with="50%"}
+::: {.column width="55%"}
 
-![](./images/DSCF4312.JPG){width=100%}
+**Funding agencies**  
+
+* Extend and tailor scope of available calls
+* Treat software as an infrastructure asset in all phases of the proposal
+* Request to list software and its status in final reports
+* Request statement on expected and actual energy consumption 
+
+
+**What is the benefit for the funding agencies?**
+
+Transparency regarding the energy footprint of projects can be used to guide future directions. Accessible information on software results makes research spending more effective and impactful.
+
 
 :::
 
-::: {.column width="50%"}
+::: {.column width="45%"}
 
 ![](./images/sustainableCSE2.png){width=100%}
+
+
+<br>
+
+**It's also a bit delicate**
+
+We have to be careful what we impose on ourselves ...
+
+
+:::
+
+::::
+
+## Conclusion of the workshop
+
+
+**Outcome:** A set of recommendations divided by stakeholders
+
+:::: columns
+
+::: {.column width="55%"}
+
+**Funding agencies**  
+
+* Extend and tailor scope of available calls
+* Treat software as an infrastructure asset in all phases of the proposal
+* Request to list software and its status in final reports
+* Request statement on expected and actual energy consumption 
+
+
+**What is the benefit for the funding agencies?**
+
+
+:::
+
+::: {.column width="45%"}
+
+![](./images/sustainableCSE2.png){width=100%}
+
+
 
 :::
 
@@ -825,29 +908,6 @@ Lambert Theisen · Joseph De Veaugh-Geiss · Tim Wegmann · Gabriel Wittum · An
   Outcome: A perspectives paper that will be available soon -> kowalski@mbd.rwth-aachen.de</div>
 
 
-## Proposed action
-
-```{=html}
-<div class="framework-two-col">
-  <div class="framework-card">
-    <h3>If CS&amp;E wants to be credible</h3>
-    <ul>
-      <li>it must reflect on its own energy footprint</li>
-      <li>it must preserve its software and knowledge</li>
-      <li>it must sustain its future methodological relevance</li>
-    </ul>
-  </div>
-  <div class="framework-card">
-    <h3>The three sustainability dimensions</h3>
-    <ol>
-      <li>sustainable computing</li>
-      <li>sustainable software and methods</li>
-      <li>sustainable human capability</li>
-    </ol>
-  </div>
-</div>
-<div class="framework-center-line">If CS&amp;E helps design a more sustainable world, it must also sustain its own computational ecosystems.</div>
-```
 
 ## All sorted now? ... No
 
@@ -921,7 +981,7 @@ Lambert Theisen · Joseph De Veaugh-Geiss · Tim Wegmann · Gabriel Wittum · An
   <div class="timeline-legend">
     <div><span class="timeline-legend-arrow timeline-legend-arrow--green"></span><span>How we got here today</span></div>
     <div><span class="timeline-legend-arrow timeline-legend-arrow--blue"></span><span>Where sustainability began</span></div>
-    <div><span class="timeline-legend-arrow timeline-legend-arrow--red"></span><span>Where sustainable CS&E could go next</span></div>
+    <div><span class="timeline-legend-arrow timeline-legend-arrow--red"></span><span>The future of sustainable CS&E</span></div>
   </div>
 </div>
 ```
@@ -1007,7 +1067,7 @@ Observation: </br> The scope of the decision (demand for timber/wood) rested on 
 
 <div style="height: 2em;"></div>
 
-$$T_{\text{system time-scale}} > T_{\text{decision time-scale}}$$
+$$T_{\text{system}} > T_{\text{decision}}$$
 
 <div style="height: 2em;"></div>
 
@@ -1066,7 +1126,7 @@ When regeneration is slower than decision cycles, today's decisions determine to
 ```
 
 <div style="height: 0.9em;"></div>
-$$T_{\text{system time-scale}} > T_{\text{decision time-scale}}$$
+$$T_{\text{system}} > T_{\text{decision}}$$
 
 <div style="height: 2em;"></div>
 
@@ -1114,14 +1174,14 @@ Many interacting resources, many coupled indicators, many delayed responses
 
 ## Let's model with differential equations 🙂 {.model-timescale-slide}
 
-<div class="framework-center-line">Sustainability means keeping a resource $R(t)$ of a regenerating system inside a viable region $\mathcal K$ when implementation and regeneration act on different timescales.</div>
+<div class="framework-center-line">Sustainability means keeping a resource $R(t)$ of a regenerating system inside a viable region $\mathcal K$ when action and regeneration act on different timescales.</div>
 
 <div style="height: 0.5em;"></div>
 
 ```{=html}
 <div class="framework-two-col">
   <div class="framework-card">
-    <h3>State and dynamics</h3>
+    <h3>Resource dynamics</h3>
     <div class="framework-equation">\[
     \tau_R \frac{dR}{dt}=G(R,t)-D(R,t)+E(R,I,t)
     \]</div>
@@ -1134,7 +1194,7 @@ Many interacting resources, many coupled indicators, many delayed responses
     </ul>
   </div>
   <div class="framework-card">
-    <h3>Governance and viability</h3>
+    <h3>Impact dynamics</h3>
     <div class="framework-equation">\[
     \tau_I \frac{dI}{dt}=c\,u-I,
     \quad
@@ -1152,16 +1212,13 @@ Many interacting resources, many coupled indicators, many delayed responses
 
 ```
 
-## An arbitrary example
+## An generic example
 
 :::: columns 
 
 ::: {.column width="50%"}
 
-The viability condition is $R(t)\ge R_{\min}$ and
-$\tau_R=4.0,\tau_I=6.0,$ and $\varepsilon=\frac{\tau_I}{\tau_R}=1.5$
-
-Regeneration, depletion and intervention:
+* Regeneration, depletion and intervention are given by:
 
 $$
 \begin{aligned}
@@ -1171,7 +1228,11 @@ E(R,I)&=\gamma\,I\left(1-\frac{R}{K}\right)
 \end{aligned}
 $$
 
-The governance decision is
+* Viability condition is $R(t)\ge R_{\min}$ 
+
+* $\tau_R=4.0,\tau_I=6.0,$ and $\varepsilon=\frac{\tau_I}{\tau_R}=1.5$
+
+* Decision-based action is
 
 $$
 u(R)=
@@ -1184,6 +1245,8 @@ $$
 :::
 
 ::: {.column width="50%"}
+
+<br>
 
 ![](./images/viability_feedback_solver_julia.png)
 
@@ -1191,16 +1254,13 @@ $$
 
 ::::
 
-## An arbitrary example
+## An generic example
 
 :::: columns 
 
 ::: {.column width="50%"}
 
-The viability condition is $R(t)\ge R_{\min}$ and
-$\tau_R=4.0,\tau_I=6.0,$ and $\varepsilon=\frac{\tau_I}{\tau_R}=1.5$
-
-Regeneration, depletion and intervention:
+* Regeneration, depletion and intervention are given by:
 
 $$
 \begin{aligned}
@@ -1210,7 +1270,11 @@ E(R,I)&=\gamma\,I\left(1-\frac{R}{K}\right)
 \end{aligned}
 $$
 
-The governance decision is
+* Viability condition is $R(t)\ge R_{\min}$ 
+
+* $\tau_R=4.0,\tau_I=6.0,$ and $\varepsilon=\frac{\tau_I}{\tau_R}=1.5$
+
+* Decision-based action is
 
 $$
 u(R)=
@@ -1224,16 +1288,21 @@ $$
 
 ::: {.column width="50%"}
 
-![](./images/viability_feedback_ratio_sensitivity_julia.png)
+<br>
 
-The immediate question that naturally arises is: What is $R,G,D$ and $u$?
+![](./images/viability_feedback_ratio_sensitivity_julia.png)
 
 :::
 
 ::::
 
 
+
 ## Viability theory provides an interpretable framework
+
+<div style="height: 1em;"></div>
+
+In case of Carlowitz and forest management:
 
 <div style="height: 1em;"></div>
 
@@ -1242,36 +1311,68 @@ The immediate question that naturally arises is: What is $R,G,D$ and $u$?
   <div class="framework-card">
     <h3>What's the system at stake?</h3>
     <ul>
-      <li>Carlowitz: forest</li>
-      <li>SDG framing: water, land, ...</li>
+      <li>forest</li>
     </ul>
   </div>
   <div class="framework-card">
     <h3>What's the sustained resource?</h3>
     <ul>
       <li>timber stock</li>
-      <li>access to water, fruitful land</li>
     </ul>
   </div>
   <div class="framework-card">
     <h3>What natural processes and actions need to be considered?</h3>
     <ul>
       <li>natural growth, logging, reforesting</li>
-      <li>quality recovery, wasting, activ cleaning</li>
     </ul>
   </div>
   <div class="framework-card">
     <h3>What are the time-scales of the system?</h3>
     <ul>
       <li>\[\tau_R \approx 20-30y, \tau_I \approx 1-5y\]</li>
+    </ul>
+  </div>
+</div>
+```
+
+## Viability theory provides an interpretable framework
+
+<div style="height: 1em;"></div>
+
+In case of SDG framing:
+
+<div style="height: 1em;"></div>
+
+```{=html}
+<div class="framework-four-grid">
+  <div class="framework-card">
+    <h3>What's the system at stake?</h3>
+    <ul>
+      <li>clean water, land, ...</li>
+    </ul>
+  </div>
+  <div class="framework-card">
+    <h3>What's the sustained resource?</h3>
+    <ul>
+      <li>access to water, fruitful land</li>
+    </ul>
+  </div>
+  <div class="framework-card">
+    <h3>What natural processes and actions need to be considered?</h3>
+    <ul>
+      <li>quality recovery, wasting, activ cleaning</li>
+    </ul>
+  </div>
+  <div class="framework-card">
+    <h3>What are the time-scales of the system?</h3>
+    <ul>
       <li>\[\tau_R \approx Xm, \tau_I \approx Xd\]</li>
     </ul>
   </div>
 </div>
 ```
 
-
-## Part 3: Where sustainable CS&E could go next
+## Part 3: The future of sustainable CS\&E
 
 <div style="height: 1em;"></div>
 
@@ -1347,7 +1448,7 @@ The immediate question that naturally arises is: What is $R,G,D$ and $u$?
   <div class="timeline-legend">
     <div><span class="timeline-legend-arrow timeline-legend-arrow--green"></span><span>How we got here today</span></div>
     <div><span class="timeline-legend-arrow timeline-legend-arrow--blue"></span><span>Where sustainability began</span></div>
-    <div><span class="timeline-legend-arrow timeline-legend-arrow--red"></span><span>Where sustainable CS&E could go next</span></div>
+    <div><span class="timeline-legend-arrow timeline-legend-arrow--red"></span><span>The future of sustainable CS&E</span></div>
   </div>
 </div>
 ```
