@@ -1,8 +1,8 @@
 ---
 title: "Sustainability in Computational Science and Engineering"
-subtitle: "Methods, Software, and Long-Term Scientific Value"
+subtitle: "JuliaCon 2026, Mainz"
 author: "Julia Kowalski"
-date: "18. August 2026"
+date: "13. August 2026"
 date-format: "D. MMMM YYYY"
 resources:
   - sdg-icons/
@@ -40,6 +40,9 @@ from Wikipedia's *List of programming languages* there seem to be
 
 > Programming may (today) be male-dominated, but programming languages with human first names seem to have a female majority. 😄
 
+<small>
+More on women in simulation science:[https://zenodo.org/records/14498025](https://zenodo.org/records/14498025)
+</small>
 
 :::
 
@@ -49,21 +52,24 @@ from Wikipedia's *List of programming languages* there seem to be
 
 ::: {.fragment}
 
-**Origine stories**
+**Origin stories**
 
 **Ada**  names after **Ada Lovelace**
 
 **Alice**  named after ***Alice's Adventures in Wonderland***
 
-**Julia**  *“There's no good reason, really.  It just seemed like a pretty name.“ (Karpinski)*
+**Julia**  *“There's no good reason, really.  It just seemed like a pretty name.“ (SK)*
 
 :::
 
 ::: {.fragment}
 
-What about: *“Similar to Julia sets, it leads to complex behaviour emerging from simple computational rules“*
+What about: 
 
-![](./images/julia-set.png){width=80%}
+* *“Julia is literally youthful (based on Greek origin) — a young language challenging established ways of scientific computing“*
+
+* *“Julia demonstrates resilience: The name has been around for more than 2000 years“*
+
 
 :::
 
@@ -75,7 +81,6 @@ What about: *“Similar to Julia sets, it leads to complex behaviour emerging fr
 Sources: Wikipedia, Disclaimer: This is not a systematic study.
 </small>
 
-
 ## The invitation
 
 :::: {.mail-thread}
@@ -84,7 +89,7 @@ Sources: Wikipedia, Disclaimer: This is not a systematic study.
 ::: {.mail-message .hendrik}
 **JuliaCon Organizers → JuliaKow**
 
-We would like to invite you to give a keynote at JuliaCon?
+We would like to invite you to give a keynote at JuliaCon. Do you agree?
 :::
 
 <div style="height: 1em;"></div>
@@ -108,14 +113,14 @@ Yes, no worries. Our intention is to reach out to the wider community in order t
 ::: {.mail-message .julia .decision .fragment data-fragment-index="3"}
 **JuliaKow → JuliaCon Organizers**
 
-Nice, in that case I am all in and would like to talk about **Sustainability in Computational Science and Engineering (CS\&E)**. I think that is a topic that is relevant to the JuliaLan community and to the wider CS\&E community.
+Nice, in that case I am all in and will talk about **Sustainability in Computational Science and Engineering (CS\&E)**. I think that is a topic that is also relevant to the JuliaLang community.
 :::
 ::::
 
 
 
 
-## Good job: It worked already ;)
+## Good news: it already worked ;)
 
 
 We (MBD@RWTH Aachen) have now two projects that to significant parts rely on the JuliaLang:
@@ -160,12 +165,13 @@ $$
 
 ::::
 
-## Computational Science and Engineering (CS\&E)
+
+## The field 
 
 ::: {.framework-card .cse-overlap-card}
 
 <div class="framework-center-line">
-  ... sits at the intersection of applied mathematics, computer science and applications in engineering and science.</div>
+  Computational Science and Engineering (CS\&E) sits at the intersection of applied mathematics, computer science and applications in engineering and science.</div>
 
 <div style="height: 0.1em;"></div>
 
@@ -194,7 +200,55 @@ $$
 ::::
 :::
 
-## Structure of the talk ... projected to timeline of events
+## The field
+
+
+<div style="height: 0.5em;"></div>
+
+![](./images/cse1-overview.png){fig-align="center"}
+
+
+## The field
+
+<div style="height: 0.5em;"></div>
+
+![](./images/cse2-overview.png){fig-align="center"}
+
+## The field
+
+<div style="text-align:center;">
+  <img src="./images/workflow.png" style="width:70%; height:auto;">
+</div>
+
+<div class="framework-center-line">
+Workflows and their engineering have become research objectives in their own right. Workflows consume energy and workflow engineering requires systems thinking, special expertise and software!
+  </div>
+
+
+## The hypothesis
+
+```{=html}
+<div style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; min-height: 68vh; padding: 0 1.5rem;">
+  <div style="font-size: 2.2rem; line-height: 1.25; font-weight: 600; max-width: 13em;">
+    Software turns an idea into <span style="color: #c84c09;">impact</span>.
+  </div>
+  <div style="height: 2.2rem;"></div>
+  <div style="width: 7rem; height: 0.18rem; background: linear-gradient(90deg, #c84c09 0%, #e6b17a 100%); border-radius: 999px;"></div>
+  <div style="height: 2.2rem;"></div>
+  <div style="font-size: 2.2rem; line-height: 1.5; max-width: 18em; color: #3f3a36;">
+    If software is critical to what we do, we should treat it as <strong>critical infrastructure</strong>.
+  </div>
+  <div style="height: 2.2rem;"></div>
+  <div style="width: 7rem; height: 0.18rem; background: linear-gradient(90deg, #c84c09 0%, #e6b17a 100%); border-radius: 999px;"></div>
+  <div style="height: 2.2rem;"></div>
+  <div style="font-size: 2.2rem; line-height: 1.5; max-width: 18em; color: #3f3a36;">
+    <strong>Hypothesis:</strong> Software is a sustainability dimension of our field (so let's go and convince our institution to invest into a Research Software Office).</strong>
+  </div>
+</div>
+```
+
+
+## Structure of the talk ... 
 
 <div style="height: 1em;"></div>
 
@@ -260,7 +314,7 @@ $$
   <div class="timeline-event timeline-event--bottom fragment" data-fragment-index="2" style="left: 93%;">
     <div class="timeline-year">203x</div>
     <div class="timeline-card">
-      <strong>Future of CS&amp;E?</strong>
+      <strong>Future of CS&amp;E</strong>
       <span>sustainability in methods, software, workflows, and institutions</span>
     </div>
   </div>
@@ -323,7 +377,7 @@ $$
 
 # Which of the United Nations Sustainable Development Goals feels closest to your research? {.unnumbered}
 
-## United Nation's Sustainable Development Goals (SDGs)
+## United Nations Sustainable Development Goals (SDGs)
 
 ```{=html}
 <div class="sdg-grid">
@@ -399,7 +453,7 @@ $$
 </div>
 ```
 
-## United Nation's Sustainable Development Goals (SDGs)
+## United Nations Sustainable Development Goals (SDGs)
 
 
 :::: columns
@@ -416,11 +470,6 @@ As the departure point serves the **Brundtland report** issued by @wced_our_comm
 > *Sustainable development is development that meets the needs of the present without compromising the ability of future generations to meet their own needs.*
 :::
 
-::: {.fragment}
-
-Note: 1987 -> Perl, HyperTalk, pre-WWW-times 
-
-:::
 
 :::
 
@@ -450,7 +499,7 @@ Note: 1987 -> Perl, HyperTalk, pre-WWW-times
 
 Sustainability becomes operational via indicators that bridge between SDG goals and tangible outcomes. 
 
-**Indicators can be measured, predicted and optimized for with computational methods.** 
+**Indicators can be measured, predicted and optimized for (with computational methods).** 
 
 
 **Example: Indicator 7.2.1**
@@ -465,12 +514,6 @@ Sustainability becomes operational via indicators that bridge between SDG goals 
 UN SDG Report 2026 [@un_sdg_report_2026_goal7] and UN metadata for indicator 7.2.1 [@un_sdg_metadata_721].
 
 
-
-:::
-
-::: {.fragment}
-
-Note: 2015 -> Rust1.0, tensorflow, Julia 0.4
 
 :::
 
@@ -574,9 +617,9 @@ Note: 2015 -> Rust1.0, tensorflow, Julia 0.4
 
 <div style="height: 0.5em;"></div>
 
-**Observation**: CS\&E often contributes indirectly, but rarely names sustainability explicitly:
+CS\&E often contributes to sustainability research, but rarely names sustainability explicitly.
 
-<div style="height: 0.5em;"></div>
+<div style="height: 1em;"></div>
 
 ```{=html}
 <div class="framework-bridge">
@@ -598,21 +641,16 @@ Note: 2015 -> Rust1.0, tensorflow, Julia 0.4
 </div>
 ```
 
-<div style="height: 0.5em;"></div>
+<div style="height: 1.5em;"></div>
 
->
-> If CS&amp;E helps design a more sustainable world, how sustainable is CS&amp;E itself?
->
-
-<div style="height: 0.5em;"></div>
-
-CS\&E publications focus on accuracy, runtime, scalability, and robustness, more recently also energy footprint. Yet, they rarely frame methodological design as a sustainability dimension.
+<div class="framework-center-line">
+  If CS&amp;E helps design a more sustainable world, how sustainable is CS&amp;E itself?
+  </div>
 
 
+## Pillars of sustainability 
 
-## Perception of sustainability projected to CS\&E
-
-Sustainability often descibed as in three dimensions that need to be balanced:  
+Sustainability often descibed as in three pillars that need to be balanced:  
 
 <div style="height: 0.5em;"></div>
 
@@ -652,7 +690,7 @@ Sustainability often descibed as in three dimensions that need to be balanced:
 
 
 
-2023: We structured the sustainability dimensions of CS\&E in a similar manner:
+**2023**: We structured the sustainability dimensions of CS\&E in a similar manner:
 
 <div style="height: 0.5em;"></div>
 
@@ -684,7 +722,42 @@ Sustainability often descibed as in three dimensions that need to be balanced:
 </div>
 ```
 
-... and **organized a conference** to get consulted by expert colleagues.
+... and **organized a conference** (to get consulted by expert colleagues and community).
+
+## Do it - interact with people in person 👥☕🤝!
+
+:::: columns
+
+::: {.column with="50%"}
+
+![](./images/DSCF4312.JPG){width=100%}
+
+:::
+
+::: {.column width="50%"}
+
+![](./images/DSCF4394.JPG){width=100%}
+
+:::
+
+::::
+
+
+::: {style="text-align: center; font-size: 0.55em; line-height: 1.5;"}
+
+Many thanks to:<br>
+Ann S. Almgren · Achim Basermann · Alan Correa · Immo Huismann ·
+Uwe Naumann · Hendrik Ranocha · Matthias Rauter · Jens Saak · Michael Schlottke-Lakemper ·
+Robert Speck · Manuel Torrilhon · Mario Wolter · Niklas von der Aßen · Jayesh Badwaik ·
+Maria Guadalupe Barrios Sazo · Dipankul Bhattacharya · Marcel Bock · Faras Brumand-Poor ·
+Dirk Brömmel · Semih Burak · Sara Grundel · Christiane Helzel · Bruce Hendrickson ·
+Robert Klöfkorn · Katharina Kormann · Zahra Lakdawala · Hannah Lanzrath · Camilla Lummerzheim ·
+Anna Matuszynska · Matthias Meinke · Simon Märtens · Abigail Morrison · William S. Moses ·
+Georgii Oblapenko · Tapasya Patki · Marcel Pfeiffer · Jana Sasse · Katharina Schmitz ·
+Miriam Schulte · Anna Schwarz · Pit Steinbach · Ingo Steldermann · Anton Stratmann ·
+Lambert Theisen · Joseph De Veaugh-Geiss · Tim Wegmann · Gabriel Wittum · Anil Yildiz
+:::
+
 
 
 ## The community took up the idea
@@ -764,39 +837,6 @@ Sustainability often descibed as in three dimensions that need to be balanced:
 
 **Applications · algorithms · hardware · software · reuse · longevity**
 
-## Do it - interact with people in person 👥☕🤝!
-
-:::: columns
-
-::: {.column with="50%"}
-
-![](./images/DSCF4312.JPG){width=100%}
-
-:::
-
-::: {.column width="50%"}
-
-![](./images/DSCF4394.JPG){width=100%}
-
-:::
-
-::::
-
-
-::: {style="text-align: center; font-size: 0.55em; line-height: 1.5;"}
-
-Many thanks to:<br>
-Ann S. Almgren · Achim Basermann · Alan Correa · Immo Huismann ·
-Uwe Naumann · Hendrik Ranocha · Matthias Rauter · Jens Saak · Michael Schlottke-Lakemper ·
-Robert Speck · Manuel Torrilhon · Mario Wolter · Niklas von der Aßen · Jayesh Badwaik ·
-Maria Guadalupe Barrios Sazo · Dipankul Bhattacharya · Marcel Bock · Faras Brumand-Poor ·
-Dirk Brömmel · Semih Burak · Sara Grundel · Christiane Helzel · Bruce Hendrickson ·
-Robert Klöfkorn · Katharina Kormann · Zahra Lakdawala · Hannah Lanzrath · Camilla Lummerzheim ·
-Anna Matuszynska · Matthias Meinke · Simon Märtens · Abigail Morrison · William S. Moses ·
-Georgii Oblapenko · Tapasya Patki · Marcel Pfeiffer · Jana Sasse · Katharina Schmitz ·
-Miriam Schulte · Anna Schwarz · Pit Steinbach · Ingo Steldermann · Anton Stratmann ·
-Lambert Theisen · Joseph De Veaugh-Geiss · Tim Wegmann · Gabriel Wittum · Anil Yildiz
-:::
 
 
 
@@ -805,7 +845,7 @@ Lambert Theisen · Joseph De Veaugh-Geiss · Tim Wegmann · Gabriel Wittum · An
 <div style="height: 1em;"></div>
 
 ```{=html}
-<div class="framework-center-line"> In order to credibly enable sustainability in domains we need to reflect on sustainability within our own computational practices, software ecosystems, and knowledge flows. Three aspects need to be paid attention to:</div>
+<div class="framework-center-line"> In order to credibly enable sustainability in domains we need to reflect on sustainability within our own computational practices, software ecosystems, and knowledge flows. This includes:</div>
 ```
 
 <div style="height: 1em;"></div>
@@ -815,7 +855,7 @@ Lambert Theisen · Joseph De Veaugh-Geiss · Tim Wegmann · Gabriel Wittum · An
 ::: {.column width="33%"}
 **Energy footprint of individual workflows**, ... 
 
-... which grows with increasing data volumes, computational complexity, and problem sizes and the use of agentic AI.
+... which grows with increasing data volumes, computational complexity, and problem sizes **and the use of agentic AI**.
 
 :::
 ::: {.column width="33%"}
@@ -826,15 +866,18 @@ Lambert Theisen · Joseph De Veaugh-Geiss · Tim Wegmann · Gabriel Wittum · An
 ::: {.column width="33%"}
 **Future relevance of CS\&E as a field** ... 
 
-... as encoding physical principles, mathematical structure, and error management remains essential for many applications.
+... encoding physical principles, mathematical structure, and error management remains essential.
 :::
 
 ::::
 
-## Conclusion of the workshop
+<div class="framework-center-line">Computational science is a race between expanding questions and the community's ability to answer them.</div>
+
+## Outcome of the workshop
 
 
-**Outcome:** A set of recommendations divided by stakeholders
+Stakeholder-specific recommendations.
+
 
 :::: columns
 
@@ -871,10 +914,10 @@ We have to be careful what we impose on ourselves ...
 
 ::::
 
-## Conclusion of the workshop
+## Outcome of the workshop
 
 
-**Outcome:** A set of recommendations divided by stakeholders
+Stakeholder-specific recommendations.
 
 :::: columns
 
@@ -888,7 +931,6 @@ We have to be careful what we impose on ourselves ...
 * Request statement on expected and actual energy consumption 
 
 
-**What is the benefit for the funding agencies?**
 
 
 :::
@@ -905,14 +947,15 @@ We have to be careful what we impose on ourselves ...
 
 
 <div class="framework-center-line">
-  Outcome: A perspectives paper that will be available soon -> kowalski@mbd.rwth-aachen.de</div>
+  A perspectives paper that will be available soon -> kowalski@mbd.rwth-aachen.de</div>
 
 
 
 ## All sorted now? ... No
 
-
-![](./images/DSCF4329.JPG){fig-align="center" width=80%}
+<div style="text-align:center;">
+  <img src="./images/DSCF4329.JPG" style="width:70%; height:auto;">
+</div>
 
 
 ## Part 2: Where sustainability began
@@ -987,7 +1030,7 @@ We have to be careful what we impose on ourselves ...
 ```
 
 
-## The idea of sustainability attributed to Carlowitz
+## The birth of sustainability as a term 
 
 :::: columns
 
@@ -995,7 +1038,7 @@ We have to be careful what we impose on ourselves ...
 
 We typically attribute the sustainability idea to **Hans Carl von Carlowitz**.
 
-- early forestry formulation in *Sylvicultura oeconomica*  [@carlowitz_1713_biblio]
+- early forestry management in *Sylvicultura oeconomica*  [@carlowitz_1713_biblio]
 
 - manage forests such that harvest does not outrun regrowth
 - it turned forest use into an explicit long-term management problem
@@ -1111,21 +1154,18 @@ Many interacting resources, many coupled indicators, many delayed responses
 ::: 
 ::::
 
-
-
 ## It's actually a multiscale-in-time problem
 
 <div style="height: 1em;"></div>
 
 ```{=html}
 <div class="framework-center-line">
-
-One common principle: </br>
-When regeneration is slower than decision cycles, today's decisions determine tomorrow's possibilities. Sustainability is not mainly about indicators. It is about governing delayed dynamics.
+Observation: </br> The scope of the decision (demand for timber/wood) rested on a time-scale much shorter than the regeneration time of the system it controlled (the forest).
 </div>
 ```
 
-<div style="height: 0.9em;"></div>
+<div style="height: 2em;"></div>
+
 $$T_{\text{system}} > T_{\text{decision}}$$
 
 <div style="height: 2em;"></div>
@@ -1136,9 +1176,9 @@ $$T_{\text{system}} > T_{\text{decision}}$$
 
 ::: {.sdg-taxonomy-card}
 
-**Carlowitz' system**: 
+**Carlowitz' decision**: 
 
-One renewable resource, one stock, one regeneration process.
+How much regrowth, when to regrow, what to regrow?
 
 :::
 
@@ -1160,15 +1200,34 @@ $\Leftrightarrow$
 
 ::: {.sdg-taxonomy-card}
 
-**SDG system**: 
+**SDG decision**: 
 
-Many interacting resources, many coupled indicators, many delayed responses
+Multi-stakeholder, international policy making. Compliance management.
   
 :::
 
 
 ::: 
 ::::
+
+
+
+## It's actually a multiscale-in-time problem
+
+<div style="height: 1em;"></div>
+
+```{=html}
+<div class="framework-center-line">
+
+One common principle: </br>
+When regeneration is slower than decision cycles, today's decisions determine tomorrow's possibilities. Sustainability is not mainly about indicators. It is about governing delayed dynamics.
+</div>
+```
+
+<div style="height: 0.88em;"></div>
+$$T_{\text{system}} > T_{\text{decision}}$$
+
+<div style="height: 2em;"></div>
 
 
 
@@ -1204,7 +1263,7 @@ Many interacting resources, many coupled indicators, many delayed responses
       <li><strong>\(\tau_I\)</strong>: governance timescale</li>
       <li><strong>\(u\)</strong>: implemented action</li>
       <li><strong>c</strong>: compliance</li>
-      <li><strong>I</strong>: realized impact</li>
+      <li><strong>I</strong>: impact</li>
       <li><strong>\(\varepsilon\)</strong>: governance-to-system ratio</li>
     </ul>
   </div>
@@ -1212,7 +1271,7 @@ Many interacting resources, many coupled indicators, many delayed responses
 
 ```
 
-## An generic example
+## A generic example
 
 :::: columns 
 
@@ -1234,12 +1293,11 @@ $$
 
 * Decision-based action is
 
-$$
-u(R)=
+$u(R)=
 \min\!\bigl\{u_{\max},\,u_0 + g\,(R_\ast - R)_+\bigr\},
 \qquad
 (R_\ast - R)_+ := \max(R_\ast - R,0).
-$$
+$
 
 
 :::
@@ -1360,7 +1418,7 @@ In case of SDG framing:
   <div class="framework-card">
     <h3>What natural processes and actions need to be considered?</h3>
     <ul>
-      <li>quality recovery, wasting, activ cleaning</li>
+      <li>quality recovery, wasting, active cleaning</li>
     </ul>
   </div>
   <div class="framework-card">
@@ -1438,7 +1496,7 @@ In case of SDG framing:
   <div class="timeline-event timeline-event--bottom" style="left: 93%;">
     <div class="timeline-year">203x</div>
     <div class="timeline-card">
-      <strong>Future of CS&amp;E?</strong>
+      <strong>Future of CS&amp;E</strong>
       <span>sustainability in methods, software, workflows, and institutions</span>
     </div>
   </div>
@@ -1454,25 +1512,25 @@ In case of SDG framing:
 ```
 
 
-## Sustainable CS\&E and why it matters now
+## Better positioned to discuss sustainable CS&E
 
-Previously, we introduced three dimensions:
+Previously, we (intuitively) introduced three dimensions:
 
-Sustainable software · Sustainable computing · Computing for sustainability
+**Sustainable software · Sustainable computing · Computing for sustainability**
 
+<div style="height: 1em;"></div>
 
-Now, we have a conceptual framework to lead the discussion:
+Now, we are in a better position and have a conceptual framework to lead a strategic discussion:
 
-<div style="height: 0.5em;"></div>
+<div style="height: 1em;"></div>
 
 ```{=html}
 <div class="framework-four-grid">
   <div class="framework-card">
-    <h3>What's the systems at stake?</h3>
+    <h3>What's the system at stake?</h3>
     <ul>
       <li>software ecosystem</li>
-      <li>computational ecosystem</li>
-      <li>methodological innovation ecosystem</li>
+      <li>hardware ecosystem</li>
       <li>research and training ecosystem</li>
     </ul>
   </div>
@@ -1480,8 +1538,40 @@ Now, we have a conceptual framework to lead the discussion:
     <h3>What's the sustained resource?</h3>
     <ul>
       <li>software usability</li>
-      <li>effective compute</li>
-      <li>methodological capability</li>
+      <li>available compute</li>
+      <li>scientific capability</li>
+    </ul>
+  </div>
+</div>
+```
+
+## Better positioned to discuss sustainable CS&E
+
+Previously, we (intuitively) introduced three dimensions:
+
+**Sustainable software · Sustainable computing · Computing for sustainability**
+
+<div style="height: 1em;"></div>
+
+Now, we are in a better position and have a conceptual framework to lead a strategic discussion:
+
+<div style="height: 1em;"></div>
+
+```{=html}
+<div class="framework-four-grid">
+  <div class="framework-card">
+    <h3>What's the system at stake?</h3>
+    <ul>
+      <li><strong>software ecosystem</strong></li>
+      <li>hardware ecosystem</li>
+      <li>research and training ecosystem</li>
+    </ul>
+  </div>
+  <div class="framework-card">
+    <h3>What's the sustained resource?</h3>
+    <ul>
+      <li><strong>software usability</strong></li>
+      <li>available compute</li>
       <li>scientific capability</li>
     </ul>
   </div>
@@ -1490,68 +1580,37 @@ Now, we have a conceptual framework to lead the discussion:
 
 
 
-# Sustainability in the software ecosystem
+## Sustainability of the software ecosystem
 
-```{=html}
-<div class="framework-four-grid">
-  <div class="framework-card">
-    <h3>What's the system at stake?</h3>
-    <ul>
-      <li>Software ecosystem</li>
-    </ul>
-  </div>
-  <div class="framework-card">
-    <h3>What's the sustained resource?</h3>
-    <ul>
-      <li>software usability</li>
-    </ul>
-  </div>
-  <div class="framework-card">
-    <h3>What natural processes and actions need to be considered?</h3>
-    <ul>
-      <li>G:</li>
-      <li>G:</li>
-           
-<li>G:</li>
+:::: columns 
 
-    </ul>
-  </div>
-  <div class="framework-card">
-    <h3>What are the time-scales of the system?</h3>
-    <ul>
-      <li>\[\tau_R \approx 20-30y, \tau_I \approx 1-5y\]</li>
-      <li>\[\tau_R \approx Xm, \tau_I \approx Xd\]</li>
-    </ul>
-  </div>
-</div>
-```
+::: {.column width="50%"}
 
-# Sustainability in the computational workflow
+**Relevant processes and interventions**
 
-## CS\&E are shifting
-
-::: columns
-
-::: {.column width="48%"}
-
-**Traditional bottlenecks**
-
-- compute access
-- parallelization competence
-- memory and storage
-- raw implementation effort
+* **Regeneration**: none, except community effort
+* **Depletion**: ecosystem drift and the fragility of growing workflows and software stacks
+* **Intervention**: maintenance, RSE support (centralized or decentralized)
+* **Compliance (implementation capacity):** expertise of the supervisor or project lead
+* **System timescale** is determined by turnover and lifecycle of software and hardware
+* **Action timescale** determined by project durations and PhD lifecycles.
+* **Impact: Github stars, citations, contributors ??**
 
 :::
 
-::: {.column width="52%"}
+::: {.column width="50%"}
+**Feedback**
 
-**Emerging bottlenecks**
+**Positive**: Usability $R(t)$ (-> adoption) -> maintenance capacity -> usability
 
-- workflow complexity
-- software fragility
-- reproducibility gaps
-- AI integration
-- long-term maintainability
+> **Software that remains usable gets adopted, cited, and depended on.**
+
+<br>
+
+
+**Negative**: Workflow growth (-> complexity ->) maintenance burden -> declining usability/compliance -> more fragile workflows
+
+> **As workflows become more capable, they usually also become harder to maintain.** 
 
 :::
 
@@ -1559,82 +1618,175 @@ Now, we have a conceptual framework to lead the discussion:
 
 
 
-## Available compute is a finite regenerative resource
+## Sustainability of the software ecosystem
 
-```{=html}
-<div class="framework-two-col">
-  <div class="framework-card">
-    <h3>Resource</h3>
-    <p><strong>Available compute</strong> <code>C(t)</code></p>
-    <p>Includes hardware, energy, queue time, cloud access, budget, and carbon budget.</p>
-    <div class="framework-equation">\[
-    \dot C = G_C - L_C
-    \]</div>
-  </div>
-  <div class="framework-card">
-    <h3>Interpretation</h3>
-    <ul>
-      <li><strong>G<sub>C</sub></strong>: hardware, energy efficiency, funding, algorithms</li>
-      <li><strong>L<sub>C</sub></strong>: larger simulations, UQ, optimization, digital twins</li>
-      <li>finite computational opportunity must be allocated deliberately</li>
-    </ul>
-  </div>
+
+<div style="text-align:center;">
+  <img src="./images/viability_feedback_solver_software.png" style="width:50%; height:auto;">
 </div>
-<div class="framework-center-line">The key question is not how to minimize compute at all costs, but how to turn finite compute into the most trustworthy insight.</div>
+
+<div class="framework-center-line">Software sustainability is an ecosystem challenge: usability decays unless maintenance continuously regenerates it.</div>
+
+## ⏱️ Let's make the timescales explicit
+
+```{python}
+#| echo: false
+#| fig-width: 8.2
+#| fig-height: 4.0
+#| fig-align: center
+
+import matplotlib.pyplot as plt
+
+# characteristic times in days
+labels = [
+    "Bug fix",
+    "Release",
+    "GPU / node\nprocurement",
+    "Dependency\nsupport",
+    "Version\nsupport",
+    "PhD student",
+    "Postdoc",
+    "Hardware\nrefresh cycle",
+    "Faculty career",
+    "Research\nproject",
+    "Scientific software\ninfrastructure",
+    "Operational\nlegacy software"
+]
+
+categories = [
+    "software",
+    "software",
+    "hardware",
+    "software",
+    "software",
+    "career",
+    "career",
+    "hardware",
+    "career",
+    "career",
+    "software",
+    "software"
+]
+
+days = [
+    14,             # ~2 weeks
+    365,            # 1 year
+    180,            # ~6 months
+    3.5*365,        # 42 months
+    5*365,          # Python support
+    4*365,          # representative PhD
+    2*365,          # representative postdoc
+    5*365,          # representative cluster refresh
+    25*365,         # faculty career horizon
+    4*365,          # representative project
+    20*365,         # decades
+    49*365          # Voyager
+]
+
+fig, ax = plt.subplots(figsize=(8.2, 4.0))
+
+palette = {
+    "software": "#2f7b29",
+    "hardware": "#3972b7",
+    "career": "#c84c09",
+}
+
+ypos = list(range(len(days)))
+colors = [palette[category] for category in categories]
+
+ax.scatter(days, ypos, s=90, c=colors)
+
+for x, y, label, color in zip(days, ypos, labels, colors):
+    ax.text(x*1.22, y, label, va="center", fontsize=10, color=color)
+
+ax.set_xscale("log")
+ax.set_xlim(7, 20000)
+ax.set_yticks([])
+ax.set_xlabel("Characteristic timescale")
+
+# readable reference ticks
+ticks = [
+    7, 30, 180, 365, 5*365, 10*365, 20*365, 50*365
+]
+ticklabels = [
+    "1 week", "1 month", "6 mo", "1 year", "5 y", "10 y", "20 y", "50 y"
+]
+
+ax.set_xticks(ticks)
+ax.set_xticklabels(ticklabels)
+
+ax.grid(axis="x", which="both", alpha=.2)
+ax.spines[["left", "right", "top"]].set_visible(False)
+
+plt.tight_layout()
+plt.show()
 ```
 
-## Green computing versus sustainable computing
+Relevant CS\&E timescales span software, hardware, and academic careers across **more than six orders of magnitude in time.**
+
+::: {style="font-size: 0.38em;"}
+**Sources:** Python PEP 602 (annual releases; 5-year support); 
+NumPy NEP 29 (24/42-month ecosystem support windows); 
+Ernst et al. (2023), *Architecting Complex, Long-Lived Scientific Software*;
+NASA Voyager mission. Short timescales are illustrative.
+:::
+
+
+
+## A detour across viability theory helped shape the narrative
+
 
 ```{=html}
-<div class="framework-two-col">
-  <div class="framework-card">
-    <h3>Green computing asks</h3>
-    <p>How can we reduce computational energy consumption?</p>
-    <p style="margin-top:1rem;">Important, but incomplete.</p>
+<div style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; min-height: 68vh; padding: 0 1.5rem;">
+  <div style="font-size: 2.2rem; line-height: 1.25; font-weight: 600; max-width: 13em;">
+    Software turns an idea into <span style="color: #c84c09;">impact</span>.
   </div>
-  <div class="framework-card">
-    <h3>Sustainable computing asks</h3>
-    <div class="framework-equation">\[
-    K=\eta(M)\,C
-    \]</div>
-    <ul>
-      <li><strong>K</strong>: generated knowledge</li>
-      <li><strong>M</strong>: methodological capability</li>
-      <li><strong>\eta = K/C</strong>: knowledge return per computational investment</li>
-    </ul>
+  <div style="height: 2.2rem;"></div>
+  <div style="width: 7rem; height: 0.18rem; background: linear-gradient(90deg, #c84c09 0%, #e6b17a 100%); border-radius: 999px;"></div>
+  <div style="height: 2.2rem;"></div>
+  <div style="font-size: 2.2rem; line-height: 1.5; max-width: 18em; color: #3f3a36;">
+    If software is critical to what we do, we should treat it as <strong>critical infrastructure</strong>.
+  </div>
+  <div style="height: 2.2rem;"></div>
+  <div style="width: 7rem; height: 0.18rem; background: linear-gradient(90deg, #c84c09 0%, #e6b17a 100%); border-radius: 999px;"></div>
+  <div style="height: 2.2rem;"></div>
+  <div style="font-size: 2.2rem; line-height: 1.5; max-width: 18em; color: #3f3a36;">
+    <strong>Statement:</strong> The relevant resource to create opportunities and unfold impact is software usability in an evolving socio-technical ecosystem in which maintenance has to continuously compensate drift.</strong>
   </div>
 </div>
-<div class="framework-center-line">The goal is not minimal compute. The goal is maximal trustworthy information return per computational investment.</div>
 ```
 
 
-## Sustainable computing means allocating effort where it matters
+## The journey goes on
 
-```{=html}
-<div class="framework-two-col">
-  <div class="framework-card">
-    <h3>Three levers</h3>
-    <ol>
-      <li>Hardware efficiency</li>
-      <li>Algorithmic efficiency</li>
-      <li>Model efficiency</li>
-    </ol>
-  </div>
-  <div class="framework-card">
-    <h3>What that means in practice</h3>
-    <ul>
-      <li>invest degrees of freedom only where they matter</li>
-      <li>connect accuracy targets to computational effort</li>
-      <li>let quantities of interest drive computational investment</li>
-      <li>spend extra effort only where it changes the answer materially</li>
-    </ul>
-  </div>
-</div>
-<div class="framework-center-line">Adaptive methods increase effective compute because they increase the value extracted from each computational unit.</div>
-```
+:::: columns
+
+::: {.column}
+
+![](./images/mss.png)
+
+Research software office: 🚀 Jan 2027
+
+We're hiring: Call will be out soon!
+
+:::
+
+::: {.column}
+
+![](./images/csg.png)
+
+Cross-Sectional-Group Sustainable computational engineering: 🚀 Jan 2027
+
+We're hiring: Call will be out even sooner!
+
+:::
+
+:::
 
 
-## Regeneration and depletion in computational ecosystems
+## Deepdive into *Available compute* ...
+
+<div style="height: 1em;"></div>
 
 ```{=html}
 <div class="framework-two-col">
@@ -1663,301 +1815,64 @@ Now, we have a conceptual framework to lead the discussion:
 </div>
 ```
 
+<div style="height: 2em;"></div>
+
+<div class="framework-center-line"> ... not today ... but call for action to develop methods that optimize over the whole stack.</div>
 
 
+## There are huge challenges ahead
 
-## Software is the heart of CS\&E
+:::: columns
 
-```{=html}
-<div class="framework-two-col">
-  <div class="framework-card">
-    <h3>Scientific role</h3>
-    <ul>
-      <li>software carries methods into practice</li>
-      <li>software preserves or loses knowledge</li>
-      <li>software quality shapes long-term scientific impact</li>
-    </ul>
-  </div>
-  <div class="framework-card">
-    <h3>The key shift</h3>
-    <p>The sustained resource is not the artifact itself.</p>
-    <p><strong>It is software usability inside an evolving ecosystem.</strong></p>
-  </div>
-</div>
+::: {.column width="58%"}
+
+Global data-center electricity demand doubles every 5y.
+
+```{python}
+#| echo: false
+#| fig-width: 3.5
+#| fig-height: 2.5
+
+import matplotlib.pyplot as plt
+
+years  = [2025, 2030]
+demand = [485, 950]
+
+fig, ax = plt.subplots()
+
+ax.plot(years, demand, marker="o", linewidth=3, markersize=10)
+
+for x, y in zip(years, demand):
+    ax.text(x, y + 45, f"{y} TWh", 
+            ha="center", fontsize=16, fontweight="bold")
+
+ax.set_xlim(2024, 2031)
+ax.set_ylim(0, 1100)
+ax.set_xticks(years)
+ax.set_ylabel("Electricity demand [TWh/year]")
+ax.spines[["top", "right"]].set_visible(False)
+
+plt.show()
 ```
 
+AI-focused data centers are projected to grow **even faster: ~3×**.
 
-## Sustainable software as a viability problem
+In the US share of electricity consumed by data centers is projected to increase from 4.4% in 2023 to ~11.8% (9.5–15.3%) in 2030.
 
-```{=html}
-<div class="framework-two-col">
-  <div class="framework-card">
-    <h3>Resource dynamics</h3>
-    <p><strong>Usability</strong> <code>U(t)</code></p>
-    <div class="framework-equation">\[
-    \dot U = -\delta U + \eta m
-    \]</div>
-    <ul>
-      <li><strong>\delta</strong>: ecosystem drift</li>
-      <li><strong>m</strong>: realized maintenance</li>
-      <li><strong>\eta</strong>: maintenance effectiveness</li>
-    </ul>
-  </div>
-  <div class="framework-card">
-    <h3>Viability</h3>
-    <div class="framework-equation">\[
-    U(t)\ge U_{\min}
-    \]</div>
-    <p>Software remains viable only if maintenance keeps pace with drift.</p>
-  </div>
+<div style="font-size: 1.5rem; font-weight: 700; line-height: 1.2;">
+How much <strong>scientific insight</strong> do we gain per computational investment?
 </div>
-<div class="framework-center-line">Software sustainability is an ecosystem problem: usability decays unless maintenance continuously regenerates it.</div>
-```
+
+:::
 
 
-## Planning versus implementation
+::: {.column width="42%"}
 
-```{=html}
-<div class="framework-two-col">
-  <div class="framework-card">
-    <h3>Planned maintenance</h3>
-    <p><strong>Decision</strong> <code>I(t)</code></p>
-    <p>What a group lead, PI, or project team intends to invest.</p>
-  </div>
-  <div class="framework-card">
-    <h3>Realized maintenance</h3>
-    <div class="framework-equation">\[
-    m(t)=c(t)\,I(t)
-    \]</div>
-    <p><strong>Compliance</strong> determines how much planned work becomes actual upkeep.</p>
-  </div>
-</div>
-```
-
-
-## Sustainable software means more than code availability
-
-```{=html}
-<div class="framework-two-col">
-  <div class="framework-card">
-    <h3>Properties of sustainable software</h3>
-    <ul>
-      <li>maintainability</li>
-      <li>reproducibility</li>
-      <li>accessibility</li>
-      <li>extensibility</li>
-      <li>portability</li>
-      <li>community uptake</li>
-    </ul>
-  </div>
-  <div class="framework-card">
-    <h3>Two failure modes</h3>
-    <ul>
-      <li><strong>resource failure</strong>: too little maintenance planned</li>
-      <li><strong>governance failure</strong>: maintenance planned, but not implemented</li>
-    </ul>
-  </div>
-</div>
-```
-
-
-## Sustainability emerges from feedback loops
-
-- usability increases adoption
-- adoption increases maintenance willingness
-- maintenance preserves usability
-- declining usability can trigger the opposite loop
-
-
-## Sustainable software: the main take-aways
-
-```{=html}
-<div class="framework-two-col">
-  <div class="framework-card">
-    <h3>Conceptual shift</h3>
-    <ul>
-      <li>the sustained resource is not the code artifact itself</li>
-      <li>the relevant resource is software usability in an evolving ecosystem</li>
-      <li>viability means keeping <code>U(t)\ge U_{\min}</code></li>
-      <li>maintenance must continuously compensate ecosystem drift</li>
-    </ul>
-  </div>
-  <div class="framework-card">
-    <h3>Practical consequence</h3>
-    <ul>
-      <li>software sustainability is a maintenance-and-governance problem</li>
-      <li>code availability alone is not enough</li>
-      <li>maintainability, reproducibility, portability, and uptake all matter</li>
-      <li>sustainability must be assessed over time, not at release date only</li>
-    </ul>
-  </div>
-</div>
-```
-
-
-## What was surprising in the viability view?
-
-```{=html}
-<div class="framework-two-col">
-  <div class="framework-card">
-    <h3>Unexpected modeling insight</h3>
-    <ul>
-      <li>a project can remain visible while already losing viability</li>
-      <li>the decisive quantity is usable, maintained functionality, not repository existence</li>
-      <li>positive feedback can help: usability supports adoption, and adoption supports maintenance</li>
-      <li>the same loop can reverse and accelerate decline</li>
-    </ul>
-  </div>
-  <div class="framework-card">
-    <h3>Unexpected governance insight</h3>
-    <ul>
-      <li>failure need not start with bad intentions</li>
-      <li>there is <strong>resource failure</strong>: too little maintenance planned</li>
-      <li>there is <strong>governance failure</strong>: maintenance planned, but not realized</li>
-      <li>so sustainability depends on implementation capacity, not only stated commitment</li>
-    </ul>
-  </div>
-</div>
-<div class="framework-center-line">The viability lens makes software sustainability look less like a property of code and more like a delayed, feedback-driven ecosystem process.</div>
-```
-
-
-## Sustainable methods as a race between questions and methods
-
-```{=html}
-<div class="framework-two-col">
-  <div class="framework-card">
-    <h3>Two evolving quantities</h3>
-    <p><strong>Required decision capability</strong> <code>Q(t)</code></p>
-    <p><strong>Available methodological capability</strong> <code>M(t)</code></p>
-    <div class="framework-equation">\[
-    \Gamma(t)=Q(t)-M(t), \qquad \Gamma \le 0 \text{ for viability}
-    \]</div>
-  </div>
-  <div class="framework-card">
-    <h3>Interpretation</h3>
-    <ul>
-      <li>demand drives innovation</li>
-      <li>success creates new demand</li>
-      <li>adaptivity slows obsolescence</li>
-      <li>continuous innovation is required just to keep pace</li>
-    </ul>
-  </div>
-</div>
-<div class="framework-center-line">Computational science is a race between expanding questions and the community's ability to answer them.</div>
-```
-
-
-## Methodological success creates future demand
-
-- more methods enable more ambitious questions
-- more ambitious questions raise required decision capability
-- adaptivity slows methodological obsolescence
-- continuous innovation is required merely to keep pace
-
-
-## Sustainable human capability
-
-```{=html}
-<div class="framework-two-col">
-  <div class="framework-card">
-    <h3>The regenerative layer beneath CS&amp;E</h3>
-    <ul>
-      <li>education</li>
-      <li>mentoring</li>
-      <li>scientific collaboration</li>
-      <li>methodological training</li>
-    </ul>
-  </div>
-  <div class="framework-card">
-    <h3>The AI tension</h3>
-    <ul>
-      <li>AI can amplify short-term productivity</li>
-      <li>it can also weaken long-term learning loops</li>
-      <li>capability matters more than output spikes</li>
-      <li>researchers regenerate methods, software, and judgment</li>
-    </ul>
-  </div>
-</div>
-<div class="framework-center-line">Human capability is the deepest regenerative resource in CS&amp;E because it renews every other layer of the ecosystem.</div>
-```
-
-
-
-## Sustainable CS\&E needs structure, not only goodwill
-
-```{=html}
-<div class="framework-two-col">
-  <div class="framework-card">
-    <h3>Why individual goodwill is not enough</h3>
-    <ul>
-      <li>sustainable practice often has delayed returns</li>
-      <li>short projects reward local optimization</li>
-      <li>institutions shape what is feasible and visible</li>
-    </ul>
-  </div>
-  <div class="framework-card">
-    <h3>Stakeholders who shape sustainable CS&amp;E</h3>
-    <ul>
-      <li>funding agencies</li>
-      <li>supercomputing centers</li>
-      <li>research institutions</li>
-      <li>journals and publishers</li>
-      <li>industry and project leaders</li>
-      <li>educators and young scientists</li>
-    </ul>
-  </div>
-</div>
-<div class="framework-center-line">Sustainable CS&amp;E requires sustainable computing, sustainable software, sustainable human capability, and coordinated institutional support.</div>
-```
-
-
-
-
-## The core methodological question
-
-Sustainable CS\&E asks:
+**We need a shift towards energy awareness (on workflow level)**
 
 How do we maximize trustworthy information return per computational investment?
 
-**Sustainable CS\&E is principled approximation**
-
-The point is not to compute less at all costs.
-
-The point is to compute as much as needed, for the right reason, at the right fidelity.
-
-
-## Computational investment and information return
-
-```{=html}
-<div class="framework-two-col">
-  <div class="framework-card">
-    <h3>Computational investment includes</h3>
-    <ul>
-      <li>compute time</li>
-      <li>energy</li>
-      <li>human development effort</li>
-      <li>workflow complexity</li>
-      <li>software maintenance</li>
-      <li>data generation and curation</li>
-    </ul>
-  </div>
-  <div class="framework-card">
-    <h3>Information return includes</h3>
-    <ul>
-      <li>reduced uncertainty</li>
-      <li>trustworthy predictions</li>
-      <li>actionable design guidance</li>
-      <li>transferable method knowledge</li>
-      <li>reusable software and workflows</li>
-    </ul>
-  </div>
-</div>
-<div class="framework-center-line">The methodological task is to increase trustworthy information return per unit of computational investment.</div>
-```
-
-
-## This is already native to CS\&E
+This is already native to CS\&E
 
 - error control already asks what accuracy is needed
 - adaptivity already allocates resources selectively
@@ -1965,13 +1880,62 @@ The point is to compute as much as needed, for the right reason, at the right fi
 - numerical analysis already disciplines approximation
 
 
+:::
 
-## My synthesis
+::::
 
-Sustainable CS\&E is the disciplined pursuit of lasting scientific value from computational effort.
+::: {style="font-size: 0.40em;"}
+**Sources:** International Energy Agency (2026), *Key Questions on Energy and AI*: 
+485 TWh (2025) → ~950 TWh (2030); AI-focused data-center electricity consumption ~3×.  
+Lawrence Berkeley National Laboratory (2026), *United States Data Center Energy Usage Report: 2025 Update*: 
+11.8% central estimate for US data-center electricity share in 2030 (9.5–15.3% scenario range).
+:::
 
 
-If CS\&E wants to remain a key enabling discipline, it must make sustainability explicit in how it designs methods, software, and workflows.
+## Synthesis
+
+<div class="framework-center-line">Sustainable CS\&E is how we turn computational effort into lasting scientific possibility.</div>
+
+**Which of the United Nations Sustainable Development Goals feels closest to your research?**
+
+::: columns
+
+::: {.column width="50%"}
+
+::: {.sdg-icon-list}
+- ![SDG 4](sdg-icons/E-WEB-Goal-04.png){.sdg-bullet-icon} [**SDG 4:** Quality Education]{.sdg-bullet-label}
+
+... via democratized access to software and teaching material.
+:::
+
+::: {.sdg-icon-list}
+- ![SDG 9](sdg-icons/E-WEB-Goal-09.png){.sdg-bullet-icon} [**SDG 9:** Industry, Innovation and Infrastructure]{.sdg-bullet-label}
+
+ ... because software is critical infrastructure.
+:::
 
 
-## Happy to discuss these ideas today, tomorrow or in the future
+:::
+
+::: {.column width="48%"}
+
+::: {.sdg-icon-list}
+- ![SDG 12](sdg-icons/E-WEB-Goal-12.png){.sdg-bullet-icon} [**SDG 12:** Responsible Consumption and Production]{.sdg-bullet-label}
+
+... because energy consumption of computing is on the rise.
+:::
+
+::: {.sdg-icon-list}
+- ![SDG 17](sdg-icons/E-WEB-Goal-17.png){.sdg-bullet-icon} [**SDG 17:** Partnerships for the Goals]{.sdg-bullet-label}
+
+... because challenges cannot be addresses by single groups or even institutions.
+:::
+
+:::
+
+**Are those the SDGs that you picked before?**
+
+::::
+
+
+## Happy to discuss these ideas today and in the future

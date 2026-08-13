@@ -26,7 +26,6 @@ format: html
 :::
 
 
-
 ```{=html}
 <div class="framework-two-col">
   <div class="framework-card">
