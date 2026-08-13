@@ -1830,8 +1830,8 @@ Global data-center electricity demand doubles every 5y.
 
 ```{python}
 #| echo: false
-#| fig-width: 3.5
-#| fig-height: 2.5
+#| fig-width: 2.9
+#| fig-height: 2.1
 
 import matplotlib.pyplot as plt
 
@@ -1855,22 +1855,15 @@ ax.spines[["top", "right"]].set_visible(False)
 plt.show()
 ```
 
-AI-focused data centers are projected to grow **even faster: ~3×**.
 
 In the US share of electricity consumed by data centers is projected to increase from 4.4% in 2023 to ~11.8% (9.5–15.3%) in 2030.
-
-<div style="font-size: 1.5rem; font-weight: 700; line-height: 1.2;">
-How much <strong>scientific insight</strong> do we gain per computational investment?
-</div>
 
 :::
 
 
 ::: {.column width="42%"}
 
-**We need a shift towards energy awareness (on workflow level)**
-
-How do we maximize trustworthy information return per computational investment?
+**We need a shift towards energy awareness on workflow level:**
 
 This is already native to CS\&E
 
@@ -1879,6 +1872,7 @@ This is already native to CS\&E
 - model hierarchies already trade cost against insight
 - numerical analysis already disciplines approximation
 
+**How do we maximize trustworthy information return per computational investment?**
 
 :::
 
@@ -1937,5 +1931,45 @@ Lawrence Berkeley National Laboratory (2026), *United States Data Center Energy 
 
 ::::
 
+## Happy to interact in person 👥☕🤝!
 
-## Happy to discuss these ideas today and in the future
+:::: columns
+
+
+
+::: {.column with="50%"}
+
+![](./images/DSCF4329.JPG){width=100%}
+
+:::
+
+::: {.column with="50%"}
+
+Interested in the slides?
+
+![](./images/JuliaCon.png){width=30%}
+::: 
+
+
+::::
+
+
+::: {style="text-align: center; font-size: 0.55em; line-height: 1.5;"}
+
+**Many thanks to**:<br>
+Ann S. Almgren · Achim Basermann · Alan Correa · Immo Huismann ·
+Uwe Naumann · Hendrik Ranocha · Matthias Rauter · Jens Saak · Michael Schlottke-Lakemper ·
+Robert Speck · Manuel Torrilhon · Mario Wolter · Niklas von der Aßen · Jayesh Badwaik ·
+Maria Guadalupe Barrios Sazo · Dipankul Bhattacharya · Marcel Bock · Faras Brumand-Poor ·
+Dirk Brömmel · Semih Burak · Sara Grundel · Christiane Helzel · Bruce Hendrickson ·
+Robert Klöfkorn · Katharina Kormann · Zahra Lakdawala · Hannah Lanzrath · Camilla Lummerzheim ·
+Anna Matuszynska · Matthias Meinke · Simon Märtens · Abigail Morrison · William S. Moses ·
+Georgii Oblapenko · Tapasya Patki · Marcel Pfeiffer · Jana Sasse · Katharina Schmitz ·
+Miriam Schulte · Anna Schwarz · Pit Steinbach · Ingo Steldermann · Anton Stratmann ·
+Lambert Theisen · Joseph De Veaugh-Geiss · Tim Wegmann · Gabriel Wittum · Anil Yildiz
+:::
+
+
+
+
+## References
